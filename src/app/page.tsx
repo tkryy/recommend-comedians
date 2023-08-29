@@ -1,4 +1,45 @@
 import Image from 'next/image'
+import Link from 'next/link'
+import Header from './components/Header'
+import Sidebar from './components/Sidebar' 
+import Fotter from './components/Fotter' 
+
+export default function Home() {
+  return (
+    <html>
+    <div className="bg-white">
+    <Header></Header>
+    <div className="flex">
+      <Sidebar></Sidebar>
+      <p className="text-black">templates</p>
+
+    </div>
+    
+ 
+    
+  
+
+    <Fotter></Fotter>
+
+    </div>
+    </html>
+  )
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -111,3 +152,4 @@ export default function Home() {
     </main>
   )
 }
+ */

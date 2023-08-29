@@ -20,12 +20,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <body>
       <Header />
       <div className="flex">
         <Sidebar></Sidebar>
-        <body className={inter.className}>{children}</body>
+        <div>{children}</div>
       </div>
       <Fotter />
+      </body>
     </html>
   );
 }

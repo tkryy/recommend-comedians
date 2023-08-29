@@ -6,25 +6,31 @@ function Sidebar({ }) {
     <ul className="menu menu-lg bg-gray-200 w-56 rounded-box">
       <li>
         <Link href="/">
-          <img className="w-8 -ml-1" src="/images/home01.png" />
+          <Image alt="home" width="20" height="20" src="/icons/home_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>ホーム</p>
         </Link>
       </li>
       <li>
-        <Link href="/search_comedians" >
+        <Link href="/recommend_stars">
+          <Image alt="recommend" width="20" height="20" src="/icons/search_FILL0_wght400_GRAD0_opsz24.svg"></Image>
+          <p>おすすめAIを使う</p>
+        </Link>
+      </li>
+      <li>
+        <Link href="/search_stars">
           <Image alt="search" width="20" height="20" src="/icons/search_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>芸人を探す</p>
         </Link>
       </li>
       <li>
         <Link href="/favorite">
-          <img className="w-8 -ml-1" src="/images/star03.png" />
+          <Image alt="star" width="20" height="20" src="/icons/star_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>お気に入り</p>
         </Link>
       </li>
       <li>
         <Link href="/add_data">
-          <img className="w-8 -ml-1" src="/images/add02.png" />
+          <Image alt="add" width="20" height="20" src="/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>データ追加</p>
         </Link>
       </li>
@@ -32,13 +38,14 @@ function Sidebar({ }) {
       <div className="mt-40 border-2 border-gray-300"></div>
       <li>
         <Link href="/explanation">
-          <img className="w-8 -ml-1" src="/images/hatena02.png" />
+          <Image alt="hatena" width="20" height="20" src="/icons/help_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>使い方</p>
         </Link>
+        
       </li>
       <li>
         <Link href="/setting">
-          <img className="w-8 -ml-1 rounded-full" src="/images/haguruma01.png" />
+          <Image alt="setting" width="20" height="20" src="/icons/settings_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>設定</p>
         </Link>
       </li>

@@ -11,7 +11,7 @@ function Sidebar({ }) {
         </Link>
       </li>
       <li>
-        <Link href="/search_geinin" >
+        <Link href="/search_comedians" >
           <Image alt="search" width="20" height="20" src="/icons/search_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>芸人を探す</p>
         </Link>

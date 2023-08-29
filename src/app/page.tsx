@@ -11,7 +11,7 @@ export default function Home() {
     <Header></Header>
     <div className="flex">
       <Sidebar></Sidebar>
-      <p className="text-black">templates</p>
+      <p className="text-black">template</p>
 
     </div>
     

@@ -23,7 +23,7 @@ function Header({}) {
       <div className="dropdown dropdown-end">
         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            <img src="/images/icon01.png"/>
+            <Image alt="icon_mark" width="20" height="20" src="/icons/account_circle_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           </div>
         </label>
         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">

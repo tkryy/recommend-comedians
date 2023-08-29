@@ -4,12 +4,12 @@ import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import Fotter from "../../components/Fotter";
 
-export default function Terms_of_use() {
+export default function Privacy_policy() {
   return (
     <div>
-      <>
-        <h1>利用規約</h1>
-      </>
+     
+      <h1>おすすめAIを使う</h1>
+     
     </div>
   );
 }

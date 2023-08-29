@@ -11,13 +11,13 @@ function Sidebar({ }) {
         </Link>
       </li>
       <li>
-        <Link href="/recommend_stars">
+        <Link href="/recommend_comedians">
           <Image alt="recommend" width="20" height="20" src="/icons/search_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>おすすめAIを使う</p>
         </Link>
       </li>
       <li>
-        <Link href="/search_stars">
+        <Link href="/search_comedians">
           <Image alt="search" width="20" height="20" src="/icons/search_FILL0_wght400_GRAD0_opsz24.svg"></Image>
           <p>芸人を探す</p>
         </Link>

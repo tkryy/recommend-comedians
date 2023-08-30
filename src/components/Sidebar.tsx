@@ -12,7 +12,7 @@ function Sidebar({ }) {
       </li>
       <li>
         <Link href="/recommend_comedians">
-          <Image alt="recommend" width="20" height="20" src="/icons/search_FILL0_wght400_GRAD0_opsz24.svg"></Image>
+          <Image alt="recommend" width="20" height="20" src="/icons/smart_toy_black_24dp.svg"></Image>
           <p>おすすめAIを使う</p>
         </Link>
       </li>

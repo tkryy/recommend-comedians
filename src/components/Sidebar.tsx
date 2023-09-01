@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function Sidebar({ }) {
   return (
-    <ul className="menu menu-lg bg-gray-200 w-56 rounded-box">
+    <ul className="menu menu-lg bg-gray-200 w-56 rounded-box hidden lg:block">
       <li>
         <Link href="/">
           <Image alt="home" width="20" height="20" src="/icons/home_FILL0_wght400_GRAD0_opsz24.svg"></Image>

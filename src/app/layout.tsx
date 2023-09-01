@@ -2,7 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import Header from "../components/Header";
+/* import Header from "../components/Header";  */
+/* import Header2 from "../components/Header2";  */
+import Header3 from "../components/Header3"; 
 import Sidebar from "../components/Sidebar";
 import Fotter from "../components/Fotter";
 
@@ -21,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <Header />
+      <Header3 />
       <div className="flex">
         <Sidebar></Sidebar>
         <div>{children}</div>

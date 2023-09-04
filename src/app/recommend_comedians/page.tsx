@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import Header from "../../components/Header";
-import Sidebar from "../../components/Sidebar";
-import Fotter from "../../components/Fotter";
 
-export default function Privacy_policy() {
+export default function Recommend_comedians() {
   return (
     <div>
      
-      <h1>おすすめAIを使う</h1>
+      <h1 className="ml-80 my-12 text-3xl">おすすめ芸人診断</h1>
      
     </div>
   );

@@ -1,15 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import Header from "../../components/Header";
-import Sidebar from "../../components/Sidebar";
-import Fotter from "../../components/Fotter";
 
 export default function Favorite() {
   return (
     <div>
       <>
-
-        <h1>お気に入り</h1>
+        <h1 className="ml-80 my-12 text-3xl">お気に入り</h1>
        
       </>
     </div>

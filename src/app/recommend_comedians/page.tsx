@@ -5,7 +5,15 @@ export default function Recommend_comedians() {
   return (
     <div>
       <h1 className="ml-80 my-12 text-3xl">おすすめ芸人診断</h1>
-      <input type="text" placeholder="芸人名を記入" className=" input input-bordered w-full max-w-xs ml-72 text-black bg-gray-300" />
+      <div className="flex">
+        <input type="text" placeholder="芸人名を記入" className=" input input-bordered w-full max-w-xs ml-72 text-black bg-gray-300" />
+        <button className="btn text-white hover:opacity-75 ml-2">
+          診断
+        </button>
+
+
+      </div>
+
 
       <p className="ml-96 mt-12 mb-4 text-3xl">結果</p>
       <div className="ml-64">

@@ -72,8 +72,9 @@ export default function Add_data() {
       </div>
 
       <div className="ml-12 mt-12">
-        <div className="flex justify-around -mx-56">
+        <div className="flex justify-around -mx-24">
           <p className="text-2xl">センス</p>
+          <p className="text-2xl">ワード</p>
           <p className="text-2xl">パワー</p>
         </div>
         <input type="range" min={0} max="10" className="range" step="1" />
@@ -115,7 +116,7 @@ export default function Add_data() {
 
       <div className="ml-12 mt-12">
         <div className="flex justify-around -mx-56">
-          <p className="text-2xl">スピード</p>
+          <p className="text-2xl">はやい</p>
           <p className="text-2xl">ゆっくり</p>
         </div>
         <input type="range" min={0} max="10" className="range" step="1" />
@@ -137,7 +138,49 @@ export default function Add_data() {
       <div className="ml-12 mt-12">
         <div className="flex justify-around -mx-56">
           <p className="text-2xl">尖り</p>
-          <p className="text-2xl">万人受け</p>
+          <p className="text-2xl">真面目</p>
+        </div>
+        <input type="range" min={0} max="10" className="range" step="1" />
+        <div className="w-full flex justify-between text-xs px-2">
+          <span>|<br></br>5</span>
+          <span>|<br></br>4</span>
+          <span>|<br></br>3</span>
+          <span>|<br></br>2</span>
+          <span>|<br></br>1</span>
+          <span>|<br></br>0</span>
+          <span>|<br></br>1</span>
+          <span>|<br></br>2</span>
+          <span>|<br></br>3</span>
+          <span>|<br></br>4</span>
+          <span>|<br></br>5</span>
+        </div>
+      </div>
+
+      <div className="ml-12 mt-12">
+        <div className="flex justify-around -mx-56">
+          <p className="text-2xl">イケメン</p>
+          <p className="text-2xl">ブサイク</p>
+        </div>
+        <input type="range" min={0} max="10" className="range" step="1" />
+        <div className="w-full flex justify-between text-xs px-2">
+          <span>|<br></br>5</span>
+          <span>|<br></br>4</span>
+          <span>|<br></br>3</span>
+          <span>|<br></br>2</span>
+          <span>|<br></br>1</span>
+          <span>|<br></br>0</span>
+          <span>|<br></br>1</span>
+          <span>|<br></br>2</span>
+          <span>|<br></br>3</span>
+          <span>|<br></br>4</span>
+          <span>|<br></br>5</span>
+        </div>
+      </div>
+
+      <div className="ml-12 mt-12">
+        <div className="flex justify-around -mx-56">
+          <p className="text-2xl">人気</p>
+          <p className="text-2xl">コア</p>
         </div>
         <input type="range" min={0} max="10" className="range" step="1" />
         <div className="w-full flex justify-between text-xs px-2">

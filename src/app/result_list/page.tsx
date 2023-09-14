@@ -5,7 +5,7 @@ export default function Result_list() {
   return (
     <div className="overflow-x-auto">
       <h1 className="ml-80 my-12 text-3xl">検索結果</h1>
-      <table className="table">
+      <table className="table ml-4">
         {/* head */}
         <thead>
           <tr>
@@ -33,15 +33,15 @@ export default function Result_list() {
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
-                    <Image
-                      src={"/images/icon01.png"}
-                      alt='おすすめ芸人画像'
-                      width="300"
-                      height="100" />
+                    <a href="/team_info" >
+                      <img src="https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg" alt="さや香" width="" height=""></img>
+                    </a>
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">さや香</div>
+                  <Link href="/team_info">
+                    <div className="font-bold">さや香</div>
+                  </Link>
                 </div>
               </div>
             </td>
@@ -65,23 +65,25 @@ export default function Result_list() {
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
-                    <img src="/tailwind-css-component-profile-3@56w.png" alt="Avatar Tailwind CSS Component" />
+                    <Image
+                      src={"/images/icon01.png"}
+                      alt='おすすめ芸人画像'
+                      width="300"
+                      height="100" />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Brice Swyre</div>
-                  <div className="text-sm opacity-50">China</div>
+                  <div className="font-bold">名前</div>
                 </div>
               </div>
             </td>
             <td>
-              Carroll Group
+              所属事務所
               <br />
-              <span className="badge badge-ghost badge-sm">Tax Accountant</span>
             </td>
-            <td>Red</td>
+            <td>結成年</td>
             <th>
-              <button className="btn btn-ghost btn-xs">details</button>
+              <button className="btn btn-ghost btn-xs">ジャンル</button>
             </th>
           </tr>
           {/* row 3 */}
@@ -95,23 +97,25 @@ export default function Result_list() {
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
-                    <img src="/tailwind-css-component-profile-4@56w.png" alt="Avatar Tailwind CSS Component" />
+                    <Image
+                      src={"/images/icon01.png"}
+                      alt='おすすめ芸人画像'
+                      width="300"
+                      height="100" />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Marjy Ferencz</div>
-                  <div className="text-sm opacity-50">Russia</div>
+                  <div className="font-bold">名前</div>
                 </div>
               </div>
             </td>
             <td>
-              Rowe-Schoen
+              所属事務所
               <br />
-              <span className="badge badge-ghost badge-sm">Office Assistant I</span>
             </td>
-            <td>Crimson</td>
+            <td>結成年</td>
             <th>
-              <button className="btn btn-ghost btn-xs">details</button>
+              <button className="btn btn-ghost btn-xs">ジャンル</button>
             </th>
           </tr>
           {/* row 4 */}
@@ -125,23 +129,25 @@ export default function Result_list() {
               <div className="flex items-center space-x-3">
                 <div className="avatar">
                   <div className="mask mask-squircle w-12 h-12">
-                    <img src="/tailwind-css-component-profile-5@56w.png" alt="Avatar Tailwind CSS Component" />
+                    <Image
+                      src={"/images/icon01.png"}
+                      alt='おすすめ芸人画像'
+                      width="300"
+                      height="100" />
                   </div>
                 </div>
                 <div>
-                  <div className="font-bold">Yancy Tear</div>
-                  <div className="text-sm opacity-50">Brazil</div>
+                  <div className="font-bold">名前</div>
                 </div>
               </div>
             </td>
             <td>
-              Wyman-Ledner
+              所属事務所
               <br />
-              <span className="badge badge-ghost badge-sm">Community Outreach Specialist</span>
             </td>
-            <td>Indigo</td>
+            <td>結成年</td>
             <th>
-              <button className="btn btn-ghost btn-xs">details</button>
+              <button className="btn btn-ghost btn-xs">ジャンル</button>
             </th>
           </tr>
         </tbody>

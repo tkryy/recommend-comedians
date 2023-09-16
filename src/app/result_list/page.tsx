@@ -51,7 +51,9 @@ export default function Result_list() {
             </td>
             <td>2014</td>
             <th>
-              <button className="btn btn-ghost btn-xs">正統派</button>
+              <Link href="/genres">
+                <button className="btn btn-ghost btn-xs">正統派</button>
+              </Link>
             </th>
           </tr>
           {/* row 2 */}
@@ -83,7 +85,9 @@ export default function Result_list() {
             </td>
             <td>結成年</td>
             <th>
-              <button className="btn btn-ghost btn-xs">ジャンル</button>
+              <Link href="/genres">
+                <button className="btn btn-ghost btn-xs">ジャンル</button>
+              </Link>
             </th>
           </tr>
           {/* row 3 */}
@@ -115,7 +119,9 @@ export default function Result_list() {
             </td>
             <td>結成年</td>
             <th>
-              <button className="btn btn-ghost btn-xs">ジャンル</button>
+              <Link href="/genres">
+                <button className="btn btn-ghost btn-xs">ジャンル</button>
+              </Link>
             </th>
           </tr>
           {/* row 4 */}
@@ -147,7 +153,9 @@ export default function Result_list() {
             </td>
             <td>結成年</td>
             <th>
-              <button className="btn btn-ghost btn-xs">ジャンル</button>
+              <Link href="/genres">
+                <button className="btn btn-ghost btn-xs">ジャンル</button>
+              </Link>
             </th>
           </tr>
         </tbody>

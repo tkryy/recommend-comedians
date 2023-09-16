@@ -30,7 +30,7 @@ export default function Recommend_comedians() {
 
       <p className="ml-64 mt-8 text-3xl">あなたのおすすめ芸人タイプは○○です。</p>
       <Link href="">
-        <p className="ml-64 underline text-xl">他の○○タイプの芸人を見る</p>
+        <p className="ml-64 underline hover:opacity-50 text-xl">他の○○タイプの芸人を見る</p>
       </Link>
 
 

@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 export default function Add_data() {
   return (
-    <div className="">
-      <h1 className="ml-80 my-12 text-3xl">芸人データを追加する</h1>
+    <div className="container flex flex-col items-center justify-center h-screen min-h-screen">
+      <h1 className="text-3xl">芸人データを追加する</h1>
       <input type="text" placeholder="芸人名を記入" className=" input input-bordered w-full max-w-xs ml-80 text-black bg-gray-300" />
       <p className="ml-80 mt-12">特徴</p>
       <textarea placeholder="芸人の特徴を記入" className="textarea textarea-bordered textarea-md w-full max-w-xs ml-80 text-black bg-gray-300" ></textarea>

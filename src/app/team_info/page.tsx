@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Team_info() {
   return (
-    <div className="ml-8 my-4">
+    <div className="container max-w-lg flex flex-col items-center justify-center h-screen min-h-screen">{/* ml-8 my-4 */}
       <div className="flex">
-        <p className="text-3xl ml-4">さや香</p>
-        <p className="text-3xl ml-8">ー正統派タイプー</p>
+        <p className="text-3xl ml-4 font-bold">さや香</p>
+        <p className="text-3xl ml-8 font-bold">ー正統派タイプー</p>
       </div>
 
       <br></br>
@@ -16,13 +16,13 @@ export default function Team_info() {
         </a>
         <div>
           <div className="flex">
-            <p className="ml-4 text-2xl">結成年</p>
-            <p className="ml-4 mt-2">2014</p>
+            <p className="ml-4 text-2xl text-yellow-500 font-bold">結成年</p>
+            <p className="ml-4 text-2xl">2014</p>
           </div>
           <br></br>
           <div className="flex">
-            <p className="ml-4 text-2xl">所属事務所</p>
-            <p className="ml-4 mt-2">吉本興業(大阪)</p>
+            <p className="ml-4 text-2xl text-yellow-500 font-bold">所属事務所</p>
+            <p className="ml-4 text-2xl">吉本興業(大阪)</p>
           </div>
           <br></br>
           <div className="flex">

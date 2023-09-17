@@ -26,9 +26,9 @@ export default function RootLayout({
       <Header3 />
       <div className="flex">
         <Sidebar></Sidebar>
-        <div>{children}</div>
+        <div className="container flex flex-col items-center justify-center h-screen min-h-screen">{children}</div>
       </div>
-      <Fotter />
+      <Fotter /> 
       </body>
     </html>
   );

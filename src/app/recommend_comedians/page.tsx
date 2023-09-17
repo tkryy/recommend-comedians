@@ -3,20 +3,17 @@ import Link from "next/link";
 
 export default function Recommend_comedians() {
   return (
-    <div>
-      <h1 className="ml-80 my-12 text-3xl">おすすめ芸人診断</h1>
-      <div className="flex">
-        <input type="text" placeholder="芸人名を記入" className=" input input-bordered w-full max-w-xs ml-72 text-black bg-gray-300" />
+    <div className="container flex flex-col items-center justify-center h-screen flex min-h-screen mt-96">
+      <h1 className="text-3xl mt-64">おすすめ芸人診断</h1>
+      <div className="flex mt-4">
+        <input type="text" placeholder="芸人名を記入" className=" input input-bordered text-black bg-gray-300" />
         <button className="btn text-white hover:opacity-75 ml-2">
           診断
         </button>
-
-
       </div>
 
-
-      <p className="ml-96 mt-12 mb-4 text-3xl">結果</p>
-      <div className="ml-64">
+      <p className="mt-12 mb-4 text-3xl">結果</p>
+      <div className="">
         <Image
           src={"/images/icon01.png"}
           alt='おすすめ芸人画像'
@@ -28,12 +25,10 @@ export default function Recommend_comedians() {
         </button>
       </div>
 
-      <p className="ml-64 mt-8 text-3xl">あなたのおすすめ芸人タイプは○○です。</p>
+      <p className="mt-8 text-3xl">あなたのおすすめ芸人タイプは○○です。</p>
       <Link href="">
-        <p className="ml-64 underline hover:opacity-50 text-xl">他の○○タイプの芸人を見る</p>
+        <p className="underline hover:opacity-50 text-xl mb-96">他の○○タイプの芸人を見る</p>
       </Link>
-
-
 
     </div>
   );

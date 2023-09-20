@@ -26,8 +26,8 @@ export default function RootLayout({
         <Header3 />
         <div className="md:flex block">
           <Sidebar />
-          <div className="md:pl-56 pl-0 min-h-screen w-screen flex items-center flex-col ">
-            <div className="md:mx-3 mx-5">{children}</div>
+          <div className="md:pl-56 pl-0 min-h-screen w-screen flex items-center flex-col bg-white ">
+            <div className="md:mx-3 mx-5 my-24">{children}</div>
           </div>
           <Fotter />
         </div>

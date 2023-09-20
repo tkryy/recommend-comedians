@@ -6,7 +6,7 @@ function Header3({ }) {
     <>
       <div className="navbar border-t-4 border-t-[#DD0000] bg-opacity-90 shadow-lg backdrop-filter backdrop-blur-sm bg-[#F28705] fixed top-0 z-50">
     
-        <div className="navbar-start ml-6">
+        <div className="navbar-start lg:ml-6">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden text-white">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>

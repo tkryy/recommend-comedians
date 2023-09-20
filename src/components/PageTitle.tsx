@@ -7,8 +7,8 @@ interface PageTitleProps {
 function PageTitle({ title }: PageTitleProps) {
   return (
     <div className="mb-7">
-      <h1 className="text-3xl font-bold">{title}</h1>
-      <hr className="h-px my-8 text-[#F25C05]" />
+      <h1 className="text-3xl font-bold text-[#732C02]">{title}</h1>
+      <hr className="h-px my-8 " />
     </div>
   );
 }

@@ -14,7 +14,8 @@ function Sidebar() {
   };
 
   return (
-    <ul className="menu  fixed top-0 z-40 menu-lg bg-[#F2F2F7] w-56  hidden lg:block min-h-screen">
+    <ul className="menu  fixed top-0 z-40 menu-lg bg-transparent-90   w-56  hidden lg:block min-h-screen"
+    style={{backgroundImage: "url(/images/sideBack.webp)"}}>
       <div
         style={{
           marginTop: "80px",
@@ -29,7 +30,7 @@ function Sidebar() {
         {renderSliderItem(
           "/recommend_comedians",
           "/icons/smart_toy_black_24dp.svg",
-          "おすすめAI"
+          "AIおすすめ診断"
         )}
 
         {renderSliderItem(

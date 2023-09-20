@@ -4,7 +4,7 @@ import Link from 'next/link'
 function Header3({ }) {
   return (
     <>
-      <div className="navbar bg-opacity-80 shadow-lg backdrop-filter backdrop-blur-sm bg-[#DD0000] fixed top-0 z-50">
+      <div className="navbar border-t-4 border-t-[#DD0000] bg-opacity-90 shadow-lg backdrop-filter backdrop-blur-sm bg-[#F28705] fixed top-0 z-50">
     
         <div className="navbar-start ml-6">
           <div className="dropdown">
@@ -21,7 +21,7 @@ function Header3({ }) {
               <li>
                 <Link href="/recommend_comedians">
                   <Image alt="recommend" width="20" height="20" src="/icons/smart_toy_black_24dp.svg"></Image>
-                  <p>おすすめAIを使う</p>
+                  <p>AIおすすめ診断</p>
                 </Link>
               </li>
               <li>

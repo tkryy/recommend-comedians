@@ -1,7 +1,7 @@
 /* import Link from 'next/link'; */
 import Image from 'next/image'
 
-function Header({}) {
+function Header() {
   return (
     <>
     <div className="navbar bg-gray-800">

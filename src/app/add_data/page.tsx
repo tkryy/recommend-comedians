@@ -1,4 +1,4 @@
-import Link from "next/link";
+import PageTitle from "@/components/PageTitle";
 
 export default function Add_data() {
   /**
@@ -29,7 +29,7 @@ export default function Add_data() {
 
   return (
     <div className="container ">
-      <h1 className="text-3xl">芸人データを追加する</h1>
+      <PageTitle title="芸人データを追加" />
       <input
         type="text"
         placeholder="芸人名を記入"

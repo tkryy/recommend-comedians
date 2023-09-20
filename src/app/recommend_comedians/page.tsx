@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import PageTitle from "@/components/PageTitle";
 
 export default function Recommend_comedians() {
   return (
-    <div className="container flex flex-col items-center justify-center h-screen min-h-screen ">
-      <h1 className="text-3xl mt-64">おすすめ芸人診断</h1>
+    <div className="">
+            <PageTitle  title="AIおすすめ診断"/>
+    <div className="flex flex-col items-center ">
+
       <div className="flex mt-4">
         <input type="text" placeholder="芸人名を記入" className=" input input-bordered text-black bg-gray-300" />
         <button className="btn text-white hover:opacity-75 ml-2">
@@ -30,6 +33,7 @@ export default function Recommend_comedians() {
         <p className="underline hover:opacity-50 text-xl mb-96">他の○○タイプの芸人を見る</p>
       </Link>
 
+    </div>
     </div>
   );
 }

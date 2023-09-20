@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import PageTitle from "@/components/PageTitle";
 export default function Favorite() {
   return (
     <div>
-      <h1 className="text-3xl">お気に入り</h1>
+      <PageTitle title="お気に入り"/>
       <table className="table ml-4">
         {/* head */}
         <thead>

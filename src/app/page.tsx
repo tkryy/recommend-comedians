@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import PageTitle from '@/components/PageTitle';
 
 export default function Home() {
   return (
+    <div>
+      <PageTitle title="ホーム"/>
     <div className="container flex flex-col items-center">
       <div className="my-12 flex">
         <Image
@@ -27,6 +30,7 @@ export default function Home() {
       <button className="btn btn-wide btn-lg text-white hover:opacity-75 mx-80 mb-4">芸人診断の使い方</button>
       </Link>
 
+    </div>
     </div>
   );
 }

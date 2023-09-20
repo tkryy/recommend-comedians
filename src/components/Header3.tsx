@@ -4,7 +4,7 @@ import Link from 'next/link'
 function Header3({ }) {
   return (
     <>
-      <div className="navbar bg-opacity-80 shadow-xl backdrop-filter backdrop-blur-sm bg-[#DD0000] fixed top-0 z-50">
+      <div className="navbar bg-opacity-80 shadow-lg backdrop-filter backdrop-blur-sm bg-[#DD0000] fixed top-0 z-50">
     
         <div className="navbar-start ml-6">
           <div className="dropdown">

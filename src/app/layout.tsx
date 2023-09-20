@@ -24,10 +24,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header3 />
-        <div className="md:flex block">
+        <div className="lg:flex block">
           <Sidebar />
-          <div className="md:pl-56 pl-0 min-h-screen w-screen flex items-center flex-col bg-white ">
-            <div className="md:mx-3 mx-5 my-24">{children}</div>
+          <div className="lg:pl-56 pl-0 min-h-screen w-screen flex items-center flex-col bg-white ">
+            <div className="lg:min-w-[1200px] md:px-9 md:mx-5 my-24 ">{children}</div>
           </div>
           <Fotter />
         </div>

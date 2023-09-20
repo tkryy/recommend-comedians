@@ -23,15 +23,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-      <Header3 />
-      <div className="md:flex block">
-        <Sidebar />
-      
+        <Header3 />
+        <div className="md:flex block">
+          <Sidebar />
           <div className="md:pl-56 pl-0 min-h-screen w-screen flex items-center flex-col ">
             <div className="md:mx-3 mx-5">{children}</div>
           </div>
-      
-        <Fotter />
+          <Fotter />
         </div>
       </body>
     </html>

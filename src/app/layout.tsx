@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 
 /* import Header from "../components/Header";  */
 /* import Header2 from "../components/Header2";  */
-import Header3 from "../components/Header3"; 
+import Header3 from "../components/Header3";
 import Sidebar from "../components/Sidebar";
 import Fotter from "../components/Fotter";
 
@@ -24,11 +24,15 @@ export default function RootLayout({
     <html lang="en">
       <body>
       <Header3 />
-      <div className="flex">
-        <Sidebar></Sidebar>
-        <div className="container flex flex-col items-center justify-center h-screen min-h-screen">{children}</div>
-      </div>
-      <Fotter /> 
+      <div className="md:flex block">
+        <Sidebar />
+      
+          <div className="md:pl-56 pl-0 min-h-screen w-screen flex items-center flex-col ">
+            <div className="md:mx-3 mx-5">{children}</div>
+          </div>
+      
+        <Fotter />
+        </div>
       </body>
     </html>
   );

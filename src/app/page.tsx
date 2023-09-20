@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="container max-w-lg flex flex-col items-center justify-center h-screen min-h-screen">
+    <div className="container flex flex-col items-center">
       <div className="my-12 flex">
         <Image
           src={"/images/graph_circle01.png"}

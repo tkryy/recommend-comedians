@@ -14,8 +14,10 @@ function Sidebar() {
   };
 
   return (
-    <ul className="menu  fixed top-0 z-40 menu-lg bg-transparent-90   w-56  hidden lg:block min-h-screen"
-    style={{backgroundImage: "url(/images/sideBack.webp)"}}>
+    <ul
+      className="menu  fixed top-0 z-40 menu-lg bg-transparent-90   w-56  hidden xl:block min-h-screen"
+      style={{ backgroundImage: "url(/images/sideBack.webp)" }}
+    >
       <div
         style={{
           marginTop: "80px",

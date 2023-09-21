@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Result_list() {
+
+
+  
   return (
     <div className="overflow-x-auto">
       <h1 className="ml-80 my-12 text-3xl">検索結果</h1>

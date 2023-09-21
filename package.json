@@ -23,6 +23,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@gradio/client": "^0.3.1",
     "daisyui": "^3.6.3"
   }
 }

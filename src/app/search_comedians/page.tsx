@@ -1,8 +1,13 @@
 "use client";
+import { getComedianNamePredict } from "@/lib/gradio";
+import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
 import { Comedian } from "@/models/Comedian";
 import ComedianCard from "@/components/ComedianCard";
 import GenreIcon from "@/components/GenreIcon";
+
+
+
 
 const dummyData: Comedian[] = [
   {
@@ -33,18 +38,14 @@ const dummyData: Comedian[] = [
 ];
 
 export default function Search_comedians() {
-
-  const handleButtonClick = () => {
-    console.log("クリック!");
-  };
-
+ 
 
   return (
     <div>
       <PageTitle title="芸人を探す" />
       {/*　検索ページ */}
       <div className="space-y-4">
-      <button onClick={handleButtonClick}>クリックして関数を実行</button>
+       
         {/* キーワード検索 */}
         <div className="space-y-4 items-center justify-between">
           <h2 className="text-2xl font-bold">キーワード検索</h2>

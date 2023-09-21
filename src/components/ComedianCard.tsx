@@ -14,15 +14,13 @@ function ComedianCard({ comedian }: ComedianCardProps) {
       <div className="p-4">
         {/* 画像 */}
         <div className="avator flex flex-col items-center">
-        
-            <Image
-              src={comedian.imageSRC || dummyImageSRC} // comedian.imageSRCが存在しない場合にダミー画像を表示
-              alt={comedian.name}
-              width={180}
-              height={180}
-              className=" w-[180px]"
-            />
-     
+          <Image
+            src={comedian.imageSRC || dummyImageSRC} // comedian.imageSRCが存在しない場合にダミー画像を表示
+            alt={comedian.name}
+            width={180}
+            height={180}
+            className=" w-[180px]"
+          />
         </div>
         {/* テキスト */}
         <div className="mt-3">

@@ -45,51 +45,51 @@ export default function Favorite() {
     <div>
       <PageTitle title="お気に入り" />
       <div className="flex flex-col items-center">
-      <table className="table  bg-[#F2F2F7]">
-        {/* head */}
-        <thead>
-          <tr >
-            <th className="text-black">名前</th>
-            <th className="text-black">所属事務所</th>
-            <th className="text-black">結成年</th>
-            <th className="text-black">ジャンル</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* row 1 */}
-          {renderFavoriteRow(
-            "https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg",
-            "さや香",
-            "吉本興業(大阪)",
-            "2014",
-            "正統派"
-          )}
-          {/* row 2 */}
-          {renderFavoriteRow(
-            "/images/icon01.png",
-            "サンプル",
-            "サンプル興業",
-            "2022",
-            "正統派"
-          )}
-          {/* row 3 */}
-          {renderFavoriteRow(
-            "/images/icon01.png",
-            "サンプル",
-            "サンプル興業",
-            "2022",
-            "正統派"
-          )}
-          {/* row 4 */}
-          {renderFavoriteRow(
-            "/images/icon01.png",
-            "サンプル",
-            "サンプル興業",
-            "2022",
-            "正統派"
-          )}
-        </tbody>
-      </table>
+        <table className="table  bg-[#F2F2F7]">
+          {/* head */}
+          <thead>
+            <tr>
+              <th className="text-black">名前</th>
+              <th className="text-black">所属事務所</th>
+              <th className="text-black">結成年</th>
+              <th className="text-black">ジャンル</th>
+            </tr>
+          </thead>
+          <tbody>
+            {/* row 1 */}
+            {renderFavoriteRow(
+              "https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg",
+              "さや香",
+              "吉本興業(大阪)",
+              "2014",
+              "正統派"
+            )}
+            {/* row 2 */}
+            {renderFavoriteRow(
+              "/images/icon01.png",
+              "サンプル",
+              "サンプル興業",
+              "2022",
+              "正統派"
+            )}
+            {/* row 3 */}
+            {renderFavoriteRow(
+              "/images/icon01.png",
+              "サンプル",
+              "サンプル興業",
+              "2022",
+              "正統派"
+            )}
+            {/* row 4 */}
+            {renderFavoriteRow(
+              "/images/icon01.png",
+              "サンプル",
+              "サンプル興業",
+              "2022",
+              "正統派"
+            )}
+          </tbody>
+        </table>
       </div>
     </div>
   );

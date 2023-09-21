@@ -9,7 +9,7 @@ export default function Team_info() {
   const dataClassName = "md:text-2xl";
 
   return (
-    <div className="md:mx-0 mx-4 md:space-y-0 space-y-9">
+    <div className="md:mx-0 mx-4  space-y-9">
       {/* ヘッダー */}
       <div id="HEADER" className=" bg-[#331301]  rounded-3xl md:max-w-6xl max-w-sm">
         <div className="md:flex block md:p-6 p-3 md:justify-start justify-center">
@@ -37,7 +37,7 @@ export default function Team_info() {
         </div>
       </div>
 
-      <div className="my-9 block md:flex  md:flex-col items-center justify-center ">
+      <div className="my-9 block md:flex md:flex-col items-center justify-center ">
         <div className="md:flex md:space-x-9 ">
           {/* プロフィール */}
           <div className="border-2 space-y-3 border-gray-300 md:p-9 p-3 md:max-w-xl max-w-sm">

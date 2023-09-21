@@ -1,6 +1,8 @@
+
 export type Comedian = {
   //基本属性
   id: string;
+  imageSRC?: string;
   name: string;
   sex: number;
   info: string;
@@ -9,13 +11,13 @@ export type Comedian = {
 
   //芸風に関する数値
   //値がない場合も考慮する
-  manzai: boolean | undefined;
-  conte: boolean | undefined;
-  alone: boolean | undefined;
-  rhythm: boolean | undefined;
-  ogiri: boolean | undefined;
-  mimic: boolean | undefined;
-  talk: boolean | undefined;
+  manzai?: boolean;
+  conte?: boolean;
+  alone?: boolean;
+  rhythm?: boolean;
+  ogiri?: boolean;
+  mimic?: boolean;
+  talk?: boolean;
 
 
   //見た目や人気など

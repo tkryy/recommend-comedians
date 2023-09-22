@@ -1,41 +1,16 @@
 "use client";
+
 import { getComedianNamePredict } from "@/lib/gradio";
 import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
-import { Comedian } from "@/models/Comedian";
+import { Comedian, dummyData } from "@/models/Comedian";
 import ComedianCard from "@/components/ComedianCard";
 import GenreIcon from "@/components/GenreIcon";
 
 
 
 
-const dummyData: Comedian[] = [
-  {
-    id: "1",
 
-    name: "ダミー芸人1",
-    sex: 1,
-    info: "これはダミーデータ1です",
-    company: "株式会社テスト",
-    birthYear: "2000",
-    manzai: true,
-    appearance: 1,
-    popularity: 1,
-  },
-  {
-    id: "2",
-    name: "ダミー芸人2",
-    //imageSRC: "https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg",
-    sex: 1,
-    info: "これはダミーデータ1です",
-    company: "株式会社テスト",
-    birthYear: "2000",
-    manzai: true,
-    conte: true,
-    appearance: 1,
-    popularity: 1,
-  },
-];
 
 export default function Search_comedians() {
  
@@ -55,7 +30,7 @@ export default function Search_comedians() {
               placeholder="「ものまね」「歌ネタ」などキーワードを入力！"
               className="input input-bordered md:w-96 w-full text-black bg-gray-300"
             />
-            <button className="btn text-white hover:opacity-75 ml-2">
+            <button className="btn text-white bg-[#732C02] hover:opacity-75 ml-2">
               検索
             </button>
           </div>
@@ -96,13 +71,10 @@ export default function Search_comedians() {
         {/* トレンド */}
         <div className="flex flex-col justify-center space-y-4">
           <h2 className="text-2xl font-bold">トレンド</h2>
-          <div className="grid md:grid-cols-5 grid-cols-1 md:gap-5 gap-5 md:px-0 px-12">
-            <ComedianCard comedian={dummyData[0]} />
-            <ComedianCard comedian={dummyData[1]} />
-            <ComedianCard comedian={dummyData[0]} />
-            <ComedianCard comedian={dummyData[1]} />
-            <ComedianCard comedian={dummyData[0]} />
-            <ComedianCard comedian={dummyData[1]} />
+          <div className="grid md:grid-cols-4 grid-cols-1 md:gap-5 gap-5 md:px-0 px-12">
+            {dummyData.map((comedian: Comedian) => (
+              <ComedianCard comedian={comedian} />
+            ))}
           </div>
         </div>
       </div>

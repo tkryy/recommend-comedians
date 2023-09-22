@@ -44,6 +44,11 @@ const nextConfig = {
         hostname: "profile.yoshimoto.co.jp",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "www.ohtapro.co.jp",
+        port: "",
+      },
     ],
   },
 };

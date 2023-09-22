@@ -7,6 +7,7 @@ import Link from "next/link";
 import PageTitle from "@/components/PageTitle";
 
 export default function Recommend_comedians() {
+  
   const [resultText, setResultText] = useState("結果");
   const [isLoading, setIsLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -36,8 +37,7 @@ export default function Recommend_comedians() {
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
             />
-            <button type="submit">実行</button>{" "}
-            {/* type属性を追加 */}
+            <button type="submit">実行</button> {/* type属性を追加 */}
           </form>{" "}
           {/* 追加 */}
         </div>

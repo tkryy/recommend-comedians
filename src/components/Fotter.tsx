@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function Fotter({}) {
   return (
-  <footer className="fotter p-4 bg-gray-800 text-white block lg:hidden">
+  <footer className="fotter p-4 bg-[#D2691e] text-white block lg:hidden">
     <div>
       <p className="text-2xl">タイトル</p>
     </div>

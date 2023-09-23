@@ -14,7 +14,7 @@ export default function Add_data() {
     rightLabel: string
   ) => {
     return (
-      <div className="mt-12 md:min-w-[400px]  space-y-8">
+      <div className="mt-12 md:min-w-[800px]  space-y-8">
         {/* 質問のタイトル */}
         <div className="">
           <h2 className="md:text-2xl text-lg font-bold">{title}</h2>
@@ -23,7 +23,7 @@ export default function Add_data() {
         {/* パラメータのスライダー */}
         <div className=" flex items-center justify-center">
           <div className="flex justify-between md:w-2/3 w-[270px]">
-            <p className="md:text-xl text-xs md:w-[70px]  w-[50px]  ">
+            <p className="md:text-xl text-xs md:w-[70px] w-[50px]  ">
               {leftLabel}
             </p>
             <div>
@@ -31,7 +31,7 @@ export default function Add_data() {
                 type="range"
                 min={0}
                 max={10}
-                className="md:w-[400px] w-[150px] h-2 accent-[#262526] bg-gradient-to-r from-pink-400 to-cyan-400 rounded-lg appearance-none cursor-pointer"
+                className="md:w-[600px] w-[150px] h-2 accent-[#262526] bg-gradient-to-r from-pink-400 to-cyan-400 rounded-lg appearance-none cursor-pointer"
               ></input>
               <div className="flex justify-between text-xs px-[5px]">
                 {[5, 4, 3, 2, 1, 0, 1, 2, 3, 4, 5].map((value) => (
@@ -55,7 +55,7 @@ export default function Add_data() {
   };
 
   return (
-    <div className="">
+    <div className="md:ml-12">
       <PageTitle title="芸人データを追加" />
 
       <div className="flex flex-col justify-center items-center space-y-9 px-2">
@@ -64,7 +64,7 @@ export default function Add_data() {
           <input
             type="text"
             placeholder="芸人の名前を記入"
-            className="input input-bordered md:max-w-[400px] text-black bg-gray-300"
+            className="input input-bordered md:max-w-[400px] md:input-lg text-black bg-gray-300"
           />
           <p className="">特徴</p>
           <textarea
@@ -72,7 +72,7 @@ export default function Add_data() {
             className="textarea textarea-bordered textarea-md md:max-w-[400px]  text-black bg-gray-300"
           ></textarea>
         </div>
-        <div id="SLIDERS" className="flex flex-col">
+        <div id="SLIDERS" className="flex flex-col md:max-w-[1000px]">
           <h2 className="md:text-3xl text-xl font-bold">分析データ</h2>
           <div className="mx-12">
             {renderRatingSliders("どんなスタイル？", "精密", "柔軟")}

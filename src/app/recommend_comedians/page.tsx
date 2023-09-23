@@ -42,7 +42,7 @@ export default function Recommend_comedians() {
 
       <div className="flex flex-col justify-center items-center space-y-[50px] ">
         <div className="flex flex-col items-center justify-center min-w-full">
-          <h2 className="text-3xl font-bold text-center">
+          <h2 className="md:text-3xl font-bold text-center">
             AIがあなたの好みから
             <br />
             新しいおすすめ芸人をご紹介!
@@ -56,7 +56,7 @@ export default function Recommend_comedians() {
                 id="SEARCH_BOX"
                 type="text"
                 placeholder="好きな芸人の名前を入力！"
-                className="input input-bordered text-[#000] bg-[#D9D9D9] min-w-[300px]"
+                className="input input-bordered text-[#000] bg-[#D9D9D9] md:min-w-[300px]"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
               />
@@ -72,7 +72,7 @@ export default function Recommend_comedians() {
           </div>
         </div>
 
-        <div className="mockup-code min-w-[500px]">
+        <div className="mockup-code md:min-w-[500px]">
           <pre data-prefix="$">
             <code>あなたの好みを分析...</code>
           </pre>
@@ -92,9 +92,9 @@ export default function Recommend_comedians() {
           </pre>
         </div>
 
-        <div className="flex items-center space-x-3">
+        <div className="md:flex  items-center md:space-x-3">
           <h3 className="text-3xl font-bold">おすすめは</h3>
-          <div className="flex flex-col justify-center items-center min-w-[300px] border-2 border-[#D9D9D9] p-3 rounded-lg">
+          <div className="flex flex-col justify-center items-center min-w-[300px] border-2 border-[#D9D9D9] p-3 rounded-lg md:mt-0 mt-2">
             {!isLoading && (
               <h4 id="RESULT_TEXT" className="text-xl font-bold">
                 {resultText}
@@ -110,7 +110,7 @@ export default function Recommend_comedians() {
             {/* isLoadingがtrueのときだけ表示 */}
           </div>
         </div>
-        <p className=" text-3xl">あなたのおすすめ芸人タイプは○○です。</p>
+        <p className=" md:text-3xl ">あなたのおすすめ芸人タイプは○○です。</p>
         <div className="flex items-center justify-center space-x-3">
           <Link href="" className="btn btn-outline btn-accent  text-white   ">
             他の○○タイプの芸人を見る

@@ -76,12 +76,12 @@ export default function Add_data() {
           <h2 className="md:text-3xl text-xl font-bold">分析データ</h2>
           <div className="mx-12">
             {renderRatingSliders("どんなスタイル？", "精密", "柔軟")}
-            {renderRatingSliders("笑いの取り方は", "正統派", "破天荒")}
+            {renderRatingSliders("笑いの取り方は？", "正統派", "破天荒")}
             {/*  
     内部データ上の分類は問題ないが、サイト上の表記としては「頭悪い」は不適切かもしれない。
     「センス・パワー」との差別化もわかりにくいので他の表現も模索する。
     */}
-            {renderRatingSliders("ネタの印象は？", "賢い", "頭悪い")}
+            {renderRatingSliders("ネタの印象は？", "賢い", "馬鹿らしい")}
 
             {/*  
     以下の部分は「ワード」というパラメータがあったがデザイン的な統一を考えて省略した。

@@ -9,7 +9,7 @@ import PageTitle from "@/components/PageTitle";
 import TypingAnimation from "@/components/TypingCode";
 
 export default function Recommend_comedians() {
-  const [resultText, setResultText] = useState("ここに結果が表示されます");
+  const [resultText, setResultText] = useState("？？？");
   const [isLoading, setIsLoading] = useState(false);
 
   const [isTypingFirst, setIsTypingFirst] = useState(false);
@@ -39,31 +39,37 @@ export default function Recommend_comedians() {
   return (
     <div className="">
       <PageTitle title="AIおすすめ診断" />
-      <div className="flex flex-col justify-center items-center space-y-9 ">
-        <h2 className="text-3xl font-bold text-center">
-          AIがあなたの好みから
-          <br />
-          新しいおすすめ芸人をご紹介!
-        </h2>
 
-        <div className="flex mt-4">
-          <form onSubmit={handleButtonClick}>
-            {" "}
+      <div className="flex flex-col justify-center items-center space-y-[50px] ">
+        <div className="flex flex-col items-center justify-center min-w-full">
+          <h2 className="text-3xl font-bold text-center">
+            AIがあなたの好みから
+            <br />
+            新しいおすすめ芸人をご紹介!
+          </h2>
+
+          <div className="flex mt-4">
+            <form onSubmit={handleButtonClick}>
+              {" "}
+              {/* 追加 */}
+              <input
+                id="SEARCH_BOX"
+                type="text"
+                placeholder="好きな芸人の名前を入力！"
+                className="input input-bordered text-[#000] bg-[#D9D9D9] min-w-[300px]"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+              <button
+                type="submit"
+                className="btn bg-[#732C02] text-white ml-4"
+              >
+                実行
+              </button>{" "}
+              {/* type属性を追加 */}
+            </form>{" "}
             {/* 追加 */}
-            <input
-              id="SEARCH_BOX"
-              type="text"
-              placeholder="好きな芸人の名前を入力！"
-              className="input input-bordered text-[#000] bg-[#D9D9D9] min-w-[300px]"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-            />
-            <button type="submit" className="btn bg-[#732C02] text-white ml-4">
-              実行
-            </button>{" "}
-            {/* type属性を追加 */}
-          </form>{" "}
-          {/* 追加 */}
+          </div>
         </div>
 
         <div className="mockup-code min-w-[500px]">
@@ -104,7 +110,7 @@ export default function Recommend_comedians() {
             {/* isLoadingがtrueのときだけ表示 */}
           </div>
         </div>
-        <p className="mt-8 text-3xl">あなたのおすすめ芸人タイプは○○です。</p>
+        <p className=" text-3xl">あなたのおすすめ芸人タイプは○○です。</p>
         <div className="flex items-center justify-center space-x-3">
           <Link href="" className="btn btn-outline btn-accent  text-white   ">
             他の○○タイプの芸人を見る

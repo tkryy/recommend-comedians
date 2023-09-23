@@ -21,7 +21,7 @@ const config: Config = {
     themes: [
       {
         mytheme: {
-          primary: "#707C74",
+          primary: "#F25C05",
 
           sumi: "#0C0C0C",
 

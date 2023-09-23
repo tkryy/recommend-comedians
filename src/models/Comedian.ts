@@ -15,6 +15,7 @@ export type Comedian = {
   conte?: boolean;
   alone?: boolean;
   rhythm?: boolean;
+  gag?: boolean;
   ogiri?: boolean;
   mimic?: boolean;
   talk?: boolean;

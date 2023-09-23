@@ -4,7 +4,7 @@ function Fotter({}) {
   return (
   <footer className="fotter p-4 bg-[#D2691e] text-white block lg:hidden">
     <div>
-      <p className="text-2xl">タイトル</p>
+      <p className="text-2xl font-bold">Tendon</p>
     </div>
   
   <div className="mt-8">

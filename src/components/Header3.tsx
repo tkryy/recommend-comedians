@@ -60,7 +60,7 @@ function Header3({ }) {
 
             </ul>
           </div>
-          <Link style={{ fontFamily: "Futura" }} href="/" className=" normal-case text-2xl text-white">
+          <Link style={{ fontFamily: "Futura" }} href="/" className=" normal-case text-2xl text-white font-bold">
             Tendon
             </Link>
         </div>

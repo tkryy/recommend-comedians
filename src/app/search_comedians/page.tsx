@@ -1,26 +1,16 @@
 "use client";
 
-import { getComedianNamePredict } from "@/lib/gradio";
-import { useState } from "react";
 import PageTitle from "@/components/PageTitle";
 import { Comedian, dummyData } from "@/models/Comedian";
 import ComedianCard from "@/components/ComedianCard";
 import GenreIcon from "@/components/GenreIcon";
 
-
-
-
-
-
 export default function Search_comedians() {
- 
-
   return (
     <div>
       <PageTitle title="芸人を探す" />
       {/*　検索ページ */}
       <div className="space-y-4">
-       
         {/* キーワード検索 */}
         <div className="space-y-4 items-center justify-between">
           <h2 className="text-2xl font-bold">キーワード検索</h2>

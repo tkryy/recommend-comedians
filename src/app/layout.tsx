@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 /* import Header from "../components/Header";  */
@@ -11,7 +11,7 @@ import Fotter from "../components/Fotter";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "芸人おすすめサイト",
+  title: "Tendon-芸人おすすめサイト",
   description: "好きな芸人を探そう！",
 };
 

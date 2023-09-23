@@ -31,7 +31,7 @@ export default function Search_comedians() {
           <h2 className="text-2xl font-bold text-start">芸風から探す</h2>
           <div className="grid md:grid-cols-6 grid-cols-3 md:gap-0 gap-3 px-12">
             <GenreIcon
-              genre="漫才"
+              genre="漫才/漫談"
               imageSRC="/icons/mic_FILL0_wght400_GRAD0_opsz24_white.svg"
             />
 

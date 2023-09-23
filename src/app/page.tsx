@@ -24,6 +24,7 @@ export default function Home() {
             subTitle="Artificial Intelligence"
             title="AIがおすすめのお笑い芸人を診断！"
             content={'好きな芸人やネタの傾向を入力すると、それに似た芸人をAIが判断し、おすすめを提案します！\nあなた好みの笑いが必ず見つかります！自分ではわからない、思わぬ笑いのツボが見つかるかも・・・'}
+            href="/recommend_comedians"
           />
           <div className="grid md:grid-cols-2 gap-8">
             <FeatureCard
@@ -41,6 +42,7 @@ export default function Home() {
               subTitle="Data"
               title="お笑いデータベース"
               content="ネタの形式はもちろん、芸風やテンポまで独自に分析！詳細なデータから自分好みの笑いを見つけ出すお手伝いをします。"
+              href="/search_comedians"
             />
             <FeatureCard
               icon={
@@ -63,6 +65,7 @@ export default function Home() {
               subTitle="Customize"
               title="あなたのデータを追加"
               content="「好きな芸人さんが登録されてない・・」そんな時は力を貸してください！あなたのデータでアプリが改善されます！"
+              href="/add_data"
             />
           </div>
         </div>

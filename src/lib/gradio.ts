@@ -13,7 +13,6 @@ export const getComedianNamePredict = async (
 
   if (result !== null && typeof result === "object" && "data" in result) {
     const data: ResultData = result as ResultData;
-    console.log(data.data);
     if (data.data.length > 0) {
       return data.data[0];
     }

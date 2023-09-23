@@ -1,30 +1,51 @@
 "use client";
+
 import { getComedianNamePredict } from "@/lib/gradio";
 import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
 import PageTitle from "@/components/PageTitle";
+import TypingAnimation from "@/components/TypingCode";
 
 export default function Recommend_comedians() {
-  
-  const [resultText, setResultText] = useState("結果");
+  const [resultText, setResultText] = useState("ここに結果が表示されます");
   const [isLoading, setIsLoading] = useState(false);
+
+  const [isTypingFirst, setIsTypingFirst] = useState(false);
+  const [isTypingSecond, setIsTypingSecond] = useState(false);
+  const [isTypingThird, setIsTypingThird] = useState(false);
+
   const [searchText, setSearchText] = useState("");
 
   const handleButtonClick = async (event: any) => {
     event.preventDefault();
+
     setIsLoading(true);
+
+    setIsTypingFirst(true);
+    await setTimeout(() => setIsTypingSecond(true), 500);
+    await setTimeout(() => setIsTypingThird(true), 1000);
+
     const result = await getComedianNamePredict(searchText);
-    setResultText(result || "結果");
     setIsLoading(false);
-    setSearchText("");
+    await setResultText(result || "結果");
+
+    await setTimeout(() => setIsTypingFirst(false), 500);
+    await setTimeout(() => setIsTypingSecond(false), 500);
+    await setTimeout(() => setIsTypingThird(false), 500);
   };
 
   return (
     <div className="">
       <PageTitle title="AIおすすめ診断" />
-      <div className="flex flex-col items-center ">
+      <div className="flex flex-col justify-center items-center space-y-9 ">
+        <h2 className="text-3xl font-bold text-center">
+          AIがあなたの好みから
+          <br />
+          新しいおすすめ芸人をご紹介!
+        </h2>
+
         <div className="flex mt-4">
           <form onSubmit={handleButtonClick}>
             {" "}
@@ -32,46 +53,66 @@ export default function Recommend_comedians() {
             <input
               id="SEARCH_BOX"
               type="text"
-              placeholder="芸人名を記入"
-              className="input input-bordered text-black bg-gray-300"
+              placeholder="好きな芸人の名前を入力！"
+              className="input input-bordered text-[#000] bg-[#D9D9D9] min-w-[300px]"
               value={searchText}
               onChange={(e) => setSearchText(e.target.value)}
             />
-            <button type="submit">実行</button> {/* type属性を追加 */}
+            <button type="submit" className="btn bg-[#732C02] text-white ml-4">
+              実行
+            </button>{" "}
+            {/* type属性を追加 */}
           </form>{" "}
           {/* 追加 */}
         </div>
 
-        <p className="mt-12 mb-4 text-3xl">結果</p>
+        <div className="mockup-code min-w-[500px]">
+          <pre data-prefix="$">
+            <code>あなたの好みを分析...</code>
+          </pre>
+          <pre data-prefix=">" className="text-warning">
+            {isTypingFirst && <TypingAnimation text={"installing..."} />}
+            {!isTypingFirst && <TypingAnimation text={" "} />}{" "}
+          </pre>
+          <pre data-prefix=">" className="text-warning">
+            {isTypingSecond && (
+              <TypingAnimation text={"Tendon server access..."} />
+            )}
+            {!isTypingSecond && <TypingAnimation text={" "} />}{" "}
+          </pre>
+          <pre data-prefix=">" className="text-success">
+            {isTypingThird && <TypingAnimation text={"access authorized!"} />}
+            {!isTypingThird && <TypingAnimation text={" "} />}{" "}
+          </pre>
+        </div>
 
-        <div className="">
-          <Image
-            src={"/images/icon01.png"}
-            alt="おすすめ芸人画像"
-            width="300"
-            height="100"
-          />
-          <p className="ml-32 mt-2 text-xl">芸人名</p>
-          {!isLoading && <div id="RESULT_TEXT">{resultText}</div>}{" "}
-          {/* isLoadingがfalseのときだけ表示 */}
-          {isLoading && (
-            <span
-              id="LOADING"
-              className="loading loading-infinity text-[#F25C05] loading-lg"
-            ></span>
-          )}{" "}
-          {/* isLoadingがtrueのときだけ表示 */}
-          <button className="btn  btn-secondary text-white hover:opacity-75 ml-24 mt-4">
+        <div className="flex items-center space-x-3">
+          <h3 className="text-3xl font-bold">おすすめは</h3>
+          <div className="flex flex-col justify-center items-center min-w-[300px] border-2 border-[#D9D9D9] p-3 rounded-lg">
+            {!isLoading && (
+              <h4 id="RESULT_TEXT" className="text-xl font-bold">
+                {resultText}
+              </h4>
+            )}{" "}
+            {/* isLoadingがfalseのときだけ表示 */}
+            {isLoading && (
+              <span
+                id="LOADING"
+                className="loading loading-infinity text-[#F25C05] loading-2xl"
+              ></span>
+            )}{" "}
+            {/* isLoadingがtrueのときだけ表示 */}
+          </div>
+        </div>
+        <p className="mt-8 text-3xl">あなたのおすすめ芸人タイプは○○です。</p>
+        <div className="flex items-center justify-center space-x-3">
+          <Link href="" className="btn btn-outline btn-accent  text-white   ">
+            他の○○タイプの芸人を見る
+          </Link>
+          <button className="btn   btn-accent text-white ">
             お気に入り登録
           </button>
         </div>
-
-        <p className="mt-8 text-3xl">あなたのおすすめ芸人タイプは○○です。</p>
-        <Link href="">
-          <p className="underline hover:opacity-50 text-xl mb-96">
-            他の○○タイプの芸人を見る
-          </p>
-        </Link>
       </div>
     </div>
   );

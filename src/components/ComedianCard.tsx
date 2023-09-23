@@ -15,10 +15,10 @@ interface ComedianCardProps {
 
 function ComedianCard({ comedian }: ComedianCardProps) {
   const size = 400;
-  const badgeClass = "text-xs font-medium mr-2 px-2.5 py-0.5 rounded text-white bg-transparent";
+  const badgeClass =
+    "text-xs font-medium mr-2 px-2.5 py-0.5 rounded text-white bg-transparent";
 
-
-  const companyColor =  convertComedianCompanyToColor(comedian);
+  const companyColor = convertComedianCompanyToColor(comedian);
   return (
     <div className="bg-[#F2F2F7] rounded-md card max-w-[220px] shadow-2xl">
       {/* テキスト */}
@@ -27,39 +27,56 @@ function ComedianCard({ comedian }: ComedianCardProps) {
 
         <div className="flex mt-2 space-x-1">
           {comedian.manzai && (
-            <div id="BADGE" className={badgeClass}
-            style={{backgroundColor: companyColor}}>
+            <div
+              id="BADGE"
+              className={badgeClass}
+              style={{ backgroundColor: companyColor }}
+            >
               漫才
             </div>
           )}
           {comedian.conte && (
-            <div id="BADGE" className={badgeClass}
-            style={{backgroundColor: companyColor}}
+            <div
+              id="BADGE"
+              className={badgeClass}
+              style={{ backgroundColor: companyColor }}
             >
               コント
             </div>
           )}
           {comedian.mimic && (
-            <div id="BADGE" className={badgeClass}
-            style={{backgroundColor: companyColor}}>
+            <div
+              id="BADGE"
+              className={badgeClass}
+              style={{ backgroundColor: companyColor }}
+            >
               ものまね
             </div>
           )}
           {comedian.alone && (
-            <div id="BADGE" className={badgeClass}
-            style={{backgroundColor: companyColor}}>
+            <div
+              id="BADGE"
+              className={badgeClass}
+              style={{ backgroundColor: companyColor }}
+            >
               ピン
             </div>
           )}
           {comedian.rhythm && (
-            <div id="BADGE" className={badgeClass}
-            style={{backgroundColor: companyColor}}>
+            <div
+              id="BADGE"
+              className={badgeClass}
+              style={{ backgroundColor: companyColor }}
+            >
               歌ネタ
             </div>
           )}
           {comedian.ogiri && (
-            <div id="BADGE" className={badgeClass}
-            style={{backgroundColor: companyColor}}>
+            <div
+              id="BADGE"
+              className={badgeClass}
+              style={{ backgroundColor: companyColor }}
+            >
               大喜利
             </div>
           )}
@@ -67,11 +84,16 @@ function ComedianCard({ comedian }: ComedianCardProps) {
       </div>
       {/* 画像 */}
 
-      <div className={"flex flex-col items-start justify-between min-h-[265px] rounded-b-lg" + companyColor}
-      style={{
-        backgroundColor: companyColor,
-        borderRadius: "0px 0px 8px 8px",
-      }}>
+      <div
+        className={
+          "flex flex-col items-start justify-between min-h-[265px] rounded-b-lg" +
+          companyColor
+        }
+        style={{
+          backgroundColor: companyColor,
+          borderRadius: "0px 0px 8px 8px",
+        }}
+      >
         <Image
           src={comedian.imageSRC || dummyImageSRC} // comedian.imageSRCが存在しない場合にダミー画像を表示
           alt={comedian.name}

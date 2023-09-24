@@ -55,7 +55,7 @@ export default function Add_data() {
   };
 
   return (
-    <div className="md:ml-12">
+    <div className="md:ml-16">
       <PageTitle title="芸人データを追加" />
 
       <div className="flex flex-col justify-center items-center space-y-9 px-2">
@@ -66,9 +66,9 @@ export default function Add_data() {
             placeholder="芸人の名前を記入"
             className="input input-bordered md:max-w-[400px] md:mt-2 md:input-lg text-black bg-gray-300"
           />
-          <p className="md:mt-2">その他</p>
+          <p className="md:mt-2">備考</p>
           <textarea
-            placeholder="芸人のその他追加事項を記入"
+            placeholder="その他の必要な情報を記入"
             className="textarea textarea-bordered textarea-md md:max-w-[400px] text-black bg-gray-300"
           ></textarea>
         </div>
@@ -96,11 +96,11 @@ export default function Add_data() {
             {renderRatingSliders("今の知名度は？", "人気", "コア")}
           </div>
         </div>
-        <button className="btn text-white bg-[#ff8c0] hover:opacity-75 ml-2">
-              送信
-            </button>
+        <button className="btn text-white bg-[#8B0000] hover:opacity-75">
+          送信
+        </button>
       </div>
-      
+
     </div>
   );
 }

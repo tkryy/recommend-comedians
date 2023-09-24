@@ -22,7 +22,7 @@ export default function Add_data() {
         </div>
         {/* パラメータのスライダー */}
         <div className=" flex items-center justify-center">
-          <div className="flex justify-between md:w-2/3 w-[270px]">
+          <div className="flex justify-between md:w-[800px] w-[270px]">
             <p className="md:text-xl text-xs md:w-[70px] w-[50px]  ">
               {leftLabel}
             </p>
@@ -45,7 +45,7 @@ export default function Add_data() {
                 ))}
               </div>
             </div>
-            <p className="md:text-xl text-xs md:w-[70px] w-[50px] text-end">
+            <p className="md:text-xl text-xs md:w-[90px] w-[50px] text-end">
               {rightLabel}
             </p>
           </div>
@@ -59,17 +59,17 @@ export default function Add_data() {
       <PageTitle title="芸人データを追加" />
 
       <div className="flex flex-col justify-center items-center space-y-9 px-2">
-        <div id="TEXTS" className="flex flex-col ">
+        <div id="TEXTS" className="flex flex-col md:w-[1000px] md:ml-24">
           <h2 className="md:text-3xl text-xl font-bold">基本情報</h2>
           <input
             type="text"
             placeholder="芸人の名前を記入"
-            className="input input-bordered md:max-w-[400px] md:input-lg text-black bg-gray-300"
+            className="input input-bordered md:max-w-[400px] md:mt-2 md:input-lg text-black bg-gray-300"
           />
-          <p className="">特徴</p>
+          <p className="md:mt-2">その他</p>
           <textarea
-            placeholder="芸人の特徴を記入"
-            className="textarea textarea-bordered textarea-md md:max-w-[400px]  text-black bg-gray-300"
+            placeholder="芸人のその他追加事項を記入"
+            className="textarea textarea-bordered textarea-md md:max-w-[400px] text-black bg-gray-300"
           ></textarea>
         </div>
         <div id="SLIDERS" className="flex flex-col md:max-w-[1000px]">
@@ -96,7 +96,11 @@ export default function Add_data() {
             {renderRatingSliders("今の知名度は？", "人気", "コア")}
           </div>
         </div>
+        <button className="btn text-white bg-[#ff8c0] hover:opacity-75 ml-2">
+              送信
+            </button>
       </div>
+      
     </div>
   );
 }

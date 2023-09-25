@@ -45,7 +45,7 @@ export default function Add_data() {
                 ))}
               </div>
             </div>
-            <p className="md:text-xl text-xs md:w-[90px] w-[50px] text-end">
+            <p className="md:text-xl text-xs md:w-[110px] w-[50px] text-end">
               {rightLabel}
             </p>
           </div>

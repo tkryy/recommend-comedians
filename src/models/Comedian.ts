@@ -158,6 +158,7 @@ export const dummyData: Comedian[] = [
     birthYear: "2000",
     manzai: true,
     conte: true,
+    mimic: true,
     appearance: 4,
     popularity: 4,
   },

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-
+import UserAccountAvatar from "../auth/AccountAvatar";
+import { ServerAuthProvider } from "@/lib/firebase/server-auth-provider";
 function Header3({}) {
   return (
     <>
@@ -152,14 +153,9 @@ function Header3({}) {
           {/* アイコンマーク */}
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <div className="w-10 rounded-full">
-                <Image
-                  alt="icon_mark"
-                  width="20"
-                  height="20"
-                  src="/icons/account_circle_white_24dp.svg"
-                ></Image>
-              </div>
+              <ServerAuthProvider>
+                <UserAccountAvatar />
+              </ServerAuthProvider>
             </label>
             <ul
               tabIndex={0}

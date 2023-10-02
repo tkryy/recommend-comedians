@@ -24,11 +24,10 @@ function redirectToLogin(request: NextRequest) {
 }
 
 export async function middleware(request: NextRequest) {
+  const apiKey = authConfig.apiKey || "";
 
-   const apiKey = authConfig.apiKey || "";
- 
-   const serviceAccount = authConfig.serviceAccount || serverConfig.serviceAccount;
-
+  const serviceAccount =
+    authConfig.serviceAccount || serverConfig.serviceAccount;
 
   return authentication(request, {
     loginPath: "/api/login",
@@ -40,7 +39,7 @@ export async function middleware(request: NextRequest) {
     serviceAccount: {
       projectId: serviceAccount.projectId,
       clientEmail: serviceAccount.clientEmail,
-      privateKey: serviceAccount.privateKey!
+      privateKey: serviceAccount.privateKey!,
     },
     handleValidToken: async ({ token, decodedToken }) => {
       // Authenticated user should not be able to access /login, /register and /reset-password routes
@@ -61,5 +60,10 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/((?!_next|favicon.ico|api|.*\\.).*)", "/api/login", "/api/logout"],
+  matcher: [
+    "/",
+    "/((?!_next|favicon.ico|api|.*\\.).*)",
+    "/api/login",
+    "/api/logout",
+  ],
 };

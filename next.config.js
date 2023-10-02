@@ -2,6 +2,7 @@
 const { webpack } = require("next/dist/compiled/webpack/webpack");
 
 const nextConfig = {
+
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve = {
@@ -31,6 +32,7 @@ const nextConfig = {
     return config;
   },
 
+  
   images: {
     // importした画像の型定義設定を無効にする
     remotePatterns: [

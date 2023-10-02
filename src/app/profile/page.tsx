@@ -1,4 +1,4 @@
-import styles from "./page.module.css";
+
 import { ServerAuthProvider } from "@/lib/firebase/server-auth-provider";
 import UserProfile from "@/components/auth/UserProfile";
 import { Metadata } from "next";
@@ -8,12 +8,16 @@ import { authConfig } from "../../config/server-config";
 import PageTitle from "@/components/shared/PageTitle";
 import { getFirebaseAdminApp } from "@/lib/firebase/firebaseAdmin";
 import { getFirestore } from "firebase-admin/firestore";
+import { auth } from "firebase-admin";
+
+
+
+
 
 export default async function Profile() {
   return (
     <div>
       <PageTitle title="Profile" />
-
       <ServerAuthProvider>
         <UserProfile count={0} />
       </ServerAuthProvider>

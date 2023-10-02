@@ -27,7 +27,7 @@ function UserProfile({ count }: UserProfileProps) {
     await fetch("/api/logout", {
       method: "GET",
     });
-    window.location.reload();
+    router.push("/login");
   });
 
   const [handleClaims, isClaimsLoading] = useLoadingCallback(async () => {
@@ -45,7 +45,12 @@ function UserProfile({ count }: UserProfileProps) {
         method: "POST",
       });
 
+      if (!response.ok) {
+        throw new Error(response.statusText);
+      }
       await response.json();
+   
+  
       router.refresh();
     });
 
@@ -75,7 +80,7 @@ function UserProfile({ count }: UserProfileProps) {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col space-y-8">
       <div>
         <div id="USER" className="flex space-x-4 items-center">
           <div className="avatar">
@@ -95,18 +100,11 @@ function UserProfile({ count }: UserProfileProps) {
           </div>
         )}
 
-        <div className="flex flex-col space-y-4">
-          <div>
-            <h5>Custom claims</h5>
-            <p>{JSON.stringify(user.customClaims, undefined, 2)}</p>
-          </div>
-          <button className="btn w-80" disabled={isClaimsLoading} onClick={handleClaims}>
-            Refresh custom user claims
-          </button>
+        <div className="flex flex-col space-y-4 mt-3">
+  
           <button className="btn w-28" disabled={isLogoutLoading} onClick={handleLogout}>
             Log out
           </button>
-          <button className="btn w-28" onClick={handleRedirect}>Redirect</button>
         </div>
       </div>
       <div>
@@ -114,16 +112,7 @@ function UserProfile({ count }: UserProfileProps) {
           {/* defaultCount is updated by server */}
           Counter: {count}
         </h3>
-        <div>
-          <button
-            disabled={
-              isIncrementCounterApiLoading || isIncrementCounterActionPending
-            }
-            onClick={handleIncrementCounterApi}
-          >
-            Update counter w/ api endpoint
-          </button>
-        </div>
+        
       </div>
     </div>
   );

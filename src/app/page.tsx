@@ -1,8 +1,8 @@
-
-import { FeatureCard, FeatureLargeCard } from "@/components/HeroViewSection";
-
-
-
+import {
+  FeatureCard,
+  FeatureLargeCard,
+} from "@/components/home/HeroViewSection";
+import { GoogleLogInButton } from "@/components/auth/LoginButtons";
 
 export default function Home() {
   return (
@@ -23,7 +23,9 @@ export default function Home() {
             }
             subTitle="Artificial Intelligence"
             title="AIがおすすめのお笑い芸人を診断！"
-            content={'好きな芸人やネタの傾向を入力すると、それに似た芸人をAIが判断し、おすすめを提案します！\nあなた好みの笑いが必ず見つかります！自分ではわからない、思わぬ笑いのツボが見つかるかも・・・'}
+            content={
+              "好きな芸人やネタの傾向を入力すると、それに似た芸人をAIが判断し、おすすめを提案します！\nあなた好みの笑いが必ず見つかります！自分ではわからない、思わぬ笑いのツボが見つかるかも・・・"
+            }
             href="/recommend_comedians"
           />
           <div className="grid md:grid-cols-2 gap-8">

@@ -1,4 +1,4 @@
-import PageTitle from "@/components/PageTitle";
+import PageTitle from "@/components/shared/PageTitle";
 
 export default function Add_data() {
   /**
@@ -100,7 +100,6 @@ export default function Add_data() {
           送信
         </button>
       </div>
-
     </div>
   );
 }

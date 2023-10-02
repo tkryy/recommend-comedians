@@ -163,13 +163,13 @@ function Header3({}) {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-white"
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#000] rounded-box w-52 text-white"
             >
               <li>
-                <a className="justify-between">
+                <Link href={"/profile"} className="justify-between">
                   Profile
                   <span className="badge">New</span>
-                </a>
+                </Link>
               </li>
               <li>
                 <a>Settings</a>

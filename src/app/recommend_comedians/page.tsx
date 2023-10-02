@@ -5,8 +5,8 @@ import { useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import PageTitle from "@/components/PageTitle";
-import TypingAnimation from "@/components/TypingCode";
+import PageTitle from "@/components/shared/PageTitle";
+import TypingAnimation from "@/components/shared/TypingCode";
 
 export default function Recommend_comedians() {
   const [resultText, setResultText] = useState("？？？");

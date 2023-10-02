@@ -6,13 +6,12 @@ import {
   convertComedianCompanyToColor,
 } from "@/models/Comedian";
 import Link from "next/link";
-import PageTitle from "@/components/PageTitle";
+import PageTitle from "@/components/shared/PageTitle";
 export default function Favorite() {
   const renderFavoriteRow = (comedian: Comedian) => {
-
     const dummyImageSRC = "https://via.placeholder.com/200x200";
     const tdClassName = "mx-0 my-0 ";
-    const tdTextClasses = "md:text-base text-[10px] text-[#8E8E93]"
+    const tdTextClasses = "md:text-base text-[10px] text-[#8E8E93]";
     const companyColor = convertComedianCompanyToColor(comedian);
     const badgeClass =
       "md:text-sm text-[10px] font-medium  md:px-2.5 md:py-0.5 rounded text-white items-center text-center bg-transparent";

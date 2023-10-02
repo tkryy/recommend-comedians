@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import RatingDataView from "@/components/RatingDataView";
+import RatingDataView from "@/components/shared/RatingDataView";
 
 export default function Team_info() {
 

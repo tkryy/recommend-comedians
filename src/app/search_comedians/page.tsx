@@ -1,9 +1,9 @@
 "use client";
 
-import PageTitle from "@/components/PageTitle";
+import PageTitle from "@/components/shared/PageTitle";
 import { Comedian, dummyData } from "@/models/Comedian";
-import ComedianCard from "@/components/ComedianCard";
-import GenreIcon from "@/components/GenreIcon";
+import ComedianCard from "@/components/shared/ComedianCard";
+import GenreIcon from "@/components/shared/GenreIcon";
 
 export default function Search_comedians() {
   return (

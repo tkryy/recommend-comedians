@@ -15,8 +15,8 @@ export const serverConfig = {
 
 const projectId = process.env.FIREBASE_PROJECT_ID;
 const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
-const { privateKey } = JSON.parse(process.env.FIREBASE_PRIVATE_KEY_JSON ?? "{}");
-//const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n') as string;
+//const { privateKey } = JSON.parse(process.env.FIREBASE_PRIVATE_KEY_JSON ?? "{}");
+const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n') as string;
 
 const customCert: ServiceAccount = {
   projectId,
@@ -27,7 +27,8 @@ const customCert: ServiceAccount = {
 export const firebaseAdmin =
   admin.apps[0] ??
   admin.initializeApp({
-    credential: admin.credential.cert(customCert),
+    //credential: admin.credential.cert(customCert),
+    credential: admin.credential.cert(serverConfig.serviceAccount),
   });
 
 

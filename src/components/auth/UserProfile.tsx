@@ -49,8 +49,7 @@ function UserProfile({ count }: UserProfileProps) {
         throw new Error(response.statusText);
       }
       await response.json();
-   
-  
+
       router.refresh();
     });
 
@@ -101,8 +100,11 @@ function UserProfile({ count }: UserProfileProps) {
         )}
 
         <div className="flex flex-col space-y-4 mt-3">
-  
-          <button className="btn w-28" disabled={isLogoutLoading} onClick={handleLogout}>
+          <button
+            className="btn w-28"
+            disabled={isLogoutLoading}
+            onClick={handleLogout}
+          >
             Log out
           </button>
         </div>
@@ -112,7 +114,6 @@ function UserProfile({ count }: UserProfileProps) {
           {/* defaultCount is updated by server */}
           Counter: {count}
         </h3>
-        
       </div>
     </div>
   );

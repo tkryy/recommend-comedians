@@ -19,8 +19,9 @@ export function GoogleLogInButton() {
       const auth = getFirebaseAuth();
       const user = await loginWithProvider(auth, getGoogleProvider(auth));
       const idTokenResult = await user.getIdTokenResult();
+
       await fetch("/api/login", {
-        method: "GET",
+        method: "POST",
         headers: {
           Authorization: `Bearer ${idTokenResult.token}`,
         },

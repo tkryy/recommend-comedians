@@ -15,7 +15,7 @@ export async function POST(request: NextRequest) {
   const tokens = await getTokens(request.cookies, authConfig);
 
   if (!tokens) {
-    console.log(tokens)
+    //console.log(tokens)
     return NextResponse.json(null);
   }
 

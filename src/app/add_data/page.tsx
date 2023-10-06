@@ -55,7 +55,7 @@ export default function Add_data() {
   };
 
   return (
-    <div className="md:ml-16">
+    <div className="">
       <PageTitle title="芸人データを追加" />
 
       <div className="flex flex-col justify-center items-center space-y-9 px-2">

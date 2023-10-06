@@ -6,7 +6,7 @@ function Header3({}) {
   return (
     <>
       <div className="navbar bg-opacity-80 shadow-lg backdrop-filter backdrop-blur-sm bg-[#F25C05] fixed top-0 z-50">
-        <div className="navbar-start lg:ml-6">
+        <div className="navbar-start lg:ml-4">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost xl:hidden text-white">
               <svg
@@ -130,7 +130,7 @@ function Header3({}) {
 
         <div className="navbar-end mr-6">
           {/* ベルマーク */}
-          <button className="btn btn-ghost btn-circle">
+          <button className="btn btn-ghost btn-circle mr-4">
             <div className="indicator text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -151,29 +151,10 @@ function Header3({}) {
           </button>
 
           {/* アイコンマーク */}
-          <div className="dropdown dropdown-end">
-            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-              <ServerAuthProvider>
-                <UserAccountAvatar />
-              </ServerAuthProvider>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#000] rounded-box w-52 text-white"
-            >
-              <li>
-                <Link href={"/profile"} className="justify-between">
-                  Profile
-                  <span className="badge">New</span>
-                </Link>
-              </li>
-              <li>
-                <a>Settings</a>
-              </li>
-              <li>
-                <a>Logout</a>
-              </li>
-            </ul>
+          <div className="dropdown dropdown-end ">
+            <ServerAuthProvider>
+              <UserAccountAvatar />
+            </ServerAuthProvider>
           </div>
         </div>
       </div>

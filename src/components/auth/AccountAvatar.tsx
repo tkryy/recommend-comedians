@@ -2,30 +2,45 @@
 
 import * as React from "react";
 import { useAuth } from "@/lib/firebase/context";
-import { ServerAuthProvider } from "@/lib/firebase/server-auth-provider";
-import Image from "next/image";
+import Link from "next/link";
 
 function UserAccountAvatar() {
   const { user } = useAuth();
 
   if (!user) {
     return (
-      <div className="w-10 rounded-full">
-        <Image
-          alt="icon_mark"
-          width="20"
-          height="20"
-          src="/icons/account_circle_white_24dp.svg"
-        ></Image>
+      <div className="">
+        <button className="btn btn-info">
+          <Link href={"/login"}>ログイン</Link>
+        </button>
       </div>
     );
   }
 
   return (
-    <div className="rounded-full">
-      <div className="w-10 rounded-full ring ring-primary ring-offset-primary ring-offset-2">
-        {user.photoURL && <img src={user.photoURL} />}
-      </div>
+    <div>
+      <label tabIndex={0} >
+        <div className="rounded-full avatar">
+          <div className="w-10 rounded-full ring ring-info ring-offset-info ring-offset-1">
+            {user.photoURL && <img src={user.photoURL} />}
+          </div>
+        </div>
+      </label>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-[#000] rounded-box w-52 text-white"
+      >
+        <li>
+          <Link href={"/profile"} className="justify-between">
+            プロフィール
+          </Link>
+        </li>
+        <li>
+        <Link href={"/setting"} className="justify-between">
+            設定
+          </Link>
+        </li>
+      </ul>
     </div>
   );
 }

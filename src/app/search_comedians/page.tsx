@@ -7,10 +7,10 @@ import GenreIcon from "@/components/shared/GenreIcon";
 
 export default function Search_comedians() {
   return (
-    <div className="ml-12">
+    <div className="">
       <PageTitle title="芸人を探す" />
       {/*　検索ページ */}
-      <div className="space-y-4">
+      <div className="space-y-4 mx-20">
         {/* キーワード検索 */}
         <div className="space-y-4 items-center justify-between">
           <h2 className="text-2xl font-bold">キーワード検索</h2>

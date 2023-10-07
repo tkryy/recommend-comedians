@@ -4,7 +4,7 @@ import UserProfile from "@/components/auth/UserProfile";
 import { Metadata } from "next";
 import { getTokens } from "next-firebase-auth-edge/lib/next/tokens";
 import { cookies } from "next/headers";
-import { authConfig } from "../../config/server-config";
+import { authConfig } from "../../../config/server-config";
 import PageTitle from "@/components/shared/PageTitle";
 import { getFirebaseAdminApp } from "@/lib/firebase/firebaseAdmin";
 import { getFirestore } from "firebase-admin/firestore";

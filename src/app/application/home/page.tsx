@@ -1,20 +1,3 @@
-
-
-
-
-
-
-/* ランディングページ */
-
-
-
-
-
-
-
-
-
-
 import {
   FeatureCard,
   FeatureLargeCard,

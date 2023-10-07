@@ -4,7 +4,7 @@ import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useFirebaseAuth } from "@/lib/firebase/firebase-config";
 import { useLoadingCallback } from "react-loading-hook";
-import { getGoogleProvider, loginWithProvider } from "../../app/login/firebase";
+import { getGoogleProvider, loginWithProvider } from "../../app/application/login/firebase";
 
 export function GoogleLogInButton() {
   const router = useRouter();

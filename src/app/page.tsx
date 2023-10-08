@@ -1,10 +1,54 @@
-
-
-
-
-
-
 /* ランディングページ */
+import Image from "next/image";
+import Link from "next/link";
+
+export default function Home() {
+  return (
+    <div className="min-h-[130vh] min-w-[190vh] bg-[url('/images/laughing_people.jpg')] bg-center bg-cover">
+      <div className="pt-32 place-self-center flex place-content-center">
+        <div className="rounded-2xl p-20 backdrop-blur-sm  bg-gray-400 bg-opacity-30 shadow-md shadow-black/40"> {/* bg-white/50 */}
+          <h1 className="text-9xl font-bold text-[#F25C05]">
+            Tendon
+          </h1>
+        </div>
+      </div>
+      <div className="place-self-center flex place-content-center">
+        <div className="pt-5 text-5xl font-bold text-white">
+          <h2>あなたの好みの芸人がきっと見つかる！！</h2>
+
+
+        </div>
+        
+      </div>
+
+      {/* <h1>ランディングページ</h1>
+        <h2>まだ知らない芸人との出会いが！？</h2>
+        <h3>あなたの好みの芸人がきっと見つかる！！</h3>
+        <h4>あなたの好みの傾向がわかるかも！</h4> */}
+
+
+
+      {/* <div className="max-w-[1920px]">
+        <img src="https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg" alt="さや香" width="1900" height=""></img>
+      </div> */}
+
+      <div className="">
+        <p className="">
+
+        </p>
+
+      </div>
+
+      <p className="text-xl mt-96">test</p>
+      
+      
+
+    </div>
+
+
+
+  )
+}
 
 
 
@@ -12,9 +56,7 @@
 
 
 
-
-
-
+/* 
 import {
   FeatureCard,
   FeatureLargeCard,
@@ -92,3 +134,4 @@ export default function Home() {
     </div>
   );
 }
+ */

@@ -1,10 +1,9 @@
-import "./globals.css";
+/* import "./globals.css";*/
 
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-/* import Header from "../components/Header";  */
-/* import Header2 from "../components/Header2";  */
+
 import Header3 from "../../components/shared/Header3";
 import Sidebar from "../../components/shared/Sidebar";
 import Fotter from "../../components/shared/Fotter";

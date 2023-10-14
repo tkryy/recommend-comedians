@@ -5,15 +5,30 @@ import {
   BackgroundImage,
 } from "@/components/landing/HeroSection"
 
+import {
+  ScrollFadeIn
+} from "@/components/landing/ScrollFadein";
+/*export const Page = () => {
+  useEffect(() => {
+    ScrollFadeIn();
+  }, []);
+  return (
+    <div className="js-show-on-scroll>
+      ...
+    </div>
+  );
+};  */
+
 export default function Home() {
   return (
-    <div className=""> {/* bg-[url('/images/laughing_people.jpg')] */}
-      <BackgroundImage
-        image="/images/laughing_people.jpg"
+    <div className="">
+      < BackgroundImage
         title="Tendon"
         subtitle="あなたの好みの芸人がきっと見つかる！！"
         href="/application/recommend_comedians"
-      ></BackgroundImage>
+      ></BackgroundImage >
+
+      <ScrollFadeIn></ScrollFadeIn>
 
       {/* <h1>ランディングページ</h1>
         <h2>まだ知らない芸人との出会いが！？</h2>
@@ -26,10 +41,10 @@ export default function Home() {
 
       <div>
         <p className="text-xl mt-96">test</p>
-     
+
       </div>
 
-    </div>
+    </div >
 
   )
 }

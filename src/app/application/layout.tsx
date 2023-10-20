@@ -22,8 +22,8 @@ export default function RootLayout({
 }) {
   return (
 
-      <html lang="ja">
-        <body>
+      <>
+        <>
           <Header3 />
           <div className="lg:flex block">
             <Sidebar />
@@ -34,8 +34,8 @@ export default function RootLayout({
             </div>
             <Fotter />
           </div>
-        </body>
-      </html>
+        </>
+      </>
 
   );
 }

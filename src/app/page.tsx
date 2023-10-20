@@ -1,13 +1,9 @@
 /* ランディングページ */
 import Image from "next/image";
 import Link from "next/link";
-import {
-  BackgroundImage,
-} from "@/components/landing/HeroSection"
+import { BackgroundImage } from "@/components/landing/HeroSection";
 
-import {
-  ScrollFadeIn
-} from "@/components/landing/ScrollFadein";
+import { ScrollFadeIn } from "@/components/landing/ScrollFadein";
 /*export const Page = () => {
   useEffect(() => {
     ScrollFadeIn();
@@ -22,11 +18,11 @@ import {
 export default function Home() {
   return (
     <div className="">
-      < BackgroundImage
+      <BackgroundImage
         title="Tendon"
         subtitle="あなたの好みの芸人がきっと見つかる！！"
         href="/application/recommend_comedians"
-      ></BackgroundImage >
+      ></BackgroundImage>
 
       <ScrollFadeIn></ScrollFadeIn>
 
@@ -41,19 +37,10 @@ export default function Home() {
 
       <div>
         <p className="text-xl mt-96">test</p>
-
       </div>
-
-    </div >
-
-  )
+    </div>
+  );
 }
-
-
-
-
-
-
 
 /* 
 import {

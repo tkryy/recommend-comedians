@@ -1,5 +1,10 @@
-import { cert, initializeApp, getApps } from 'firebase-admin/app';
-import { getAuth } from 'firebase-admin/auth';
+import { cert, initializeApp, getApps } from "firebase-admin/app";
+import { getAuth } from "firebase-admin/auth";
+import {
+  getFirestore,
+  QuerySnapshot,
+  QueryDocumentSnapshot,
+} from "firebase-admin/firestore";
 import * as admin from "firebase-admin";
 import type { ServiceAccount } from "firebase-admin";
 
@@ -16,7 +21,10 @@ export const serverConfig = {
 const projectId = process.env.FIREBASE_PROJECT_ID;
 const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
 //const { privateKey } = JSON.parse(process.env.FIREBASE_PRIVATE_KEY_JSON ?? "{}");
-const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n') as string;
+const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(
+  /\\n/g,
+  "\n"
+) as string;
 
 const customCert: ServiceAccount = {
   projectId,
@@ -31,15 +39,13 @@ export const firebaseAdmin =
     credential: admin.credential.cert(serverConfig.serviceAccount),
   });
 
-
 export const auth = getAuth();
 
-
 const firebaseAdminConfig = {
-    credential: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n")
-        ? admin.credential.cert(serverConfig.serviceAccount)
-        : undefined,
-}
+  credential: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, "\n")
+    ? admin.credential.cert(serverConfig.serviceAccount)
+    : undefined,
+};
 
 export const getFirebaseAdminApp = () => {
   if (admin.apps.length > 0) {
@@ -52,7 +58,11 @@ export const getFirebaseAdminApp = () => {
 };
 
 export function customInitApp() {
-    if (getApps().length <= 0) {
-        initializeApp(firebaseAdminConfig);
-    }
+  if (getApps().length <= 0) {
+    initializeApp(firebaseAdminConfig);
+  }
 }
+
+export const db = getFirestore(getFirebaseAdminApp());
+
+export { QuerySnapshot, QueryDocumentSnapshot };

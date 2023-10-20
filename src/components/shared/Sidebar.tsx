@@ -14,62 +14,62 @@ function Sidebar() {
   };
 
   return (
-    <ul
-      className="menu  fixed top-0 z-40 menu-lg bg-transparent-90   w-56  hidden xl:block min-h-screen"
-      style={{ backgroundImage: "url(/images/sideBack.webp)" }}
-    >
-      <div
-        style={{
-          marginTop: "80px",
-        }}
+      <ul
+        className="menu  fixed top-0 z-40 menu-lg bg-transparent-90   w-56  hidden xl:block min-h-screen"
+        style={{ backgroundImage: "url(/images/sideBack.webp)" }}
       >
-        {renderSliderItem(
-          "/",
-          "/icons/home_FILL0_wght400_GRAD0_opsz24.svg",
-          "ホーム"
-        )}
+        <div
+          style={{
+            marginTop: "80px",
+          }}
+        >
+          {renderSliderItem(
+            "/",
+            "/icons/home_FILL0_wght400_GRAD0_opsz24.svg",
+            "ホーム"
+          )}
 
-        {renderSliderItem(
-          "/recommend_comedians",
-          "/icons/smart_toy_black_24dp.svg",
-          "AIおすすめ診断"
-        )}
+          {renderSliderItem(
+            "/recommend_comedians",
+            "/icons/smart_toy_black_24dp.svg",
+            "AIおすすめ診断"
+          )}
 
-        {renderSliderItem(
-          "/search_comedians",
-          "/icons/search_FILL0_wght400_GRAD0_opsz24.svg",
-          "芸人を探す"
-        )}
+          {renderSliderItem(
+            "/search_comedians",
+            "/icons/search_FILL0_wght400_GRAD0_opsz24.svg",
+            "芸人を探す"
+          )}
 
-        {renderSliderItem(
-          "/favorite",
-          "/icons/star_FILL0_wght400_GRAD0_opsz24.svg",
-          "お気に入り"
-        )}
+          {renderSliderItem(
+            "/favorite",
+            "/icons/star_FILL0_wght400_GRAD0_opsz24.svg",
+            "お気に入り"
+          )}
 
-        {renderSliderItem(
-          "/add_data",
-          "/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg",
-          "データ追加"
-        )}
+          {renderSliderItem(
+            "/add_data",
+            "/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg",
+            "データ追加"
+          )}
 
-        <div id="BORDER" className="mt-40 border-2 border-gray-300" />
-      </div>
+          <div id="BORDER" className="mt-40 border-2 border-gray-300" />
+        </div>
 
-      <div>
-        {renderSliderItem(
-          "/explanation",
-          "/icons/help_FILL0_wght400_GRAD0_opsz24.svg",
-          "使い方"
-        )}
+        <div>
+          {renderSliderItem(
+            "/explanation",
+            "/icons/help_FILL0_wght400_GRAD0_opsz24.svg",
+            "使い方"
+          )}
 
-        {renderSliderItem(
-          "/setting",
-          "/icons/settings_FILL0_wght400_GRAD0_opsz24.svg",
-          "設定"
-        )}
-      </div>
-    </ul>
+          {renderSliderItem(
+            "/setting",
+            "/icons/settings_FILL0_wght400_GRAD0_opsz24.svg",
+            "設定"
+          )}
+        </div>
+      </ul>
   );
 }
 

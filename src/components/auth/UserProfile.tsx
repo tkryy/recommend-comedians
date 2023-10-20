@@ -85,11 +85,11 @@ function UserProfile({ count }: UserProfileProps) {
                 <img src={user.photoURL} alt="User Photo" />
               ) : (
                 <Image
-                alt="icon_mark"
-                width="20"
-                height="20"
-                src="/icons/account_circle_white_24dp.svg"
-              ></Image>
+                  alt="icon_mark"
+                  width="20"
+                  height="20"
+                  src="/icons/account_circle_white_24dp.svg"
+                ></Image>
               )}
             </div>
           </div>

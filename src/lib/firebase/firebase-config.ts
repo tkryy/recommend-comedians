@@ -1,7 +1,9 @@
-import { initializeApp, FirebaseOptions, FirebaseApp} from "firebase/app";
+
+import { initializeApp, FirebaseOptions, FirebaseApp } from "firebase/app";
 import { getApps, getApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
+
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -23,11 +25,7 @@ const getFirebaseApp = (options: FirebaseOptions) => {
 
 const useFirebaseAuth = () => {
   const getFirebaseAuth = () => {
-
-   
     const auth = getAuth(app);
-
-  
 
     return auth;
   };
@@ -35,4 +33,5 @@ const useFirebaseAuth = () => {
   return { getFirebaseAuth };
 };
 
-export { app, auth, provider, useFirebaseAuth };
+
+export { app, auth, provider, useFirebaseAuth,  };

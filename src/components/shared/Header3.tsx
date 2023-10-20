@@ -24,6 +24,7 @@ function Header3({}) {
                 />
               </svg>
             </label>
+            <div>
             <ul
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-200 rounded-box w-52 text-black"
@@ -108,6 +109,7 @@ function Header3({}) {
                 </Link>
               </li>
             </ul>
+            </div>
           </div>
           <Link
             style={{ fontFamily: "Futura" }}

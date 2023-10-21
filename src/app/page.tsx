@@ -11,6 +11,10 @@ import {
   HowToUse,
 } from "@/components/landing/HowToUse";
 
+import {
+  SearchIntroduction,
+} from "@/components/landing/SearchIntroduction";
+
 /*export const Page = () => {
   useEffect(() => {
     ScrollFadeIn();
@@ -34,6 +38,8 @@ export default function Home() {
       <ScrollFadeIn></ScrollFadeIn>
 
       <HowToUse></HowToUse>
+
+      <SearchIntroduction></SearchIntroduction>
 
       {/* <div className="flex justify-center">
         <h1>芸人名を入力、おすすめを提案！</h1>

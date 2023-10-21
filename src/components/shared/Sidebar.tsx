@@ -24,31 +24,31 @@ function Sidebar() {
           }}
         >
           {renderSliderItem(
-            "/",
+            "/application",
             "/icons/home_FILL0_wght400_GRAD0_opsz24.svg",
             "ホーム"
           )}
 
           {renderSliderItem(
-            "/recommend_comedians",
+            "/application/recommend_comedians",
             "/icons/smart_toy_black_24dp.svg",
             "AIおすすめ診断"
           )}
 
           {renderSliderItem(
-            "/search_comedians",
+            "/application/search_comedians",
             "/icons/search_FILL0_wght400_GRAD0_opsz24.svg",
             "芸人を探す"
           )}
 
           {renderSliderItem(
-            "/favorite",
+            "/application/favorite",
             "/icons/star_FILL0_wght400_GRAD0_opsz24.svg",
             "お気に入り"
           )}
 
           {renderSliderItem(
-            "/add_data",
+            "/application/add_data",
             "/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg",
             "データ追加"
           )}
@@ -58,13 +58,13 @@ function Sidebar() {
 
         <div>
           {renderSliderItem(
-            "/explanation",
+            "/application/explanation",
             "/icons/help_FILL0_wght400_GRAD0_opsz24.svg",
             "使い方"
           )}
 
           {renderSliderItem(
-            "/setting",
+            "/application/setting",
             "/icons/settings_FILL0_wght400_GRAD0_opsz24.svg",
             "設定"
           )}

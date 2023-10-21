@@ -19,6 +19,7 @@ export type Comedian = {
   ogiri?: boolean;
   mimic?: boolean;
   talk?: boolean;
+  sns?: boolean;
 
   //見た目や人気など
   appearance: number;

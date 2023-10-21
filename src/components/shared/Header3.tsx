@@ -30,7 +30,7 @@ function Header3({}) {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-200 rounded-box w-52 text-black"
             >
               <li>
-                <Link href="/">
+                <Link href="/application">
                   <Image
                     alt="home"
                     width="20"
@@ -41,7 +41,7 @@ function Header3({}) {
                 </Link>
               </li>
               <li>
-                <Link href="/recommend_comedians">
+                <Link href="/application/recommend_comedians">
                   <Image
                     alt="recommend"
                     width="20"
@@ -52,7 +52,7 @@ function Header3({}) {
                 </Link>
               </li>
               <li>
-                <Link href="/search_comedians">
+                <Link href="/application/search_comedians">
                   <Image
                     alt="search"
                     width="20"
@@ -63,7 +63,7 @@ function Header3({}) {
                 </Link>
               </li>
               <li>
-                <Link href="/favorite">
+                <Link href="/application/favorite">
                   <Image
                     alt="star"
                     width="20"
@@ -74,7 +74,7 @@ function Header3({}) {
                 </Link>
               </li>
               <li>
-                <Link href="/add_data">
+                <Link href="/application/add_data">
                   <Image
                     alt="add"
                     width="20"
@@ -87,7 +87,7 @@ function Header3({}) {
 
               <div className="mt-40 border-2 border-gray-300"></div>
               <li>
-                <Link href="/explanation">
+                <Link href="/application/explanation">
                   <Image
                     alt="hatena"
                     width="20"
@@ -98,7 +98,7 @@ function Header3({}) {
                 </Link>
               </li>
               <li>
-                <Link href="/setting">
+                <Link href="/application/setting">
                   <Image
                     alt="setting"
                     width="20"

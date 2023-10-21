@@ -14,7 +14,7 @@ export const SearchIntroduction = () => {
           alt="検索ページの図"
           width="650"
           height="320"
-          className="mockup-window border border-base-300"
+          className="p-4 mockup-window border border-base-300"
         ></Image>
       </div>
     </div>

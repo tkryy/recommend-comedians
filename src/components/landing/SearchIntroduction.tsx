@@ -4,9 +4,11 @@ import Link from "next/link";
 export const SearchIntroduction = () => {
   return (
     <div className="flex pt-24 pl-40">
-      <h1 className="text-5xl font-bold text-yellow-500 mt-4">キーワード、<br></br>芸風から検索！<br></br><span className="text-base text-black ">Tendonでは、キーワードや芸風からの検索機能を<br></br>用意しています。</span></h1>
-      
-      <div className="flex ml-12">
+      <div>
+      <h1 className="text-5xl font-bold text-yellow-500 mt-8">キーワード、<br></br>芸風から検索！</h1>
+      <p className="text-xl text-black mt-8">Tendonでは、キーワードや芸風からの<br></br>検索機能を用意しています。</p>
+      </div>
+      <div className="ml-12">
         <Image
           src={"/images/search_exam01.png"}
           alt="検索ページの図"

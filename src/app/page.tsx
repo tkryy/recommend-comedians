@@ -3,7 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { BackgroundImage } from "@/components/landing/HeroSection";
 
-import { ScrollFadeIn } from "@/components/landing/ScrollFadein";
+import {
+  ScrollFadeIn,
+} from "@/components/landing/ScrollFadein";
+
+import {
+  HowToUse,
+} from "@/components/landing/HowToUse";
+
 /*export const Page = () => {
   useEffect(() => {
     ScrollFadeIn();
@@ -26,6 +33,29 @@ export default function Home() {
 
       <ScrollFadeIn></ScrollFadeIn>
 
+      <HowToUse></HowToUse>
+
+      {/* <div className="flex justify-center">
+        <h1>芸人名を入力、おすすめを提案！</h1>
+        <Image
+          src={"/images/recommend_exam01.png"}
+          alt="診断ページの図"
+          width="500"
+          height="320"
+          className=""
+        ></Image>
+      </div>
+      <div className="flex justify-center">
+        <Image
+          src={"/images/recommend_exam02.png"}
+          alt="診断ページの図"
+          width="500"
+          height="320"
+          className=""
+        ></Image>
+
+      </div> */}
+
       {/* <h1>ランディングページ</h1>
         <h2>まだ知らない芸人との出会いが！？</h2>
         <h3>あなたの好みの芸人がきっと見つかる！！</h3>
@@ -35,8 +65,23 @@ export default function Home() {
         <img src="https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg" alt="さや香" width="1900" height=""></img>
       </div> */}
 
+      {/* 下に行くほど細かい情報
+          二段目 診断ページのスクリーンショット、軽い使い方
+
+          三段目 検索機能、診断機能、お気に入り
+          四段目 こんなかたにおすすめ！
+      
+       */}
+
       <div>
         <p className="text-xl mt-96">test</p>
+        <Image
+          src={"/images/recommend_exam01.png"}
+          alt="診断ページの図"
+          width="320"
+          height="320"
+          className="ml-24"
+        ></Image>
       </div>
     </div>
   );

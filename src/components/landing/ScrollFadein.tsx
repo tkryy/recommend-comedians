@@ -12,20 +12,14 @@ import { motion, useScroll, useInView } from "framer-motion"
 
 export const ScrollFadeIn = () => {
   return (
-    <motion.div
-    className="text-black text-bold"
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ amount: 'all' }}
-    transition={{ duration: 1 }}
-  >
-    Intersection Observer
-  </motion.div>
-    
-    
-    
-    
-    
+    <div>
+
+    </div>
+
+
+
+
+
 
   );
 }

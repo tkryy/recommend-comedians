@@ -1,4 +1,4 @@
-import { cert, initializeApp, getApps } from "firebase-admin/app";
+import {  initializeApp, getApps } from "firebase-admin/app";
 import { getAuth } from "firebase-admin/auth";
 import {
   getFirestore,
@@ -14,7 +14,7 @@ export const serverConfig = {
   serviceAccount: {
     projectId: process.env.FIREBASE_PROJECT_ID as string,
     clientEmail: process.env.FIREBASE_ADMIN_CLIENT_EMAIL as string,
-    privateKey: process.env.FIREBASE_ADMIN_PRIVATE_KEY!.replace(/\\n/g, "\n"),
+    privateKey: process.env.FIREBASE_ADMIN_PRIVATE_KEY!.replace(/\\n/g, "\n") as string,
   },
 };
 

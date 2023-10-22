@@ -27,13 +27,14 @@
     "react-dom": "18.2.0",
     "react-loading-hook": "^1.0.0",
     "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@gradio/client": "^0.3.1",
     "daisyui": "^3.6.3"
   },
-  "browser":{
+  "browser": {
     "child_process": false
-    }  
+  }
 }

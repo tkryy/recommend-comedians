@@ -11,7 +11,7 @@ export default function Search_comedians() {
   const [resultText, setResultText] = useState("？？？");
   const [isLoading, setIsLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [searchBoolean, setSearchBoolean] = useState(["","","","","","","","",""]);
+  const [searchBoolean, setSearchBoolean] = useState([false, false, false, false, false, false, false, false, false]);
 
   const handleButtonClick = async (event: any) => {
     event.preventDefault();
@@ -32,29 +32,30 @@ export default function Search_comedians() {
         <div className="space-y-4 items-center justify-between">
           <h2 className="text-2xl font-bold">キーワード検索</h2>
           <div className="flex items-center justify-center">
-            <input
-              id="SEARCH_BOX"
-              type="text"
-              placeholder="芸人さんの名前の一部を入力！"
-              className="input input-bordered md:w-96 w-full text-black bg-gray-300"
-              value={searchText}
-              onChange={(e) => setSearchText(e.target.value)}
-            />
-            <button className="btn text-white bg-[#732C02] hover:opacity-75 ml-2">
-              検索
-            </button>
+            <form onSubmit={handleButtonClick}>
+              <input
+                id="SEARCH_BOX"
+                type="text"
+                placeholder="芸人さんの名前の一部を入力！"
+                className="input input-bordered md:w-96 w-full text-black bg-gray-300"
+                value={searchText}
+                onChange={(e) => setSearchText(e.target.value)}
+              />
+              <button className="btn text-white bg-[#732C02] hover:opacity-75 ml-2">
+                検索
+              </button>
+            </form>
           </div>
         </div>
         {/* 芸風検索 */}
         {/* ボタンにして絞り込みができるようにする */}
         <div className="space-y-4 items-center justify-center">
-          <h2 className="text-2xl font-bold text-start">芸風から探す</h2>
+          <h2 className="text-2xl font-bold text-start">芸風を選択</h2>
           <div className="grid md:grid-cols-6 grid-cols-3 md:gap-0 gap-3 px-12">
             <GenreIcon
               genre="漫才/漫談"
               imageSRC="/icons/mic_FILL0_wght400_GRAD0_opsz24_white.svg"
             />
-
             <GenreIcon
               genre="コント"
               imageSRC="/icons/sports_kabaddi_FILL0_wght400_GRAD0_opsz24_white.svg"

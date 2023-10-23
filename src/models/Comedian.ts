@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export type Comedian = {
   //基本属性
   id: string;
@@ -108,7 +110,7 @@ export const convertComedianCompanyToColor = (comedian: Comedian) => {
 
 export const dummyData: Comedian[] = [
   {
-    id: "1",
+    id: uuidv4(),
     name: "ダミー芸人1",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     sex: 1,
@@ -120,7 +122,7 @@ export const dummyData: Comedian[] = [
     popularity: 1,
   },
   {
-    id: "2",
+    id: uuidv4(),
     name: "ダミー芸人2",
     imageSRC: "https://via.placeholder.com/420x315",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -134,7 +136,7 @@ export const dummyData: Comedian[] = [
     popularity: 2,
   },
   {
-    id: "3",
+    id: uuidv4(),
     name: "ダミー芸人3",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -148,7 +150,7 @@ export const dummyData: Comedian[] = [
     popularity: 3,
   },
   {
-    id: "4",
+    id: uuidv4(),
     name: "ダミー芸人4",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -163,7 +165,7 @@ export const dummyData: Comedian[] = [
     popularity: 4,
   },
   {
-    id: "5",
+    id: uuidv4(),
     name: "ダミー芸人5",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -177,7 +179,7 @@ export const dummyData: Comedian[] = [
     popularity: 5,
   },
   {
-    id: "6",
+    id: uuidv4(),
     name: "ダミー芸人6",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -191,7 +193,7 @@ export const dummyData: Comedian[] = [
     popularity: 6,
   },
   {
-    id: "7",
+    id: uuidv4(),
     name: "ダミー芸人7",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -205,7 +207,7 @@ export const dummyData: Comedian[] = [
     popularity: 7,
   },
   {
-    id: "8",
+    id: uuidv4(),
     name: "ダミー芸人8",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -219,7 +221,7 @@ export const dummyData: Comedian[] = [
     popularity: 8,
   },
   {
-    id: "9",
+    id: uuidv4(),
     name: "ダミー芸人9",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -233,7 +235,7 @@ export const dummyData: Comedian[] = [
     popularity: 9,
   },
   {
-    id: "10",
+    id: uuidv4(),
     name: "ダミー芸人10",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -247,7 +249,7 @@ export const dummyData: Comedian[] = [
     popularity: 10,
   },
   {
-    id: "11",
+    id: uuidv4(),
     name: "ダミー芸人11",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
@@ -261,7 +263,7 @@ export const dummyData: Comedian[] = [
     popularity: 11,
   },
   {
-    id: "12",
+    id: uuidv4(),
     name: "ダミー芸人12",
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",

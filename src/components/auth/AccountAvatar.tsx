@@ -11,7 +11,7 @@ function UserAccountAvatar() {
     return (
       <div className="">
         <button className="btn btn-info">
-          <Link href={"/login"}>ログイン</Link>
+          <Link href={"/application/login"}>ログイン</Link>
         </button>
       </div>
     );

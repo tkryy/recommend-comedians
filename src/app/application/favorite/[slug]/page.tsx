@@ -1,18 +1,22 @@
 "use client";
 import { useComediansStore } from "@/lib/zustand/Stores";
 import { useRouter, useSearchParams } from "next/navigation";
-import { convertComedianCompanyToString, convertComedianCompanyToColor } from "@/models/Comedian";
+import {
+  convertComedianCompanyToString,
+  convertComedianCompanyToColor,
+} from "@/models/Comedian";
 import RatingDataView from "@/components/shared/RatingDataView";
+import TypeBadges from "@/components/shared/TypeBadges";
 import Image from "next/image";
 export default function Page({ params }: { params: { slug: string } }) {
   const comedians = useComediansStore((state) => state.comedians);
   const comedian = comedians.find((comedian) => comedian.id === params.slug);
-  
+
   const labelClassName = "md:text-2xl text-[#F25C05] font-bold";
-  const dataClassName = "md:text-2xl";
+  const dataClassName = "md:text-xl";
   const tdTextClasses = "md:text-base text-[10px] text-[#8E8E93]";
   const badgeClass =
-  "md:text-sm text-[10px] font-medium  md:px-2.5 md:py-0.5 rounded text-white items-center text-center bg-transparent";
+    "md:text-sm text-[10px] font-medium  md:px-2.5 md:py-0.5 rounded text-white items-center text-center bg-transparent";
   const router = useRouter();
 
   if (!comedian) {
@@ -23,15 +27,15 @@ export default function Page({ params }: { params: { slug: string } }) {
   const companyColor = convertComedianCompanyToColor(comedian);
 
   return (
-    <div className="md:mx-0 mx-4  space-y-9">
+    <div className="flex flex-col space-y-9 items-center justify-center md:max-w-6xl max-w-sm md:p-6 p-3">
       <div
         id="HEADER"
-        className=" bg-[#331301]  rounded-3xl md:max-w-6xl max-w-sm"
+        className="bg-[#D9D9D9] md:flex block space-x-9 items-center justify-start rounded-3xl p-9 w-full"
       >
-        <div className="md:flex block md:p-6 p-3 md:justify-start justify-center">
+        <div id="LEFT" className="">
           <a
             href={comedian.homePageURL}
-            className="flex items-center justify-center my-2"
+            className="flex items-center justify-center"
           >
             <Image
               src={comedian.imageSRC || "https://via.placeholder.com/200x200"}
@@ -41,79 +45,28 @@ export default function Page({ params }: { params: { slug: string } }) {
               className="rounded-2xl md:w-[400px] w-[300px]"
             ></Image>
           </a>
-          <div className="flex flex-col md:w-96 text-white md:ml-9 ml-2 py-5 max-h-[380px]">
-            <div>
-              <h2 className="md:text-6xl text-lg font-bold">{comedian.name}</h2>
-            </div>
-            <div className="grid md:grid-cols-2 md:gap-2 gap-1">
-            {comedian.manzai && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                漫才
-              </div>
-            )}
-            {comedian.conte && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                コント
-              </div>
-            )}
-            {comedian.mimic && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                ものまね
-              </div>
-            )}
-            {comedian.alone && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                ピン
-              </div>
-            )}
-            {comedian.rhythm && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                歌ネタ
-              </div>
-            )}
-            {comedian.ogiri && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                大喜利
-              </div>
-            )}
-          </div>
-            <div className="bg-[#D9D9D9] rounded-lg text-center mt-[100px]">
-              <p className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">
-                正統派タイプ
-              </p>
-            </div>
+        </div>
+        <div
+          id="RIGHT"
+          className="flex flex-col md:max-w-96 text-white py-5 max-h-[380px] "
+        >
+          <h2 className="md:text-6xl text-lg font-bold mb-3">
+            {comedian.name}
+          </h2>
+          <TypeBadges comedian={comedian} />
+          <div className="bg-[#D9D9D9] rounded-lg text-center mt-[100px]">
+            <p className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">
+              正統派タイプ
+            </p>
           </div>
         </div>
       </div>
 
       <div className="my-9 block md:flex md:flex-col items-center justify-center ">
+
         <div className="md:flex md:space-x-9 ">
           {/* プロフィール */}
-          <div className="border-2 space-y-3 border-gray-300 md:p-9 p-3 md:max-w-xl max-w-sm">
+          <div className="max-w-[500px] border-2 space-y-3 border-gray-300 md:p-9 p-3">
             <div className="flex items-center">
               <h3 className={labelClassName}>結成年：</h3>
               <h3 className={dataClassName}>{comedian.birthYear}</h3>
@@ -135,7 +88,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             </p>
           </div>
           {/* 分析データ */}
-          <div className="flex flex-col md:mt-0 mt-4 items-center justify-center border-2 border-gray-300 md:p-9 p-3 space-y-5 md:max-w-xl max-w-sm">
+          <div className="min-w-[500px] flex flex-col md:mt-0 mt-4 items-center justify-center border-2 border-gray-300 md:p-7 p-3 space-y-5">
             <RatingDataView leftLabel="正統派" rightLabel="破天荒" rating={9} />
             <RatingDataView leftLabel="賢い" rightLabel="頭悪い" rating={7} />
             <RatingDataView leftLabel="センス" rightLabel="パワー" rating={3} />

@@ -1,6 +1,6 @@
 "use client";
 import { ComediansState, useComediansStore } from "@/lib/zustand/Stores";
-import { create } from 'zustand'
+import { create } from "zustand";
 import Image from "next/image";
 import {
   Comedian,
@@ -128,13 +128,12 @@ export default function Favorite() {
     );
   };
 
+  useEffect(() => {
+    useComediansStore.setState({
+      comedians: dummyData,
+    });
+  });
 
-useEffect(() => {
-  useComediansStore.setState({
-    comedians: dummyData
-  })
-})
-  
   return (
     <div>
       <PageTitle title="お気に入り" />

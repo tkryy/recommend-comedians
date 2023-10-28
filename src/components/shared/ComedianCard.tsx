@@ -20,7 +20,7 @@ function ComedianCard({ comedian }: ComedianCardProps) {
 
   const companyColor = convertComedianCompanyToColor(comedian);
   return (
-    <div className="bg-[#F2F2F7] rounded-md card max-w-[220px] shadow-2xl">
+    <div className="bg-[#F2F2F7] rounded-md card max-w-[220px] border bottom-1">
       {/* テキスト */}
       <div className="card-body max-h-[250px]">
         <h3 className="text-xl font-bold">{comedian.name}</h3>
@@ -53,15 +53,7 @@ function ComedianCard({ comedian }: ComedianCardProps) {
               ものまね
             </div>
           )}
-          {comedian.alone && (
-            <div
-              id="BADGE"
-              className={badgeClass}
-              style={{ backgroundColor: companyColor }}
-            >
-              ピン
-            </div>
-          )}
+
           {comedian.rhythm && (
             <div
               id="BADGE"

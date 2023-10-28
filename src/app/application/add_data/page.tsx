@@ -14,7 +14,7 @@ export default function Add_data() {
     rightLabel: string
   ) => {
     return (
-      <div className="mt-12 md:min-w-[800px]  space-y-8">
+      <div className="mt-12  w-full space-y-8">
         {/* 質問のタイトル */}
         <div className="">
           <h2 className="md:text-2xl text-lg font-bold">{title}</h2>

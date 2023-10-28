@@ -37,7 +37,7 @@ export default function Recommend_comedians() {
   };
 
   return (
-    <div className="">
+    <div className="w-full">
       <PageTitle title="AIおすすめ診断" />
 
       <div className="flex flex-col justify-center items-center space-y-[50px] ">

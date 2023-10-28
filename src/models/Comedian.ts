@@ -10,7 +10,7 @@ export type Comedian = {
   member: number;
   imageSRC?: string;
   homePageURL?: string;
-  
+
   //芸風に関する数値
   //値がない場合も考慮する
   manzai?: boolean;
@@ -72,7 +72,6 @@ export const convertComedianCompanyToString = (comedian: Comedian) => {
   }
 };
 
-
 export const convertComedianCompanyToColor = (comedian: Comedian) => {
   let number = comedian.company;
   switch (number) {
@@ -86,55 +85,52 @@ export const convertComedianCompanyToColor = (comedian: Comedian) => {
       // 松竹 - 暗い緑
       return "#006400";
     case 3:
-      // SMA - 暗い赤
-      return "#8B0000";
+      // SMA - 黄色系
+      return "#BFB889";
     case 4:
       // タイタン - 暗い紫
-      return "#800080";
+      return "#304D73";
     case 5:
       // グレープカンパニー - 暗い紺色
-      return "#304D73";
+      return "#800080";
     case 6:
       // マセキ芸能社 - 暗いピンク
       return "#C30F70";
     case 7:
       // プロダクション人力舎 - 暗い黒
-      return "#000000";
+      return "#6AA9C7";
     case 8:
       // ワタナベエンターテイメント - 暗い茶色
       return "#8B4513";
     case 9:
-      // 太田プロ - 暗い金色
-      return "#AC9001";
+      // 太田プロ - 青系
+      return "#5185C5";
     case 10:
-      // サンミュージックプロダクション - 暗いシアン
-      return "#008B8B";
+      // サンミュージックプロダクション - ピンク系
+      return "#DE6B7A";
     case 11:
-      // 浅井企画所属 - 暗いオリーブ
-      return "#556B2F";
+      // 浅井企画所属 - 暗いオリーブ　> 青系に変更
+      return "#535CA8";
     case 12:
-      // 浅井企画所属 - 暗いオリーブ
-      return "#556B2F";
+      // ケイダッシュステージ - 赤系
+      return "#E56C3E";
     case 13:
-      // 浅井企画所属 - 暗いオリーブ
+      // ホリプロコム - 濃い青
       return "#556B2F";
     case 14:
-      // 浅井企画所属 - 暗いオリーブ
-      return "#556B2F";
+      // ASH&D - オレンジ系
+      return "#E09C41";
     case 15:
-      // 浅井企画所属 - 暗いオリーブ
-      return "#556B2F";
+      // ビクターミュージック - 紫系
+      return "#684870";
     case 16:
-      // 浅井企画所属 - 暗いオリーブ
-      return "#556B2F";
+      // フリー - ハイイロ？
+      return "#949495";
     default:
       // その他 - 暗い灰色
-      return "#696969";
+      return "#4B4948";
   }
 };
-
-
-
 
 export const dummyData: Comedian[] = [
   {
@@ -146,7 +142,7 @@ export const dummyData: Comedian[] = [
     member: 2,
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ1です",
-    manzai:  true,
+    manzai: true,
     appearance: 1,
     popularity: 1,
   },
@@ -316,5 +312,79 @@ export const dummyData: Comedian[] = [
     appearance: 12,
     popularity: 12,
   },
+  {
+    id: uuidv4(),
+    name: "ダミー芸人13",
+    birthYear: "2000",
+    company: 13,
+    sex: 1,
+    member: 2,
+    imageSRC: "https://via.placeholder.com/340x240",
+    homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
+    info: "これはダミーデータ13です",
+    manzai: true,
+    conte: true,
+    appearance: 13,
+    popularity: 13,
+  },
+  {
+    id: uuidv4(),
+    name: "ダミー芸人14",
+    birthYear: "2000",
+    company: 14,
+    sex: 1,
+    member: 2,
+    imageSRC: "https://via.placeholder.com/340x240",
+    homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
+    info: "これはダミーデータ14です",
+    manzai: true,
+    conte: true,
+    appearance: 14,
+    popularity: 14,
+  },
+  {
+    id: uuidv4(),
+    name: "ダミー芸人15",
+    birthYear: "2000",
+    company: 15,
+    sex: 1,
+    member: 2,
+    imageSRC: "https://via.placeholder.com/340x240",
+    homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
+    info: "これはダミーデータ15です",
+    manzai: true,
+    conte: true,
+    appearance: 15,
+    popularity: 15,
+  },
+  {
+    id: uuidv4(),
+    name: "ダミー芸人16",
+    birthYear: "2000",
+    company: 16,
+    sex: 1,
+    member: 2,
+    imageSRC: "https://via.placeholder.com/340x240",
+    homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
+    info: "これはダミーデータ16です",
+    manzai: true,
+    conte: true,
+    appearance: 16,
+    popularity: 16,
+  },
+  {
+    id: uuidv4(),
+    name: "ダミー芸人17",
+    birthYear: "2000",
+    company: 17,
+    sex: 1,
+    member: 2,
+    imageSRC: "https://via.placeholder.com/340x240",
+    homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
+    info: "これはダミーデータ17です",
+    manzai: true,
+    conte: true,
+    appearance: 17,
+    popularity: 17,
+  },
 ];
-

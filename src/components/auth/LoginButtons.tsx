@@ -15,6 +15,7 @@ export function GoogleLogInButton() {
 
   const [handleLoginWithGoogle, isGoogleLoading] = useLoadingCallback(
     async () => {
+      console.log("google")
       setHasLogged(false);
       const auth = getFirebaseAuth();
       const user = await loginWithProvider(auth, getGoogleProvider(auth));

@@ -10,9 +10,9 @@ function RatingDataView({
   rating,
 }: RatingDataViewProps) {
   return (
-    <div className="flex justify-between items-center md:w-[450px] w-56">
+    <div className="flex justify-between items-center md:w-[400px] w-56">
 
-      <h3 className="flex justify-start lg:text-lg text-xs text-black font-bold md:w-[50px]">
+      <h3 className="flex justify-start lg:text-[16px] text-xs text-black font-bold md:w-[50px]">
         {leftLabel}
       </h3>
 
@@ -27,7 +27,7 @@ function RatingDataView({
         ></div>
       </div>
 
-      <h3 className="flex justify-end lg:text-lg text-xs text-black font-bold md:w-[70px] ">
+      <h3 className="flex justify-end lg:text-[16px] text-xs text-black font-bold md:w-[70px] ">
         {rightLabel}
       </h3>
     </div>

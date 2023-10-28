@@ -1,3 +1,6 @@
+"use client";
+import { ComediansState, useComediansStore } from "@/lib/zustand/Stores";
+import { create } from "zustand";
 import Image from "next/image";
 import {
   Comedian,
@@ -5,6 +8,7 @@ import {
   convertComedianCompanyToString,
   convertComedianCompanyToColor,
 } from "@/models/Comedian";
+import { useEffect } from "react";
 import Link from "next/link";
 import PageTitle from "@/components/shared/PageTitle";
 export default function Favorite() {
@@ -35,7 +39,7 @@ export default function Favorite() {
               </div>
             </div>
             <div>
-              <Link href="/team_info">
+              <Link href={`/application/favorite/${comedian.id}`}>
                 <div className="font-bold md:text-lg text-[10px] ">
                   {comedian.name}
                 </div>
@@ -123,6 +127,12 @@ export default function Favorite() {
       </tr>
     );
   };
+
+  useEffect(() => {
+    useComediansStore.setState({
+      comedians: dummyData,
+    });
+  });
 
   return (
     <div>

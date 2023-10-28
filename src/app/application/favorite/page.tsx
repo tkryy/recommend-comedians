@@ -135,7 +135,7 @@ export default function Favorite() {
   });
 
   return (
-    <div>
+    <div className="w-full">
       <PageTitle title="お気に入り" />
       <div className="flex flex-col items-center">
         <div className=" relative  shadow-md md:mx-8 ">

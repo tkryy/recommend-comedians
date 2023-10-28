@@ -21,21 +21,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-
-      <html lang="ja">
-        <body>
-          <Header3/>
-          <div className="lg:flex block">
-            {/* <Sidebar /> */}
-            <div className="bg-white mt-16">   {/* lg:pl-56 pl-0 min-h-screen w-screen flex items-center flex-col */}
-              <div className=" ">   {/* lg:min-w-[1200px]  md:mx-5 my-24 */}
-                {children}
-              </div>
+    <html lang="ja">
+      <body>
+        <Header3 />
+        <div className="lg:flex block">
+          {/* <Sidebar /> */}
+          <div className="bg-white mt-16">
+            {" "}
+            {/* lg:pl-56 pl-0 min-h-screen w-screen flex items-center flex-col */}
+            <div className=" ">
+              {" "}
+              {/* lg:min-w-[1200px]  md:mx-5 my-24 */}
+              {children}
             </div>
-            {/* <Fotter /> */}
           </div>
-        </body>
-      </html>
-
+          {/* <Fotter /> */}
+        </div>
+      </body>
+    </html>
   );
 }

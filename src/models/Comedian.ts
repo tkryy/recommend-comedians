@@ -3,19 +3,19 @@ import { v4 as uuidv4 } from "uuid";
 export type Comedian = {
   //基本属性
   id: string;
-  imageSRC?: string;
-  homePageURL: string;
   name: string;
-  sex: number;
-  info: string;
-  company: number;
   birthYear: string;
-
+  company: number;
+  sex: number;
+  member: number;
+  imageSRC?: string;
+  homePageURL?: string;
+  
   //芸風に関する数値
   //値がない場合も考慮する
   manzai?: boolean;
   conte?: boolean;
-  alone?: boolean;
+  pin?: boolean;
   rhythm?: boolean;
   gag?: boolean;
   ogiri?: boolean;
@@ -26,6 +26,8 @@ export type Comedian = {
   //見た目や人気など
   appearance: number;
   popularity: number;
+
+  info: string;
 };
 
 export const convertComedianCompanyToString = (comedian: Comedian) => {
@@ -55,6 +57,16 @@ export const convertComedianCompanyToString = (comedian: Comedian) => {
       return "サンミュージックプロダクション";
     case 11:
       return "浅井企画所属";
+    case 12:
+      return "ケイダッシュステージ";
+    case 13:
+      return "ホリプロコム";
+    case 14:
+      return "ASH&D";
+    case 15:
+      return "ビクターミュージックアーツ";
+    case 16:
+      return "フリー";
     default:
       return "その他";
   }
@@ -100,6 +112,21 @@ export const convertComedianCompanyToColor = (comedian: Comedian) => {
     case 11:
       // 浅井企画所属 - 暗いオリーブ
       return "#556B2F";
+    case 12:
+      // 浅井企画所属 - 暗いオリーブ
+      return "#556B2F";
+    case 13:
+      // 浅井企画所属 - 暗いオリーブ
+      return "#556B2F";
+    case 14:
+      // 浅井企画所属 - 暗いオリーブ
+      return "#556B2F";
+    case 15:
+      // 浅井企画所属 - 暗いオリーブ
+      return "#556B2F";
+    case 16:
+      // 浅井企画所属 - 暗いオリーブ
+      return "#556B2F";
     default:
       // その他 - 暗い灰色
       return "#696969";
@@ -113,24 +140,26 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人1",
-    homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
-    info: "これはダミーデータ1です",
-    company: 1,
     birthYear: "2000",
-    manzai: true,
+    company: 1,
+    sex: 1,
+    member: 2,
+    homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
+    info: "これはダミーデータ1です",
+    manzai:  true,
     appearance: 1,
     popularity: 1,
   },
   {
     id: uuidv4(),
     name: "ダミー芸人2",
+    birthYear: "2000",
+    company: 2,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/420x315",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ2です",
-    company: 2,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 2,
@@ -139,12 +168,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人3",
+    birthYear: "2000",
+    company: 3,
+    sex: 1,
+    member: 3,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ3です",
-    company: 3,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 3,
@@ -153,12 +183,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人4",
+    birthYear: "2000",
+    company: 4,
+    sex: 1,
+    member: 1,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ4です",
-    company: 4,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     mimic: true,
@@ -168,12 +199,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人5",
+    birthYear: "2000",
+    company: 5,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ5です",
-    company: 5,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 5,
@@ -182,12 +214,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人6",
+    birthYear: "2000",
+    company: 6,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ6です",
-    company: 6,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 6,
@@ -196,12 +229,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人7",
+    birthYear: "2000",
+    company: 7,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ7です",
-    company: 7,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 7,
@@ -210,12 +244,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人8",
+    birthYear: "2000",
+    company: 8,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ8です",
-    company: 8,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 8,
@@ -224,12 +259,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人9",
+    birthYear: "2000",
+    company: 9,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ9です",
-    company: 9,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 9,
@@ -238,12 +274,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人10",
+    birthYear: "2000",
+    company: 10,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ10です",
-    company: 10,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 10,
@@ -252,12 +289,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人11",
+    birthYear: "2000",
+    company: 11,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ11です",
-    company: 11,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 11,
@@ -266,12 +304,13 @@ export const dummyData: Comedian[] = [
   {
     id: uuidv4(),
     name: "ダミー芸人12",
+    birthYear: "2000",
+    company: 12,
+    sex: 1,
+    member: 2,
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
-    sex: 1,
     info: "これはダミーデータ12です",
-    company: 12,
-    birthYear: "2000",
     manzai: true,
     conte: true,
     appearance: 12,

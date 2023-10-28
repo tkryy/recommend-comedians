@@ -1,4 +1,5 @@
 import { client } from "@gradio/client";
+import { Comedian, dummyData } from "@/models/Comedian";
 
 type ResultData = {
   data: Array<string>;
@@ -25,11 +26,11 @@ export const getComedianNamePredict = async (
 
 export const getComedianDataForSearch = async (
   name: string,
-  type: string[]
+  comedy_type: string[]
 ): Promise<string | null> => {
   const apiUrl = "https://yomo93-tendon-search.hf.space/";
   const app = await client(apiUrl, {});
-  const result = await app.predict("/predict", [name]);
+  const result = await app.predict("/predict", [name, comedy_type]);
 
   if (result !== null && typeof result === "object" && "data" in result) {
     const data: ResultData = result as ResultData;

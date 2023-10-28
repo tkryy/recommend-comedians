@@ -6,21 +6,60 @@ import { Comedian, dummyData } from "@/models/Comedian";
 import ComedianCard from "@/components/shared/ComedianCard";
 import GenreIcon from "@/components/shared/GenreIcon";
 
+type searchParam = {
+  isManzai: boolean,
+  isConte: boolean,
+  isPin: boolean,
+  isRhythm: boolean,
+  isGag: boolean,
+  isOgiri: boolean,
+  isMimic: boolean,
+  isTalk: boolean,
+  isSNS: boolean
+}
+
+// ボタンが押されていたら文字列に追加
+
+function boolToStr(b: searchParam): string[] {
+  const s = ["", "", "", "", "", "", "", "", ""];
+  if(b.isManzai) s[0] = "漫才/漫談";
+  if(b.isConte)  s[1] = "コント";
+  if(b.isPin)    s[2] = "ピン芸";
+  if(b.isRhythm) s[3] = "リズム/歌";
+  if(b.isGag)    s[4] = "ギャグ";
+  if(b.isOgiri)  s[5] = "大喜利";
+  if(b.isMimic)  s[6] = "ものまね";
+  if(b.isTalk)   s[7] = "トーク";
+  if(b.isSNS)    s[8] = "SNS";
+  return s;
+}
 
 export default function Search_comedians() {
   const [resultText, setResultText] = useState("？？？");
   const [isLoading, setIsLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
-  const [searchBoolean, setSearchBoolean] = useState([false, false, false, false, false, false, false, false, false]);
+  const [params, setParams] = useState<searchParam>({
+    isManzai: false,
+    isConte: false,
+    isPin: false,
+    isRhythm: false,
+    isGag: false,
+    isOgiri: false,
+    isMimic: false,
+    isTalk: false,
+    isSNS: false,
+  });
+  const genreStr = boolToStr(params);
 
   const handleButtonClick = async (event: any) => {
     event.preventDefault();
 
     setIsLoading(true);
-
-    const result = await getComedianDataForSearch(searchText, searchBoolean);
+    //console.log(genreStr);
+    const result = await getComedianDataForSearch(searchText, genreStr);
     setIsLoading(false);
     await setResultText(result || "結果");
+
   };
 
   return (
@@ -52,42 +91,86 @@ export default function Search_comedians() {
         <div className="space-y-4 items-center justify-center">
           <h2 className="text-2xl font-bold text-start">芸風を選択</h2>
           <div className="grid md:grid-cols-6 grid-cols-3 md:gap-0 gap-3 px-12">
-            <GenreIcon
-              genre="漫才/漫談"
-              imageSRC="/icons/mic_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
-            <GenreIcon
-              genre="コント"
-              imageSRC="/icons/sports_kabaddi_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
-            <GenreIcon
-              genre="ピン芸"
-              imageSRC="/icons/emoji_people_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
-            <GenreIcon
-              genre="リズム/歌"
-              imageSRC="/icons/music_note_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
-            <GenreIcon
-              genre="ギャグ"
-              imageSRC="/icons/sentiment_very_satisfied_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
-            <GenreIcon
-              genre="大喜利"
-              imageSRC="/icons/edit_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
-            <GenreIcon
-              genre="ものまね"
-              imageSRC="/icons/group_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
-            <GenreIcon
-              genre="トーク"
-              imageSRC="/icons/record_voice_over_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
-            <GenreIcon
-              genre="SNS"
-              imageSRC="/icons/slideshow_FILL0_wght400_GRAD0_opsz24_white.svg"
-            />
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isManzai: !params.isManzai })}>
+                <GenreIcon
+                  genre="漫才/漫談"
+                  imageSRC="/icons/mic_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isConte: !params.isConte })}>
+                <GenreIcon
+                  genre="コント"
+                  imageSRC="/icons/sports_kabaddi_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isPin: !params.isPin })}>
+                <GenreIcon
+                  genre="ピン芸"
+                  imageSRC="/icons/emoji_people_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isRhythm: !params.isRhythm })}>
+                <GenreIcon
+                  genre="リズム/歌"
+                  imageSRC="/icons/music_note_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isGag: !params.isGag })}>
+                <GenreIcon
+                  genre="ギャグ"
+                  imageSRC="/icons/sentiment_very_satisfied_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isOgiri: !params.isOgiri })}>
+                <GenreIcon
+                  genre="大喜利"
+                  imageSRC="/icons/edit_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isMimic: !params.isMimic })}>
+                <GenreIcon
+                  genre="ものまね"
+                  imageSRC="/icons/group_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button>
+            </div>
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isTalk: !params.isTalk })}>
+                <GenreIcon
+                  genre="トーク"
+                  imageSRC="/icons/record_voice_over_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button></div>
+            <div className="flex justify-center">
+              <button className="flex flex-col items-center justify-center h-[70px] w-[60px]"
+                onClick={() => setParams({ ...params, isSNS: !params.isSNS })}>
+                <GenreIcon
+                  genre="SNS"
+                  imageSRC="/icons/slideshow_FILL0_wght400_GRAD0_opsz24_white.svg"
+                />
+              </button>
+            </div>
           </div>
         </div>
 

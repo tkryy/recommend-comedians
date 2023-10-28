@@ -95,7 +95,7 @@ export default function Favorite() {
                 ものまね
               </div>
             )}
-            {comedian.alone && (
+            {comedian.pin && (
               <div
                 id="BADGE"
                 className={badgeClass}

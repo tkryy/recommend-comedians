@@ -3,18 +3,25 @@ import Link from "next/link";
 
 export const SearchIntroduction = () => {
   return (
-    <div className="flex pt-24 pl-40">
+    <div className="md:flex md:pt-24 md:-mt-0 -mt-12 md:pl-40 pl-8">
       <div>
-      <h1 className="text-5xl font-bold text-yellow-500 mt-8">キーワード、<br></br>芸風から検索！</h1>
-      <p className="text-xl text-black mt-8">Tendonでは、キーワードや芸風からの<br></br>検索機能を用意しています。</p>
+      <h1 className="md:text-5xl text-xl font-bold text-yellow-500 md:mt-8">キーワード、<br className="md:block hidden"></br>芸風から検索！</h1>
+      <p className="md:text-xl text-black md:mt-8">Tendonでは、キーワードや芸風からの<br className="md:block hidden"></br>検索機能を<br className="md:hidden block"></br>用意しています。</p>
       </div>
-      <div className="ml-12">
+      <div className="md:ml-12 md:mt-0 mt-4">
         <Image
           src={"/images/search_exam01.png"}
           alt="検索ページの図"
           width="650"
           height="320"
-          className="p-4 mockup-window border border-base-300"
+          className="p-4 mockup-window border border-base-300 md:block hidden"
+        ></Image>
+        <Image
+          src={"/images/search_exam01.png"}
+          alt="検索ページの図"
+          width="320"
+          height="320"
+          className="p-2 -ml-2 mockup-window border border-base-300 md:hidden block"
         ></Image>
       </div>
     </div>

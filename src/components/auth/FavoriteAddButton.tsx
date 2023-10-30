@@ -1,55 +1,83 @@
 "use client";
 import { useState, useEffect } from "react";
+import { useUserDataStore } from "@/lib/zustand/Stores";
 import { useAuth } from "@/lib/firebase/context";
-import { useRouter } from "next/navigation";
 import axios from "axios";
 import Image from "next/image";
 import { Comedian } from "@/models/Comedian";
-
-import { v4 as uuidv4 } from "uuid";
 
 interface FavoriteAddButtonProps {
   comedian: Comedian;
 }
 
+/**
+ * Renders a favorite add button component.
+ *
+ * @param {FavoriteAddButtonProps} props - The props object containing the comedian.
+ * @return {JSX.Element} The rendered favorite add button component.
+ */
 export default function FavoriteAddButton({
   comedian,
 }: FavoriteAddButtonProps) {
   const [comedians, setComedians] = useState<Comedian[]>([]);
   const [isFavorite, setIsFavorite] = useState(false);
+
   const { user } = useAuth();
+  const userData = useUserDataStore((state) => state.userData);
 
   async function handleSave() {
-    comedian.id = uuidv4();
-    await axios.post(`/api/favorite?userid=${user?.uid}`, comedian);
+    await axios.post(`/api/favorite?userid=${userData.uid}`, comedian);
     setIsFavorite(true);
   }
 
   async function handleDelete() {
-    await axios.delete(`/api/favorite?userid=${user?.uid}`);
-    setIsFavorite(true);
+    await axios.patch(
+      `/api/favorite?userid=${userData.uid}&comedianId=${comedian.id}`,
+      comedian
+    );
+    setIsFavorite(false);
   }
 
-
-
- useEffect(() => {
+  useEffect(() => {
     (async () => {
-      if (user?.uid) {
-        const { data } = await axios.get(`/api/favorite?userid=${user.uid}`);
-        console.log(data);
-        setComedians(data);
-        comedians.some((comedian_data) => comedian_data.id === comedian.id)
-          ? setIsFavorite(true)
-          : setIsFavorite(false);
-      }
-    })();
-  }, [user?.uid]);
+      const { data } = await axios.get(`/api/favorite?userid=${userData.uid}`);
+      const comedians = data;
+      console.log(comedian.id);
+      console.log(comedians);
+      setComedians(data);
 
+      setIsFavorite(
+        comedians.some(
+          (comedian_data: Comedian) => comedian_data.id === comedian.id
+        )
+      );
+      console.log(isFavorite);
+    })();
+  }, []);
 
   return (
-    <div className="">
-      <p>お気に入り追加</p>
-      <button onClick={handleSave}>{isFavorite ? "削除" : "追加"}</button>
+    <div className="flex">
+      {isFavorite ? (
+        <button className="btn btn-ghost" onClick={handleDelete}>
+         
+          <Image
+            src="/icons/BookMark_fill.svg"
+            alt={comedian.name}
+            width={30}
+            height={30}
+          />
+        </button>
+      ) : (
+        <button className="btn btn-ghost"  onClick={handleSave}>
+          
+          <Image
+            src={"/icons/BookMark.svg"}
+            alt={comedian.name}
+            width={30}
+            height={30}
+          />
+        </button>
+      )}
     </div>
   );
 }

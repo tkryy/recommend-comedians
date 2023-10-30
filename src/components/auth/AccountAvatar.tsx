@@ -1,7 +1,10 @@
 "use client";
 
 import * as React from "react";
+import { useEffect } from "react";
 import { useAuth } from "@/lib/firebase/context";
+import { UserData } from "@/models/UserData";
+import { useUserDataStore } from "@/lib/zustand/Stores";
 import Link from "next/link";
 
 function UserAccountAvatar() {
@@ -16,6 +19,18 @@ function UserAccountAvatar() {
       </div>
     );
   }
+
+const userData:UserData = {
+  uid: user.uid,
+  name: user.displayName || "name",
+  email: user.email || "email",
+}
+
+  useEffect(() => {
+    useUserDataStore.setState({
+      userData: userData,
+    });
+  });
 
   return (
     <div>

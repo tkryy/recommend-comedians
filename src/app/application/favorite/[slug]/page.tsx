@@ -33,7 +33,6 @@ export default function Page({ params }: { params: { slug: string } }) {
         id="HEADER"
         className="bg-[#D9D9D9] md:flex block space-x-9 items-center justify-start rounded-3xl p-9 w-full"
       >
-        
         <div id="LEFT" className="">
           <a
             href={comedian.homePageURL}

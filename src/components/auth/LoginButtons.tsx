@@ -4,7 +4,10 @@ import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useFirebaseAuth } from "@/lib/firebase/firebase-config";
 import { useLoadingCallback } from "react-loading-hook";
-import { getGoogleProvider, loginWithProvider } from "../../app/application/login/firebase";
+import {
+  getGoogleProvider,
+  loginWithProvider,
+} from "../../app/application/login/firebase";
 
 export function GoogleLogInButton() {
   const router = useRouter();
@@ -15,7 +18,7 @@ export function GoogleLogInButton() {
 
   const [handleLoginWithGoogle, isGoogleLoading] = useLoadingCallback(
     async () => {
-      console.log("google")
+      console.log("google");
       setHasLogged(false);
       const auth = getFirebaseAuth();
       const user = await loginWithProvider(auth, getGoogleProvider(auth));
@@ -50,12 +53,12 @@ export function GoogleLogInButton() {
         </div>
       )}
       {!hasLogged && (
-        <div>
+     
           <button
             type="button"
             disabled={isGoogleLoading}
             onClick={handleLoginWithGoogle}
-            className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
+            className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55"
           >
             <svg
               className="w-4 h-4 mr-2"
@@ -74,7 +77,7 @@ export function GoogleLogInButton() {
             </svg>
             Sign up with Google
           </button>
-        </div>
+      
       )}
     </div>
   );

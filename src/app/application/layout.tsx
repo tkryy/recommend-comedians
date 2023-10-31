@@ -21,9 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <div>
-      <div className="lg:flex block">
+      <div className="lg:flex block content-start">
         <Sidebar />
-        <div className="lg:pl-56 pl-0 min-h-screen  flex items-center  justify-center flex-col  ">
+        <div className="lg:pl-56 pl-0 min-h-screen  flex  justify-center flex-col  ">
           <div className="lg:min-w-[1200px] w-full flex flex-col items-center justify-center md:mx-5 my-24 ">
             {children}
           </div>

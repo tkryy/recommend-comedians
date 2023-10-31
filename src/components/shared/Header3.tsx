@@ -25,90 +25,90 @@ function Header3({}) {
               </svg>
             </label>
             <div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-200 rounded-box w-52 text-black"
-            >
-              <li>
-                <Link href="/application">
-                  <Image
-                    alt="home"
-                    width="20"
-                    height="20"
-                    src="/icons/home_FILL0_wght400_GRAD0_opsz24.svg"
-                  ></Image>
-                  <p>ホーム</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/application/recommend_comedians">
-                  <Image
-                    alt="recommend"
-                    width="20"
-                    height="20"
-                    src="/icons/smart_toy_black_24dp.svg"
-                  ></Image>
-                  <p>AIおすすめ診断</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/application/search_comedians">
-                  <Image
-                    alt="search"
-                    width="20"
-                    height="20"
-                    src="/icons/search_FILL0_wght400_GRAD0_opsz24.svg"
-                  ></Image>
-                  <p>芸人を探す</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/application/favorite">
-                  <Image
-                    alt="star"
-                    width="20"
-                    height="20"
-                    src="/icons/star_FILL0_wght400_GRAD0_opsz24.svg"
-                  ></Image>
-                  <p>お気に入り</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/application/add_data">
-                  <Image
-                    alt="add"
-                    width="20"
-                    height="20"
-                    src="/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg"
-                  ></Image>
-                  <p>データ追加</p>
-                </Link>
-              </li>
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-gray-200 rounded-box w-52 text-black"
+              >
+                <li>
+                  <Link href="/application">
+                    <Image
+                      alt="home"
+                      width="20"
+                      height="20"
+                      src="/icons/home_FILL0_wght400_GRAD0_opsz24.svg"
+                    ></Image>
+                    <p>ホーム</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/application/recommend_comedians">
+                    <Image
+                      alt="recommend"
+                      width="20"
+                      height="20"
+                      src="/icons/smart_toy_black_24dp.svg"
+                    ></Image>
+                    <p>AIおすすめ診断</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/application/search_comedians">
+                    <Image
+                      alt="search"
+                      width="20"
+                      height="20"
+                      src="/icons/search_FILL0_wght400_GRAD0_opsz24.svg"
+                    ></Image>
+                    <p>芸人を探す</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/application/favorite">
+                    <Image
+                      alt="star"
+                      width="20"
+                      height="20"
+                      src="/icons/star_FILL0_wght400_GRAD0_opsz24.svg"
+                    ></Image>
+                    <p>お気に入り</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/application/add_data">
+                    <Image
+                      alt="add"
+                      width="20"
+                      height="20"
+                      src="/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg"
+                    ></Image>
+                    <p>データ追加</p>
+                  </Link>
+                </li>
 
-              <div className="mt-40 border-2 border-gray-300"></div>
-              <li>
-                <Link href="/application/explanation">
-                  <Image
-                    alt="hatena"
-                    width="20"
-                    height="20"
-                    src="/icons/help_FILL0_wght400_GRAD0_opsz24.svg"
-                  ></Image>
-                  <p>使い方</p>
-                </Link>
-              </li>
-              <li>
-                <Link href="/application/setting">
-                  <Image
-                    alt="setting"
-                    width="20"
-                    height="20"
-                    src="/icons/settings_FILL0_wght400_GRAD0_opsz24.svg"
-                  ></Image>
-                  <p>設定</p>
-                </Link>
-              </li>
-            </ul>
+                <div className="mt-40 border-2 border-gray-300"></div>
+                <li>
+                  <Link href="/application/explanation">
+                    <Image
+                      alt="hatena"
+                      width="20"
+                      height="20"
+                      src="/icons/help_FILL0_wght400_GRAD0_opsz24.svg"
+                    ></Image>
+                    <p>使い方</p>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/application/setting">
+                    <Image
+                      alt="setting"
+                      width="20"
+                      height="20"
+                      src="/icons/settings_FILL0_wght400_GRAD0_opsz24.svg"
+                    ></Image>
+                    <p>設定</p>
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
           <Link

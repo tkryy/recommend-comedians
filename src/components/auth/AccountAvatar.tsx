@@ -7,6 +7,11 @@ import { UserData } from "@/models/UserData";
 import { useUserDataStore } from "@/lib/zustand/Stores";
 import Link from "next/link";
 
+/**
+ * Renders the user account avatar.
+ * 
+ * @return {JSX.Element} The JSX element representing the user account avatar.
+ */
 function UserAccountAvatar() {
   const { user } = useAuth();
 

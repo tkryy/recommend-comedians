@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 import axios from "axios";
-import {v4 as uuidv4} from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export interface IPlan {
   id: string;
@@ -31,7 +31,7 @@ export default function TestButton() {
   }
 
   async function handleDelete(plan: IPlan) {
-    await axios.delete("/api/plan",  { data: { id: plan.id } });
+    await axios.delete("/api/plan", { data: { id: plan.id } });
   }
 
   useEffect(() => {
@@ -45,13 +45,16 @@ export default function TestButton() {
   return (
     <div>
       {plans.map((plan) => (
-
         <div key={plan.id} className="flex">
           {plan.title}
-          <button onClick={() => {
-          handleDelete(plan);
-        }} >delete</button>
-          </div>
+          <button
+            onClick={() => {
+              handleDelete(plan);
+            }}
+          >
+            delete
+          </button>
+        </div>
       ))}
       <form>
         <input

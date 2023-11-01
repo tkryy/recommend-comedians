@@ -1,5 +1,3 @@
-
-
 import RatingDataView from "@/components/shared/RatingDataView";
 
 export default function Team_info() {

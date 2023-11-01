@@ -59,7 +59,6 @@ export default function FavoriteAddButton({
     <div className="flex">
       {isFavorite ? (
         <button className="btn btn-ghost" onClick={handleDelete}>
-         
           <Image
             src="/icons/BookMark_fill.svg"
             alt={comedian.name}
@@ -68,8 +67,7 @@ export default function FavoriteAddButton({
           />
         </button>
       ) : (
-        <button className="btn btn-ghost"  onClick={handleSave}>
-          
+        <button className="btn btn-ghost" onClick={handleSave}>
           <Image
             src={"/icons/BookMark.svg"}
             alt={comedian.name}

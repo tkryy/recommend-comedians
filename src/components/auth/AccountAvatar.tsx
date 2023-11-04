@@ -1,9 +1,17 @@
 "use client";
 
 import * as React from "react";
+import { useEffect } from "react";
 import { useAuth } from "@/lib/firebase/context";
+import { UserData } from "@/models/UserData";
+import { useUserDataStore } from "@/lib/zustand/Stores";
 import Link from "next/link";
 
+/**
+ * Renders the user account avatar.
+ * 
+ * @return {JSX.Element} The JSX element representing the user account avatar.
+ */
 function UserAccountAvatar() {
   const { user } = useAuth();
 
@@ -16,6 +24,18 @@ function UserAccountAvatar() {
       </div>
     );
   }
+
+const userData:UserData = {
+  uid: user.uid,
+  name: user.displayName || "name",
+  email: user.email || "email",
+}
+
+  useEffect(() => {
+    useUserDataStore.setState({
+      userData: userData,
+    });
+  });
 
   return (
     <div>

@@ -1,3 +1,4 @@
+
 import { getTokens } from "next-firebase-auth-edge/lib/next/tokens";
 import { cookies } from "next/headers";
 import { AuthProvider } from "./client-auth-provider";
@@ -6,7 +7,7 @@ import { Tokens } from "next-firebase-auth-edge/lib/auth";
 import { User } from "./context";
 import { filterStandardClaims } from "next-firebase-auth-edge/lib/auth/claims";
 
-const mapTokensToUser = ({ decodedToken }: Tokens): User => {
+export const mapTokensToUser = ({ decodedToken }: Tokens): User => {
   const {
     uid,
     email,

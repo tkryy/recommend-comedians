@@ -134,7 +134,7 @@ export const convertComedianCompanyToColor = (comedian: Comedian) => {
 
 export const dummyData: Comedian[] = [
   {
-    id: uuidv4(),
+    id: "99410c8c-8c17-4c8f-9521-90b594aefaac",
     name: "ダミー芸人1",
     birthYear: "2000",
     company: 1,
@@ -147,7 +147,7 @@ export const dummyData: Comedian[] = [
     popularity: 1,
   },
   {
-    id: uuidv4(),
+    id: "a9df3c77-0671-487c-ba3d-310a58e094d0",
     name: "ダミー芸人2",
     birthYear: "2000",
     company: 2,

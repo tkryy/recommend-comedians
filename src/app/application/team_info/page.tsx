@@ -1,20 +1,21 @@
-import Image from "next/image";
-import Link from "next/link";
-
 import RatingDataView from "@/components/shared/RatingDataView";
 
 export default function Team_info() {
-
   const labelClassName = "md:text-2xl text-[#F25C05] font-bold";
   const dataClassName = "md:text-2xl";
 
   return (
     <div className="md:mx-0 mx-4  space-y-9">
       {/* ヘッダー */}
-      <div id="HEADER" className=" bg-[#331301]  rounded-3xl md:max-w-6xl max-w-sm">
+      <div
+        id="HEADER"
+        className=" bg-[#331301]  rounded-3xl md:max-w-6xl max-w-sm"
+      >
         <div className="md:flex block md:p-6 p-3 md:justify-start justify-center">
-          <a href="https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg"
-          className="flex items-center justify-center my-2">
+          <a
+            href="https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg"
+            className="flex items-center justify-center my-2"
+          >
             <img
               src="https://profile.yoshimoto.co.jp/assets/data/profile/6046/683c87f6a8956e984e6a47b30b2779ab134e824f.jpg"
               alt="さや香"

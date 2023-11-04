@@ -34,15 +34,6 @@ export default function TypeBadges({ comedian }: { comedian: Comedian }) {
           ものまね
         </div>
       )}
-      {comedian.alone && (
-        <div
-          id="BADGE"
-          className={badgeClass}
-          style={{ backgroundColor: companyColor }}
-        >
-          ピン
-        </div>
-      )}
       {comedian.rhythm && (
         <div
           id="BADGE"

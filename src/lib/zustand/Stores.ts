@@ -1,5 +1,6 @@
 
 import { Comedian } from "@/models/Comedian";
+import { UserData } from "@/models/UserData";
 import { create } from "zustand";
 
 export interface BearState {
@@ -12,7 +13,23 @@ export interface ComediansState {
   increase: () => void;
 }
 
+export interface UserDataState {
+  userData: UserData;
+  increase: () => void;
+}
+
+
+
 export const useComediansStore = create<ComediansState>((set) => ({
   comedians: [],
   increase: () => set((state) => ({ comedians: [...state.comedians, ...state.comedians] }))
+}))
+
+export const useUserDataStore = create<UserDataState>((set) => ({
+  userData: {
+    uid: "",
+    email: "",
+    name: ""
+  },
+  increase: () => set((state) => ({ userData: { ...state.userData, ...state.userData } }))
 }))

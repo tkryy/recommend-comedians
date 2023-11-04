@@ -1,12 +1,13 @@
 "use client";
 import { useComediansStore } from "@/lib/zustand/Stores";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import {
   convertComedianCompanyToString,
   convertComedianCompanyToColor,
 } from "@/models/Comedian";
 import RatingDataView from "@/components/shared/RatingDataView";
 import TypeBadges from "@/components/shared/TypeBadges";
+import FavoriteAddButton from "@/components/auth/FavoriteAddButton";
 import Image from "next/image";
 export default function Page({ params }: { params: { slug: string } }) {
   const comedians = useComediansStore((state) => state.comedians);
@@ -54,6 +55,7 @@ export default function Page({ params }: { params: { slug: string } }) {
             {comedian.name}
           </h2>
           <TypeBadges comedian={comedian} />
+          <FavoriteAddButton comedian={comedian} />
           <div className="bg-[#D9D9D9] rounded-lg text-center mt-[100px]">
             <p className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">
               正統派タイプ
@@ -63,7 +65,6 @@ export default function Page({ params }: { params: { slug: string } }) {
       </div>
 
       <div className="my-9 block md:flex md:flex-col items-center justify-center ">
-
         <div className="md:flex md:space-x-9 ">
           {/* プロフィール */}
           <div className="max-w-[500px] border-2 space-y-3 border-gray-300 md:p-9 p-3">

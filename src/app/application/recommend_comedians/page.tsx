@@ -2,13 +2,12 @@
 
 import { getComedianNamePredict } from "@/lib/gradio";
 import { useState } from "react";
-
-import Image from "next/image";
 import Link from "next/link";
 import PageTitle from "@/components/shared/PageTitle";
 import TypingAnimation from "@/components/shared/TypingCode";
 
 export default function Recommend_comedians() {
+  
   const [resultText, setResultText] = useState("？？？");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -21,16 +20,26 @@ export default function Recommend_comedians() {
   const handleButtonClick = async (event: any) => {
     event.preventDefault();
 
+    //ローディング状態を設定
     setIsLoading(true);
 
+    //タイプアニメ一行目を開始
     setIsTypingFirst(true);
+
+    //二行目以降はずらして始める
     await setTimeout(() => setIsTypingSecond(true), 500);
     await setTimeout(() => setIsTypingThird(true), 1000);
 
+    //APIを叩く
     const result = await getComedianNamePredict(searchText);
+
+    //ローディング状態を設定
     setIsLoading(false);
+
+    //結果を表示
     await setResultText(result || "結果");
 
+    //全てのアニメをリセット
     await setTimeout(() => setIsTypingFirst(false), 500);
     await setTimeout(() => setIsTypingSecond(false), 500);
     await setTimeout(() => setIsTypingThird(false), 500);

@@ -24,7 +24,7 @@ function UserProfile({ count }: UserProfileProps) {
     await fetch("/api/logout", {
       method: "GET",
     });
-    router.push("/login");
+    router.push("/application/login");
   });
 
   const [handleClaims, isClaimsLoading] = useLoadingCallback(async () => {

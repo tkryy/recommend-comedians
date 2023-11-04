@@ -12,9 +12,15 @@ import { motion, useScroll, useInView } from "framer-motion"
 
 export const ScrollFadeIn = () => {
   return (
-    <div>
-
-    </div>
+    <motion.div
+    className=""
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ amount: 'all' }}
+    transition={{ duration: 1 }}
+  >
+    
+  </motion.div>
 
 
 

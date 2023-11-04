@@ -19,12 +19,12 @@ export const BackgroundImage = ({
   return (
     <div className="md:min-h-screen min-h-[450px] md:min-w-[1500px] bg-cover bg-center bg-no-repeat relative " style={{backgroundImage: 'url(/images/landing_bg.webp)'}}>
       <div>
-        <div className="rounded-2xl md:p-20 p-2 backdrop-blur-sm  bg-gray-400 bg-opacity-30 shadow-md shadow-black/40 absolute md:left-1/4 md:top-1/4 top-1/2 -mt-32 md:ml-0 ml-12"> {/* bg-white/50 */} {/* left-1/4 top-1/4 translate-y-1/2 -mt-24 */}
+        <div className="rounded-2xl md:p-20 p-2 backdrop-blur-sm  bg-gray-400 bg-opacity-30 shadow-md shadow-black/40 absolute md:left-1/4 md:top-1/4 top-1/2 -mt-32 md:ml-0 ml-16"> 
           <h1 className="md:text-9xl text-7xl font-bold text-[#F25C05]">
             {title}
           </h1>
         </div>
-        <div className="absolute md:left-1/4 top-1/2 md:-ml-48 ml-4 md:mt-12 ">
+        <div className="absolute md:left-1/4 top-1/2 md:-ml-48 ml-8 md:mt-12 ">
           <h2 className="md:text-6xl text-xl font-bold text-white">
             {subtitle}
           </h2>

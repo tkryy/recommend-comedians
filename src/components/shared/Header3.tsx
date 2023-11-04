@@ -113,7 +113,7 @@ function Header3({}) {
           </div>
           <Link
             style={{ fontFamily: "Futura" }}
-            href="/"
+            href="/application"
             className=" normal-case text-2xl text-white "
           >
             <div className="flex items-center">

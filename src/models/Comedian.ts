@@ -13,15 +13,15 @@ export type Comedian = {
 
   //芸風に関する数値
   //値がない場合も考慮する
-  manzai?: boolean;
-  conte?: boolean;
-  pin?: boolean;
-  rhythm?: boolean;
-  gag?: boolean;
-  ogiri?: boolean;
-  mimic?: boolean;
-  talk?: boolean;
-  sns?: boolean;
+  manzai?: number;
+  conte?: number;
+  pin?: number;
+  rhythm?: number;
+  gag?: number;
+  ogiri?: number;
+  mimic?: number;
+  talk?: number;
+  sns?: number;
 
   //見た目や人気など
   appearance: number;
@@ -142,7 +142,7 @@ export const dummyData: Comedian[] = [
     member: 2,
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ1です",
-    manzai: true,
+    manzai: 1,
     appearance: 1,
     popularity: 1,
   },
@@ -156,8 +156,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/420x315",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ2です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 2,
     popularity: 2,
   },
@@ -171,8 +171,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ3です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 3,
     popularity: 3,
   },
@@ -186,9 +186,9 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ4です",
-    manzai: true,
-    conte: true,
-    mimic: true,
+    manzai: 1,
+    conte: 1,
+    mimic: 1,
     appearance: 4,
     popularity: 4,
   },
@@ -202,8 +202,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ5です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 5,
     popularity: 5,
   },
@@ -217,8 +217,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ6です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 6,
     popularity: 6,
   },
@@ -232,8 +232,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ7です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 7,
     popularity: 7,
   },
@@ -247,8 +247,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ8です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 8,
     popularity: 8,
   },
@@ -262,8 +262,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ9です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 9,
     popularity: 9,
   },
@@ -277,8 +277,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ10です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 10,
     popularity: 10,
   },
@@ -292,8 +292,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ11です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 11,
     popularity: 11,
   },
@@ -307,8 +307,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ12です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 12,
     popularity: 12,
   },
@@ -322,8 +322,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ13です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 13,
     popularity: 13,
   },
@@ -337,8 +337,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ14です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 14,
     popularity: 14,
   },
@@ -352,8 +352,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ15です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 15,
     popularity: 15,
   },
@@ -367,8 +367,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ16です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 16,
     popularity: 16,
   },
@@ -382,8 +382,8 @@ export const dummyData: Comedian[] = [
     imageSRC: "https://via.placeholder.com/340x240",
     homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
     info: "これはダミーデータ17です",
-    manzai: true,
-    conte: true,
+    manzai: 1,
+    conte: 1,
     appearance: 17,
     popularity: 17,
   },

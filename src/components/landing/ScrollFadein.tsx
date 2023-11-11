@@ -1,34 +1,52 @@
 "use client";
 
-import { motion, useScroll, useInView } from "framer-motion"
+// import { motion, useScroll, useInView } from "framer-motion"
 
-/* function Component() {
-  const { scrollYProgress } = useScroll();
-
-  return (
-    <motion.div style={{ scaleX: scrollYProgress }} />
-  )
-} */
-
-export const ScrollFadeIn = () => {
-  return (
-    <motion.div
-    className=""
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    viewport={{ amount: 'all' }}
-    transition={{ duration: 1 }}
-  >
+// export const ScrollFadeIn = () => {
+//   return (
+//     <motion.div
+//     className=""
+//     initial={{ opacity: 0 }}
+//     whileInView={{ opacity: 1 }}
+//     viewport={{ amount: 'all' }}
+//     transition={{ duration: 1 }}
+//   >
     
-  </motion.div>
+//   </motion.div>
+//   );
+// }
 
 
+// import { motion } from "framer-motion";
+// export const ScrollFadeIn = () =>  {
+//   return (
+//     <motion.div
+//       style={{
+//         width: 100,
+//         height:100,
+//         backgroundColor: "red"
+//       }}
+//       animate={{ x: 100 }} 
+//     />
+//   );
+// }
 
 
+import { motion, useAnimation, useInView} from "framer-motion";
 
-
+export const ScrollFadeIn = () =>  {
+  return(
+    <motion.div
+      animate = {{x: 100}} //←コレ
+    >
+      右にスライドイン
+    </motion.div>
   );
 }
+
+
+
+
 
 
 

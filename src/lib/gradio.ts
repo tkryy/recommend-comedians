@@ -5,6 +5,42 @@ type ResultData = {
   data: Array<string>;
 };
 
+const parseComedian = (input: string): Comedian => {
+  const [id, name, kanaName, birthYear, company, homePageURL, sex, , imageSRC, , member, manzai, conte, pin, rhythm, gag, ogiri, mimic, talk, sns, appearance, popularity, info] = input.split(', ');
+
+  return {
+    id,
+    name,
+    birthYear,
+    company: parseInt(company),
+    sex: parseInt(sex),
+    member: parseInt(member),
+    imageSRC: imageSRC !== "''" ? imageSRC : undefined,
+    homePageURL: homePageURL !== "''" ? homePageURL : undefined,
+    manzai: manzai !== "''" ? parseInt(manzai) : undefined,
+    conte: conte !== "''" ? parseInt(conte) : undefined,
+    pin: pin !== "''" ? parseInt(pin) : undefined,
+    rhythm: rhythm !== "''" ? parseInt(rhythm) : undefined,
+    gag: gag !== "''" ? parseInt(gag) : undefined,
+    ogiri: ogiri !== "''" ? parseInt(ogiri) : undefined,
+    mimic: mimic !== "''" ? parseInt(mimic) : undefined,
+    talk: talk !== "''" ? parseInt(talk) : undefined,
+    sns: sns !== "''" ? parseInt(sns) : undefined,
+    appearance: parseInt(appearance),
+    popularity: parseInt(popularity),
+    info,
+  };
+}
+
+function convertToComedian(s: string): Comedian[] {
+  const s_: string = s.substr(2, s.length - 4);
+  const tupleArray: any[] = s_.split('), ('); //string[]
+  const comedianData: Comedian[] = tupleArray.map(parseComedian);
+  //console.log(comedianData);
+
+  return comedianData;
+}
+
 export const getComedianNamePredict = async (
   name: string
 ): Promise<string | null> => {
@@ -27,7 +63,7 @@ export const getComedianNamePredict = async (
 export const getComedianDataForSearch = async (
   name: string,
   comedy_type: string[]
-): Promise<string | null> => {
+): Promise<Comedian[] | null> => {
   const apiUrl = "https://yomo93-tendon-search.hf.space/";
   const app = await client(apiUrl, {});
   const result = await app.predict("/predict", [name, comedy_type]);
@@ -35,7 +71,7 @@ export const getComedianDataForSearch = async (
   if (result !== null && typeof result === "object" && "data" in result) {
     const data: ResultData = result as ResultData;
     if (data.data.length > 0) {
-      return data.data[0];
+      return convertToComedian(data.data[0]);
     }
   } else {
     console.error("Error: Invalid data format");

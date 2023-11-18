@@ -1,9 +1,31 @@
+"use client";
+
+import { motion, useScroll, useInView } from "framer-motion"
 import Image from "next/image";
 import Link from "next/link";
 
 export const RecommendFor = () => {
   return (
-    <div className="flex justify-center md:pt-24">
+    <motion.div
+      variants ={{
+        offscreen: {
+          opacity: 0,
+        },
+        onscreen: {
+          y:0,
+          opacity: 1,
+          transition: {
+            duration: 1.5,
+          },
+        },
+      }}
+      className=""
+      initial = "offscreen"
+      whileInView = "onscreen"
+      viewport = {{once: false, amount: 0}}
+      
+      >
+        <div className="flex justify-center md:pt-24">
       
       <div className="flex-wrap md:-ml-8 -ml-16">
       <h1 className="md:text-5xl text-3xl font-bold text-yellow-500 mt-4 md:ml-40 ml-32 md:w-full">こんな方におすすめ！</h1>
@@ -14,5 +36,8 @@ export const RecommendFor = () => {
       </p>
       </div>
     </div>
+
+      </motion.div>
+    
   );
 };

@@ -37,7 +37,7 @@ import { motion, useAnimation, useInView} from "framer-motion";
 export const ScrollFadeIn = () =>  {
   return(
     <motion.div
-      animate = {{x: 100}} //←コレ
+      animate = {{x: 500}} //←コレ
     >
       右にスライドイン
     </motion.div>

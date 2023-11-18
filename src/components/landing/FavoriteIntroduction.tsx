@@ -1,9 +1,31 @@
+"use client";
+
+import { motion, useScroll, useInView } from "framer-motion"
 import Image from "next/image";
 import Link from "next/link";
 
 export const FavoriteIntroduction = () => {
   return (
-    <div className="md:flex md:pt-24 md:pl-40 pl-8">
+    <motion.div
+      variants ={{
+        offscreen: {
+          opacity: 0,
+        },
+        onscreen: {
+          y:0,
+          opacity: 1,
+          transition: {
+            duration: 1.5,
+          },
+        },
+      }}
+      className=""
+      initial = "offscreen"
+      whileInView = "onscreen"
+      viewport = {{once: false, amount: 0}}
+      
+      >
+        <div className="md:flex md:pt-24 md:pl-40 pl-8">
       <Image
         src={"/images/favorite_exam01.png"}
         alt="お気に入りページの図"
@@ -25,5 +47,8 @@ export const FavoriteIntroduction = () => {
         className="p-4 -ml-2 mt-2 mockup-window border border-base-300 md:hidden block"
       ></Image>
     </div>
+
+      </motion.div>
+    
   );
 };

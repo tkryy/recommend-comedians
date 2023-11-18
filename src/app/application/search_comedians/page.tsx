@@ -57,7 +57,11 @@ export default function Search_comedians() {
     //console.log(genreStr);
     const result = await getComedianDataForSearch(searchText, genreStr);
     setIsLoading(false);
-    await setResultText(result || "結果");
+    if(result==null) await setResultText("エラー");
+    else{
+      console.log(result);
+      await setResultText(String(result[1].name) || "結果");
+    }
   };
 
   return (

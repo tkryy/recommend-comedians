@@ -37,7 +37,7 @@ function convertToComedian(s: string): Comedian[] {
   const s_: string = s.substr(2, s.length - 4);
   const tupleArray: any[] = s_.split('), ('); //string[]
   const comedianData: Comedian[] = tupleArray.map(parseComedian);
-  //console.log(comedianData);
+
 
   return comedianData;
 }
@@ -61,22 +61,44 @@ export const getComedianNamePredict = async (
   return null;
 };
 
+/**
+ * 与えられた検索クエリに対してコメディアンのデータを取得します。
+ * @param name - 検索するコメディアンの名前。
+ * @param comedyType - 検索結果をフィルタリングするためのコメディタイプの配列。
+ * @returns 成功した場合はComedianオブジェクトの配列を解決するPromise、それ以外の場合はnull。
+ */
 export const getComedianDataForSearch = async (
   name: string,
-  comedy_type: string[]
+  comedyType: string[]
 ): Promise<Comedian[] | null> => {
+  // APIのURLを定義します
   const apiUrl = "https://yomo93-tendon-search.hf.space/";
-  const app = await client(apiUrl, {});
-  const result = await app.predict("/predict", [name, comedy_type]);
 
-  if (result !== null && typeof result === "object" && "data" in result) {
-    const data: ResultData = result as ResultData;
-    if (data.data.length > 0) {
-      return convertToComedian(data.data[0]);
+  // アプリクライアントを初期化します
+  const app = await client(apiUrl, {});
+
+  try {
+    // アプリに予測リクエストを行います
+    const result = await app.predict("/predict", [name, comedyType]);
+
+    // 結果が有効かどうかを確認します
+    if (result !== null && typeof result === "object" && "data" in result) {
+      const data: ResultData = result as ResultData;
+
+      // 少なくとも1つのデータ項目があるかどうかを確認します
+      if (data.data.length > 0) {
+        // 最初のデータ項目をComedianオブジェクトに変換します
+        return convertToComedian(data.data[0]);
+      }
     }
-  } else {
+
+    // データ形式が無効な場合はエラーをログに記録します
     console.error("Error: Invalid data format");
+  } catch (error) {
+    // 発生した他のエラーをログに記録します
+    console.error("Error:", error);
   }
-  console.error("Error: Invalid data format");
+
+  // エラーが発生したか、データが見つからなかった場合はnullを返します
   return null;
 };

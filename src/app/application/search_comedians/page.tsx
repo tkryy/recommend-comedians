@@ -7,24 +7,29 @@ import ComedianCard from "@/components/shared/ComedianCard";
 import Image from "next/image";
 
 export default function Search_comedians() {
-  const [resultText, setResultText] = useState("？？？");
   const [params, setParams] = useState<string[]>([]);
   const [comedians, setComedians] = useState<Comedian[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [searchText, setSearchText] = useState("");
 
-  const handleButtonClick = async (event: any) => {
-    event.preventDefault();
-    setIsLoading(true);
-    //console.log(genreStr);
+  /**
+   * ボタンクリックイベントを処理します。
+   *
+   * @param {React.FormEvent} event - フォームイベント。
+   */
+  const handleButtonClick = async (event: React.FormEvent) => {
+    event.preventDefault(); // デフォルトのフォーム送信動作を防ぎます
+    setIsLoading(true); // ローディング状態を true に設定します
 
-    console.log(params);
+    // getComedianDataForSearch 関数を呼び出してコメディアンのデータを取得します
     const result = await getComedianDataForSearch(searchText, params);
-    setIsLoading(false);
-    if (result == null) await setResultText("エラー");
-    else {
-      console.log(result);
-      await setComedians(result);
+
+    setIsLoading(false); // ローディング状態を false に設定します
+
+    if (result == null) {
+      await setComedians([]); // 結果が null の場合、コメディアンの状態を空の配列に設定します
+    } else {
+      await setComedians(result); // コメディアンの状態を取得した結果に設定します
     }
   };
 

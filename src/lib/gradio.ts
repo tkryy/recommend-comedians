@@ -6,17 +6,18 @@ type ResultData = {
 };
 
 const parseComedian = (input: string): Comedian => {
+
   const [id, name, kanaName, birthYear, company, homePageURL, sex, , imageSRC, , member, manzai, conte, pin, rhythm, gag, ogiri, mimic, talk, sns, appearance, popularity, info] = input.split(', ');
 
   return {
-    id,
-    name,
-    birthYear,
+    id: String(id).replace(/'/g, ""),
+    name: String(name).replace(/'/g, ""),
+    birthYear: String(birthYear).replace(/'/g, ""),
     company: parseInt(company),
     sex: parseInt(sex),
     member: parseInt(member),
-    imageSRC: imageSRC !== "''" ? imageSRC : undefined,
-    homePageURL: homePageURL !== "''" ? homePageURL : undefined,
+    imageSRC: imageSRC !== "''" ? String(imageSRC).replace(/'/g, "") : "", //imageSRC : undefined,
+    homePageURL: homePageURL !== "''" ? String(homePageURL).replace(/'/g, "") : "", //homePageURL : undefined,
     manzai: manzai !== "''" ? parseInt(manzai) : undefined,
     conte: conte !== "''" ? parseInt(conte) : undefined,
     pin: pin !== "''" ? parseInt(pin) : undefined,
@@ -28,7 +29,7 @@ const parseComedian = (input: string): Comedian => {
     sns: sns !== "''" ? parseInt(sns) : undefined,
     appearance: parseInt(appearance),
     popularity: parseInt(popularity),
-    info,
+    info: String(info).replace(/'/g, ""),
   };
 }
 

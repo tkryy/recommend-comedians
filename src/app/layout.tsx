@@ -5,8 +5,8 @@ import { Inter } from "next/font/google";
 
 import Header3 from "../components/shared/Header3";
 /*
-import Sidebar from "../components/shared/Sidebar";
-import Fotter from "../components/shared/Fotter"; */
+import Sidebar from "../components/shared/Sidebar";*/
+import Fotter_landing from "../components/shared/Fotter_landing"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -35,7 +35,7 @@ export default function RootLayout({
               {children}
             </div>
           </div>
-          {/* <Fotter /> */}
+          <Fotter_landing />
         </div>
       </body>
     </html>

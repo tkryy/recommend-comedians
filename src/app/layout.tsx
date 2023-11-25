@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 import Header3 from "../components/shared/Header3";
 /*
 import Sidebar from "../components/shared/Sidebar";*/
-import Fotter_landing from "../components/shared/Fotter_landing"; 
+import Fotter_landing from "../components/shared/Fotter_landing";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header3 />
-        <div className="lg:flex block">
+        <div className="lg:flex block mb-9">
           {/* <Sidebar /> */}
           <div className="bg-white mt-16">
             {" "}
@@ -35,8 +35,8 @@ export default function RootLayout({
               {children}
             </div>
           </div>
-          <Fotter_landing />
         </div>
+        <Fotter_landing />
       </body>
     </html>
   );

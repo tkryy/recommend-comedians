@@ -5,6 +5,7 @@ import PageTitle from "@/components/shared/PageTitle";
 import { Comedian, dummyData } from "@/models/Comedian";
 import ComedianCard from "@/components/shared/ComedianCard";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Search_comedians() {
   const [params, setParams] = useState<string[]>([]);
@@ -140,7 +141,9 @@ export default function Search_comedians() {
             {!isLoading && (
               <div className="grid md:grid-cols-4 grid-cols-1 md:gap-5 gap-5 md:px-0 px-12">
                 {comedians.map((comedian: Comedian) => (
+                  <Link href={`/application/search_comedians/detail?id=${comedian.id}`}>
                   <ComedianCard comedian={comedian} />
+                  </Link>
                 ))}
                 {comedians.length == 1 && comedians[0].name == "undefined" && (
                   <p>検索結果はありません</p>

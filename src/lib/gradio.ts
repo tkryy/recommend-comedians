@@ -6,8 +6,31 @@ type ResultData = {
 };
 
 const parseComedian = (input: string): Comedian => {
-
-  const [id, name, kanaName, birthYear, company, homePageURL, sex, , imageSRC, , member, manzai, conte, pin, rhythm, gag, ogiri, mimic, talk, sns, appearance, popularity, info] = input.split(', ');
+  const [
+    id,
+    name,
+    kanaName,
+    birthYear,
+    company,
+    homePageURL,
+    sex,
+    ,
+    imageSRC,
+    ,
+    member,
+    manzai,
+    conte,
+    pin,
+    rhythm,
+    gag,
+    ogiri,
+    mimic,
+    talk,
+    sns,
+    appearance,
+    popularity,
+    info,
+  ] = input.split(", ");
 
   return {
     id: String(id).replace(/'/g, ""),
@@ -17,7 +40,8 @@ const parseComedian = (input: string): Comedian => {
     sex: parseInt(sex),
     member: parseInt(member),
     imageSRC: imageSRC !== "''" ? String(imageSRC).replace(/'/g, "") : "", //imageSRC : undefined,
-    homePageURL: homePageURL !== "''" ? String(homePageURL).replace(/'/g, "") : "", //homePageURL : undefined,
+    homePageURL:
+      homePageURL !== "''" ? String(homePageURL).replace(/'/g, "") : "", //homePageURL : undefined,
     manzai: manzai !== "''" ? parseInt(manzai) : undefined,
     conte: conte !== "''" ? parseInt(conte) : undefined,
     pin: pin !== "''" ? parseInt(pin) : undefined,
@@ -31,13 +55,12 @@ const parseComedian = (input: string): Comedian => {
     popularity: parseInt(popularity),
     info: String(info).replace(/'/g, ""),
   };
-}
+};
 
 function convertToComedian(s: string): Comedian[] {
   const s_: string = s.substr(2, s.length - 4);
-  const tupleArray: any[] = s_.split('), ('); //string[]
+  const tupleArray: any[] = s_.split("), ("); //string[]
   const comedianData: Comedian[] = tupleArray.map(parseComedian);
-
 
   return comedianData;
 }
@@ -110,7 +133,7 @@ export const getComedianDataForSearch = async (
  * @returns 成功した場合はComedianオブジェクトの配列を解決するPromise、それ以外の場合はnull。
  */
 export const getComedianDataFromID = async (
- id: string,
+  id: string,
   comedyType: string[]
 ): Promise<Comedian[] | null> => {
   // APIのURLを定義します

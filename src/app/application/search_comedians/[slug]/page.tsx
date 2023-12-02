@@ -1,8 +1,7 @@
 "use client";
 import { getComedianDataFromID } from "@/lib/gradio";
 import { Comedian } from "@/models/Comedian";
-import { useEffect } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 // pages/comedian/[id].js
 type Props = {
@@ -10,27 +9,31 @@ type Props = {
 };
 
 export default async function ComedianPage() {
+  // 検索パラメータからIDパラメータを取得
+  const id = useSearchParams().get("id");
 
-    const pathname = useSearchParams().get("id");
-    console.log(pathname)
-
-  if (!pathname) {
-    return <div>No ID provided</div>;
+  // IDが提供されていない場合、エラーメッセージを表示
+  if (!id) {
+    return <div>IDが指定されていません</div>;
   }
 
-  const result = await getComedianDataFromID(pathname, []);
+  // IDに基づいてコメディアンのデータを取得
+  const comedians = await getComedianDataFromID(id, []);
 
-  if (result == null) {
-    return <div>No data found</div>;
+  // データが見つからない場合、エラーメッセージを表示
+  if (!comedians || comedians.length === 0) {
+    return <div>データが見つかりません</div>;
   }
 
-  const comedian: Comedian = result[0];
+  // リストから最初のコメディアンを取得
+  const comedian: Comedian = comedians[0];
 
+  // ページ上にコメディアンの詳細を表示
   return (
     <div>
-      <h2>Comedian: {comedian.name}</h2>
+      <h2>コメディアン: {comedian.name}</h2>
       <h3>結成年: {comedian.birthYear}</h3>
-      {/* ここにコメディアンの詳細情報を表示 */}
+      {/* ここに追加のコメディアンの詳細を表示 */}
     </div>
   );
 }

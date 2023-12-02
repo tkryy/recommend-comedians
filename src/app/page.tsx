@@ -23,6 +23,10 @@ import {
   RecommendFor,
 } from "@/components/landing/RecommendFor";
 
+import {
+  ContactForm,
+} from "@/components/landing/ContactForm";
+
 /*export const Page = () => {
   useEffect(() => {
     ScrollFadeIn();
@@ -52,6 +56,8 @@ export default function Home() {
       <FavoriteIntroduction></FavoriteIntroduction>
 
       <RecommendFor></RecommendFor>
+
+      <ContactForm></ContactForm>
 
       {/* <h1>ランディングページ</h1>
         <h2>まだ知らない芸人との出会いが！？</h2>

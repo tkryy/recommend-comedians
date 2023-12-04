@@ -65,20 +65,34 @@ function convertToComedian(s: string): Comedian[] {
   return comedianData;
 }
 
+
 export const getComedianNamePredict = async (
   name: string
-): Promise<string | null> => {
-  const apiUrl = "https://yomo93-tendon-recommend-698e5c7.hf.space/";
+):Promise<Comedian[] | null> => {
+  const apiUrl = "https://yomo93-tendonrecommend-pub.hf.space/--replicas/47z5n/";
   const app = await client(apiUrl, {});
   const result = await app.predict("/predict", [name]);
 
-  if (result !== null && typeof result === "object" && "data" in result) {
-    const data: ResultData = result as ResultData;
-    if (data.data.length > 0) {
-      return data.data[0];
+  try {
+    // アプリに予測リクエストを行います
+    const result = await app.predict("/predict", [name]);
+
+    // 結果が有効かどうかを確認します
+    if (result !== null && typeof result === "object" && "data" in result) {
+      const data: ResultData = result as ResultData;
+
+      // 少なくとも1つのデータ項目があるかどうかを確認します
+      if (data.data.length > 0) {
+        // 最初のデータ項目をComedianオブジェクトに変換します
+        return convertToComedian(data.data[0]);
+      }
     }
-  } else {
+
+    // データ形式が無効な場合はエラーをログに記録します
     console.error("Error: Invalid data format");
+  } catch (error) {
+    // 発生した他のエラーをログに記録します
+    console.error("Error:", error);
   }
   console.error("Error: Invalid data format");
   return null;

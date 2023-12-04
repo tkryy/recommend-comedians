@@ -1,5 +1,4 @@
 "use client";
-
 import { getComedianNamePredict } from "@/lib/gradio";
 import { useState } from "react";
 import Link from "next/link";
@@ -36,8 +35,16 @@ export default function Recommend_comedians() {
     //ローディング状態を設定
     setIsLoading(false);
 
+    if (result == null) {
+      console.log("error")
+      await setResultText("結果");
+    } else {
+      console.log(result)
+      await setResultText(result[0].name || "結果");
+   
+    }
     //結果を表示
-    await setResultText(result || "結果");
+    
 
     //全てのアニメをリセット
     await setTimeout(() => setIsTypingFirst(false), 500);

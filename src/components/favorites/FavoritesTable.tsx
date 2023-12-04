@@ -9,29 +9,35 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useComediansStore, useUserDataStore } from "@/lib/zustand/Stores";
+import { StateManager, ViewState } from "@/models/StateManager";
 
 export default function FavoritesTable() {
   const { user } = useAuth();
   const [comedians, setComedians] = useState<Comedian[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [manager, setManager] = useState<StateManager>(new StateManager());
 
   useEffect(() => {
-    setIsLoading(true);
+    manager.setState(ViewState.Loading);
 
     if (!user?.uid) return;
 
     (async () => {
-      const data = await fetch(`/api/favorite?userid=${user?.uid}` );
+      const data = await fetch(`/api/favorite?userid=${user?.uid}`);
       const favorites: Comedian[] = await data.json();
       useComediansStore.setState({
         comedians: favorites,
       });
       console.log(favorites);
       setComedians(favorites);
-      setIsLoading(false);
+      const newManager = new StateManager();
+      newManager.setState(ViewState.Success);
+      setManager(newManager);
+      if (favorites.length === 0) {
+        newManager.setState(ViewState.Success);
+        setManager(newManager);
+      }
     })();
-    setIsLoading(false);
-   
   }, [user?.uid]);
 
   const renderFavoriteRow = (comedian: Comedian) => {
@@ -150,11 +156,11 @@ export default function FavoritesTable() {
     );
   };
 
-  if (isLoading) {
+  if (manager.state == ViewState.Loading) {
     return <p>読み込み中</p>;
   }
 
-  if (comedians.length === 0) {
+  if (manager.state == ViewState.NoData) {
     return (
       <div className="text-center justify-center space-y-4">
         <Image

@@ -1,12 +1,9 @@
 "use client";
 import { getComedianDataFromID } from "@/lib/gradio";
-import {
-  Comedian,
-  convertComedianCompanyToString,
-  convertComedianCompanyToColor,
-} from "@/models/Comedian";
+import { Comedian, convertComedianCompanyToString } from "@/models/Comedian";
 import RatingDataView from "@/components/shared/RatingDataView";
 import TypeBadges from "@/components/shared/TypeBadges";
+import SkillBadges from "@/components/shared/ComedianSkillBadge";
 import FavoriteAddButton from "@/components/auth/FavoriteAddButton";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
@@ -66,7 +63,7 @@ export default async function ComedianPage() {
           <h2 className="md:text-6xl text-lg font-bold mb-3">
             {comedian.name}
           </h2>
-          <TypeBadges comedian={comedian} />
+          <SkillBadges comedian={comedian} />
           <FavoriteAddButton comedian={comedian} />
           <div className="bg-[#D9D9D9] rounded-lg text-center mt-[100px]">
             <p className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">

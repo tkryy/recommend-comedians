@@ -33,33 +33,33 @@ const parseComedian = (input: string): Comedian => {
   ] = input.split(", ");
 
   return {
-    id: String(id).replace(/'/g, ""),
-    name: String(name).replace(/'/g, ""),
-    birthYear: String(birthYear).replace(/'/g, ""),
-    company: parseInt(company),
-    sex: parseInt(sex),
-    member: parseInt(member),
+    id: String(id).replace(/'/g, "").replace(/"/g,''),
+    name: String(name).replace(/'/g, "").replace(/\s/g,"").replace(/"/g,''),
+    birthYear: String(birthYear).replace(/'/g, "").replace(/\s/g,""),
+    company: parseInt(company.replace(/'/g,"")),
+    sex: parseInt(sex.replace(/'/g,"")),
+    member: parseInt(member.replace(/'/g,"")),
     imageSRC: imageSRC !== "''" ? String(imageSRC).replace(/'/g, "") : "", //imageSRC : undefined,
     homePageURL:
       homePageURL !== "''" ? String(homePageURL).replace(/'/g, "") : "", //homePageURL : undefined,
-    manzai: manzai !== "''" ? parseInt(manzai) : undefined,
-    conte: conte !== "''" ? parseInt(conte) : undefined,
-    pin: pin !== "''" ? parseInt(pin) : undefined,
-    rhythm: rhythm !== "''" ? parseInt(rhythm) : undefined,
-    gag: gag !== "''" ? parseInt(gag) : undefined,
-    ogiri: ogiri !== "''" ? parseInt(ogiri) : undefined,
-    mimic: mimic !== "''" ? parseInt(mimic) : undefined,
-    talk: talk !== "''" ? parseInt(talk) : undefined,
-    sns: sns !== "''" ? parseInt(sns) : undefined,
-    appearance: parseInt(appearance),
-    popularity: parseInt(popularity),
+    manzai: manzai !== "''" ? parseInt(manzai.replace(/'/g,"")) : undefined,
+    conte: conte !== "''" ? parseInt(conte.replace(/'/g,"")) : undefined,
+    pin: pin !== "''" ? parseInt(pin.replace(/'/g,"")) : undefined,
+    rhythm: rhythm !== "''" ? parseInt(rhythm.replace(/'/g,"")) : undefined,
+    gag: gag !== "''" ? parseInt(gag.replace(/'/g,"")) : undefined,
+    ogiri: ogiri !== "''" ? parseInt(ogiri.replace(/'/g,"")) : undefined,
+    mimic: mimic !== "''" ? parseInt(mimic.replace(/'/g,"")) : undefined,
+    talk: talk !== "''" ? parseInt(talk.replace(/'/g,"")) : undefined,
+    sns: sns !== "''" ? parseInt(sns.replace(/'/g,"")) : undefined,
+    appearance: parseInt(appearance.replace(/'/g,"")),
+    popularity: parseInt(popularity.replace(/'/g,"")),
     info: String(info).replace(/'/g, ""),
   };
 };
 
 function convertToComedian(s: string): Comedian[] {
   const s_: string = s.substr(2, s.length - 4);
-  const tupleArray: any[] = s_.split("), ("); //string[]
+  const tupleArray: any[] = s_.split("], ["); //string[]
   const comedianData: Comedian[] = tupleArray.map(parseComedian);
 
   return comedianData;
@@ -69,10 +69,11 @@ function convertToComedian(s: string): Comedian[] {
 export const getComedianNamePredict = async (
   name: string
 ):Promise<Comedian[] | null> => {
-  const apiUrl = "https://yomo93-tendonrecommend-pub.hf.space/--replicas/47z5n/";
+  //const apiUrl = "https://yomo93-tendon-recommend-698e5c7.hf.space/";
+  const apiUrl = "https://yomo93-tendonrecommend-pub.hf.space/";
   const app = await client(apiUrl, {});
   const result = await app.predict("/predict", [name]);
-
+  console.log(result)
   try {
     // アプリに予測リクエストを行います
     const result = await app.predict("/predict", [name]);
@@ -80,9 +81,10 @@ export const getComedianNamePredict = async (
     // 結果が有効かどうかを確認します
     if (result !== null && typeof result === "object" && "data" in result) {
       const data: ResultData = result as ResultData;
-
+      console.log(data.data[0])
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
+        
         // 最初のデータ項目をComedianオブジェクトに変換します
         return convertToComedian(data.data[0]);
       }
@@ -109,7 +111,7 @@ export const getComedianDataForSearch = async (
   comedyType: string[]
 ): Promise<Comedian[] | null> => {
   // APIのURLを定義します
-  const apiUrl = "https://yomo93-tendon-search.hf.space/";
+  const apiUrl = "https://yomo93-tendonsearch-pub.hf.space/";
 
   // アプリクライアントを初期化します
   const app = await client(apiUrl, {});
@@ -121,7 +123,8 @@ export const getComedianDataForSearch = async (
     // 結果が有効かどうかを確認します
     if (result !== null && typeof result === "object" && "data" in result) {
       const data: ResultData = result as ResultData;
-
+      console.log( data.data[0].replace(/"/g, '').replace(/' /g, "'"))
+      console.log(convertToComedian(data.data[0].replace(/"/g, '')))
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
         // 最初のデータ項目をComedianオブジェクトに変換します

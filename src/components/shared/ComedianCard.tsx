@@ -3,8 +3,7 @@ import {
   convertComedianCompanyToString,
   convertComedianCompanyToColor,
 } from "@/models/Comedian";
-
-import Image from "next/image";
+import SkillBadges from "./ComedianSkillBadge";
 
 // ダミー画像のURL
 const dummyImageSRC = "https://via.placeholder.com/200x200";
@@ -14,52 +13,18 @@ interface ComedianCardProps {
 }
 
 function ComedianCard({ comedian }: ComedianCardProps) {
-  const size = 400;
-  const badgeClass =
-    "text-xs font-medium mr-2 text-center px-2.5 py-0.5 rounded text-white bg-transparent";
-
   const companyColor = convertComedianCompanyToColor(comedian);
 
   if (comedian.name == "undefined") {
     return null;
   }
 
-
-
-  const badge = (input: number | undefined, text: String) => {
-    if (input !== undefined && input > 0) {
-      return (
-        <div className="w-[80px]">
-          <div
-            id="BADGE"
-            className={badgeClass}
-            style={{ backgroundColor: companyColor }}
-          >
-            {text}
-          </div>
-        </div>
-      );
-    } else {
-      return null;
-    }
-  };
-
   return (
     <div className="bg-[#F2F2F7] rounded-md card w-[250px] border bottom-1">
       {/* テキスト */}
       <div className="card-body max-h-[250px]">
         <h3 className="text-xl font-bold">{comedian.name}</h3>
-        <div className="grid grid-cols-2  mt-2 gap-2">
-          {badge(comedian.manzai, "漫才")}
-          {badge(comedian.conte, "コント")}
-          {badge(comedian.pin, "ピン")}
-          {badge(comedian.ogiri, "大喜利")}
-          {badge(comedian.rhythm, "リズム")}
-          {badge(comedian.talk, "トーク")}
-          {badge(comedian.sns, "SNS")}
-          {badge(comedian.mimic, "ものまね")}
-          {badge(comedian.gag, "ギャグ")}
-        </div>
+        <SkillBadges comedian={comedian} />
       </div>
       {/* 画像 */}
 

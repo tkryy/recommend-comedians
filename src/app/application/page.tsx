@@ -44,7 +44,9 @@ export default function Home() {
               subTitle="Data"
               title="お笑いデータベース"
               content="ネタの形式はもちろん、芸風やテンポまで独自に分析！詳細なデータから自分好みの笑いを見つけ出すお手伝いをします。"
+
               href="/application/search_comedians"
+
             />
             <FeatureCard
               icon={
@@ -67,7 +69,9 @@ export default function Home() {
               subTitle="Customize"
               title="あなたのデータを追加"
               content="「好きな芸人さんが登録されてない・・」そんな時は力を貸してください！あなたのデータでアプリが改善されます！"
+
               href="/application/add_data"
+
             />
           </div>
         </div>

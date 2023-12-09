@@ -9,29 +9,36 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useComediansStore, useUserDataStore } from "@/lib/zustand/Stores";
+import { StateManager, ViewState } from "@/models/StateManager";
+import SkillBadges from "../shared/ComedianSkillBadge";
 
 export default function FavoritesTable() {
   const { user } = useAuth();
   const [comedians, setComedians] = useState<Comedian[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [manager, setManager] = useState<StateManager>(new StateManager());
 
   useEffect(() => {
-    setIsLoading(true);
+    manager.setState(ViewState.Loading);
 
     if (!user?.uid) return;
 
     (async () => {
-      const data = await fetch(`/api/favorite?userid=${user?.uid}` );
+      const data = await fetch(`/api/favorite?userid=${user?.uid}`);
       const favorites: Comedian[] = await data.json();
       useComediansStore.setState({
         comedians: favorites,
       });
       console.log(favorites);
       setComedians(favorites);
-      setIsLoading(false);
+      const newManager = new StateManager();
+      newManager.setState(ViewState.Success);
+      setManager(newManager);
+      if (favorites.length === 0) {
+        newManager.setState(ViewState.Success);
+        setManager(newManager);
+      }
     })();
-    setIsLoading(false);
-   
   }, [user?.uid]);
 
   const renderFavoriteRow = (comedian: Comedian) => {
@@ -89,72 +96,17 @@ export default function FavoritesTable() {
         </td>
         <th className={tdClassName}>
           {/* ジャンル */}
-          <div className="grid md:grid-cols-2 md:gap-2 gap-1">
-            {comedian.manzai && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                漫才
-              </div>
-            )}
-            {comedian.conte && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                コント
-              </div>
-            )}
-            {comedian.mimic && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                ものまね
-              </div>
-            )}
-            {comedian.pin && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                ピン
-              </div>
-            )}
-            {comedian.rhythm && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                歌ネタ
-              </div>
-            )}
-            {comedian.ogiri && (
-              <div
-                id="BADGE"
-                className={badgeClass}
-                style={{ backgroundColor: companyColor }}
-              >
-                大喜利
-              </div>
-            )}
-          </div>
+          <SkillBadges comedian={comedian} />
         </th>
       </tr>
     );
   };
 
-  if (isLoading) {
+  if (manager.state == ViewState.Loading) {
     return <p>読み込み中</p>;
   }
 
-  if (comedians.length === 0) {
+  if (manager.state == ViewState.NoData) {
     return (
       <div className="text-center justify-center space-y-4">
         <Image

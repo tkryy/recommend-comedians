@@ -47,21 +47,40 @@ export const ContactForm = () => {
     <div className="md:ml-64 mt-24">
       <h1 className="text-3xl ">お問い合わせフォーム</h1>
       <form>
+        {/* 名前 */}
         <div>
-          <div>
-            <div className="flex mt-8">
-              <FormItem title="メールアドレス" required={true}></FormItem>
-            </div>
-            <div className="mt-2">
-              <p ><input className="bg-gray-100 rounded  outline w-96" type="text" /></p>
+          <div className="mt-8">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">お名前</label>
+          </div>
+          <div className="flex space-x-8 mt-2">
+            <div className="flex space-x-2">
+              <input type="text" id="last_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="姓" required></input>
+
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"></label>
+              <input type="text" id="first_name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="名" required></input>
             </div>
           </div>
         </div>
         <hr></hr>
 
+        {/* メールアドレス */}
         <div>
-          <div className="flex mt-2">
-            <FormItem title="お問合せ項目" required={true}></FormItem>
+          <div className="mt-4">
+            <div className="flex">
+              <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">メールアドレス</label>
+              <p className="text-white bg-red-600 rounded ml-12">必須</p>
+            </div>
+            <input type="text" id="mail_address" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="example@smarthr.co.jp" required></input>
+          </div>
+        </div>
+        <hr></hr>
+
+        {/* お問合せ項目 */}
+        <div>
+          <div className="flex mt-4">
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">お問い合わせ項目</label>
           </div>
           <div>
             <CheckboxContainer name="about" value={checkList} />
@@ -69,38 +88,25 @@ export const ContactForm = () => {
         </div>
         <hr></hr>
 
+        {/* お問合せ内容 */}
         <div>
-          <div className="flex mt-2">
-            <FormItem title="お問合せ内容" required={true}></FormItem>
-          </div>
-          <div className="mt-2">
-            <p ><TextareaComp name="お問い合わせ内容" value={"お問合せ内容を記入してください。"} /></p>
+          <div className="mt-4">
+            <p className=""><TextareaComp name="お問い合わせ内容" value={"お問合せ内容を記入してください。"} /></p>
           </div>
         </div>
         <hr></hr>
 
-        <div>
-          <div className="flex space-x-8 mt-2">
-            <FormItem title="お名前" required={true}></FormItem>
-          </div>
-          <div className="mt-2">
-            <p className="mt-2">姓<input className="bg-gray-100 rounded outline w-36" type="text" /></p><p className="mt-2">名<input className="bg-gray-100 rounded outline w-36" type="text" /></p>
-          </div>
-        </div>
-        <hr></hr>
-
+        {/* 返信不要欄 */}
         <div>
           <div className="flex space-x-2 mt-2">
-            <p>返信不要欄</p>
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">返信不要欄</label>
             <input type="checkbox" />
             <p>※返信が不要な場合はチェックしてください</p>
           </div>
-
         </div>
 
       </form>
     </div>
-
   );
 };
 

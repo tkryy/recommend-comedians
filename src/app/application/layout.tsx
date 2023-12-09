@@ -21,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <div>
+      <Header3 />
       <div className="lg:flex block content-start">
         <Sidebar />
         <div className="lg:pl-56 pl-0 min-h-screen  flex  justify-top flex-col  ">
@@ -28,7 +29,7 @@ export default function RootLayout({
             {children}
           </div>
         </div>
-        <Fotter />
+        {/* <Fotter /> */}
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ import { Inter } from "next/font/google";
 import Header_landing from "../components/shared/Header_landing";
 /*
 import Sidebar from "../components/shared/Sidebar";*/
-import Fotter_landing from "../components/shared/Fotter_landing";
+import Footer_landing from "../components/shared/Footer_landing";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,7 +36,7 @@ export default function RootLayout({
             </div>
           </div>
         </div>
-        <Fotter_landing />
+        <Footer_landing />
       </body>
     </html>
   );

@@ -4,17 +4,16 @@ interface FormListProps {
   title: string;
   required: boolean;
 }
-
 export const FormItem = ({
   title,
   required,
 }: FormListProps) => {
 
   return (
-    <div>
-      <p>{ title }</p>
+    <div className="flex space-x-4 ">
+      <p >{ title }</p>
       {
-        required && <p>必須</p>
+        required && <p className="text-white bg-red-600 rounded">必須</p>
       }
     </div>
   );

@@ -3,7 +3,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import Header3 from "../components/shared/Header3";
+import Header_landing from "../components/shared/Header_landing";
 /*
 import Sidebar from "../components/shared/Sidebar";*/
 import Fotter_landing from "../components/shared/Fotter_landing";
@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header3 />
+        <Header_landing />
         <div className="lg:flex block mb-9">
           {/* <Sidebar /> */}
           <div className="bg-white mt-16">

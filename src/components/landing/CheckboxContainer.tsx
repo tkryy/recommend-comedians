@@ -10,7 +10,7 @@ export const CheckboxContainer = ({
 }: Props) => {
 
   return (
-    <div>
+    <div className="space-x-3">
       {value.map((item, index) =>
         <label key={index}>
           <input type="radio" name={name} />{item}

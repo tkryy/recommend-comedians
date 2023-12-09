@@ -11,8 +11,8 @@ export const TextareaComp = ({
 }: Props) => {
 
   return (
-    <div>
-      <textarea value={value} ></textarea>
+    <div className="outline rounded">
+      <textarea className="text-gray-400 " value={value} ></textarea>
     </div>
   );
 };

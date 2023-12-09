@@ -40,64 +40,62 @@ import {
 //   });
 // }
 
-const checkList = ["芸人について","不具合について","その他"];
+const checkList = ["芸人について", "不具合について", "その他"];
 
 export const ContactForm = () => {
   return (
-    <div>
-      <h1 className="">お問い合わせフォーム</h1>
+    <div className="md:ml-64 mt-24">
+      <h1 className="text-3xl ">お問い合わせフォーム</h1>
       <form>
         <div>
           <div>
-            <FormItem title="お問合せ項目" required={true}></FormItem>
-          </div>
-          {/* <div>
-            <input type="radio" name="aradio" value="A" />
-            <label>芸人について</label>
-            <input type="radio" name="aradio" value="B" />
-            <label>不具合について</label>
-            <input type="radio" name="cradio" value="C" />
-            <label>その他</label>
-          </div> */}
-          
-          <CheckboxContainer name="about" value={checkList}/>
-        </div>
-        <hr></hr>
-
-        <div>
-          <div>
-          <FormItem title="お問合せ内容" required={true}></FormItem>
-          </div>
-          <p className="text-gray-400"><TextareaComp name="お問い合わせ内容" value={"お問合せ内容を記入してください。"} /></p>
-        </div>
-        <hr></hr>
-
-        <div>
-          <div>
-            <FormItem title="お名前" required={true}></FormItem>
-          </div>
-          <div>
-            <p>姓<input type="text" /></p><p>名<input type="text" /></p>
-          </div>
-        </div>
-        <hr></hr>
-        <div>
-          <div>
-            <div>
+            <div className="flex mt-8">
               <FormItem title="メールアドレス" required={true}></FormItem>
             </div>
+            <div className="mt-2">
+              <p ><input className="bg-gray-100 rounded  outline w-96" type="text" /></p>
+            </div>
           </div>
-          <p><input type="text" /></p>
         </div>
         <hr></hr>
 
         <div>
+          <div className="flex mt-2">
+            <FormItem title="お問合せ項目" required={true}></FormItem>
+          </div>
           <div>
+            <CheckboxContainer name="about" value={checkList} />
+          </div>
+        </div>
+        <hr></hr>
+
+        <div>
+          <div className="flex mt-2">
+            <FormItem title="お問合せ内容" required={true}></FormItem>
+          </div>
+          <div className="mt-2">
+            <p ><TextareaComp name="お問い合わせ内容" value={"お問合せ内容を記入してください。"} /></p>
+          </div>
+        </div>
+        <hr></hr>
+
+        <div>
+          <div className="flex space-x-8 mt-2">
+            <FormItem title="お名前" required={true}></FormItem>
+          </div>
+          <div className="mt-2">
+            <p className="mt-2">姓<input className="bg-gray-100 rounded outline w-36" type="text" /></p><p className="mt-2">名<input className="bg-gray-100 rounded outline w-36" type="text" /></p>
+          </div>
+        </div>
+        <hr></hr>
+
+        <div>
+          <div className="flex space-x-2 mt-2">
             <p>返信不要欄</p>
+            <input type="checkbox" />
+            <p>※返信が不要な場合はチェックしてください</p>
           </div>
-          <div>
-            <input type="checkbox" /><p>返信不要 <span>※返信が不要な場合はチェックしてください</span></p>
-          </div>
+
         </div>
 
       </form>

@@ -81,7 +81,7 @@ export const getComedianNamePredict = async (
     // 結果が有効かどうかを確認します
     if (result !== null && typeof result === "object" && "data" in result) {
       const data: ResultData = result as ResultData;
-      console.log(data.data[0])
+      //console.log(data.data[0])
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
         
@@ -123,8 +123,8 @@ export const getComedianDataForSearch = async (
     // 結果が有効かどうかを確認します
     if (result !== null && typeof result === "object" && "data" in result) {
       const data: ResultData = result as ResultData;
-      console.log( data.data[0].replace(/"/g, '').replace(/' /g, "'"))
-      console.log(convertToComedian(data.data[0].replace(/"/g, '')))
+      //console.log( data.data[0].replace(/"/g, '').replace(/' /g, "'"))
+      //console.log(convertToComedian(data.data[0].replace(/"/g, '')))
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
         // 最初のデータ項目をComedianオブジェクトに変換します
@@ -155,20 +155,22 @@ export const getComedianDataFromID = async (
 ): Promise<Comedian[] | null> => {
   // APIのURLを定義します
   const apiUrl = "https://yomo93-getcomediansdata-pub.hf.space/";
+  //const apiUrl = "https://yomo93-tendon-searchid-pub.hf.space/";
 
   // アプリクライアントを初期化します
   const app = await client(apiUrl, {});
 
   try {
     // アプリに予測リクエストを行います
-    const result = await app.predict("/predict", [id, comedyType]);
+    const result = await app.predict("/predict", [id]);//, comedyType]);
 
     // 結果が有効かどうかを確認します
     if (result !== null && typeof result === "object" && "data" in result) {
       const data: ResultData = result as ResultData;
-
+      //console.log(data.data[0])
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
+        //console.log(convertToComedian(data.data[0]))
         // 最初のデータ項目をComedianオブジェクトに変換します
         return convertToComedian(data.data[0]);
       }
@@ -182,5 +184,38 @@ export const getComedianDataFromID = async (
   }
 
   // エラーが発生したか、データが見つからなかった場合はnullを返します
+  return null;
+};
+
+export const URLtoImage = async (
+  cURL: string
+):Promise<string | null> => {
+  const apiUrl = "https://yomo93-url2image-pub.hf.space/";
+  const app = await client(apiUrl, {});
+  
+  try {
+    // アプリに予測リクエストを行います
+    const result = await app.predict("/predict", [cURL]);
+
+    // 結果が有効かどうかを確認します
+    if (result !== null && typeof result === "object" && "data" in result) {
+      const data: ResultData = result as ResultData;
+      //console.log(data.data[0])
+      // 少なくとも1つのデータ項目があるかどうかを確認します
+      if (data.data.length > 0) {
+        
+        console.log(data.data[0])
+        // 最初のデータ項目をComedianオブジェクトに変換します
+        return data.data[0];
+      }
+    }
+
+    // データ形式が無効な場合はエラーをログに記録します
+    console.error("Error: Invalid data format");
+  } catch (error) {
+    // 発生した他のエラーをログに記録します
+    console.error("Error:", error);
+  }
+  console.error("Error: Invalid data format");
   return null;
 };

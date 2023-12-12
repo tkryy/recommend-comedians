@@ -67,7 +67,29 @@ export default async function ComedianPage() {
           <FavoriteAddButton comedian={comedian} />
           <div className="bg-[#D9D9D9] rounded-lg text-center mt-[100px]">
             <p className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">
-              正統派タイプ
+              <ul className="flex">
+                <li>
+                  <a href="https://twitter.com/seiko1204">
+                    <Image 
+                      src={"/icons/twiiter_b.svg"}
+                      width={"50"}
+                      height={"50"}
+                      alt={comedian.name+"_sns1"}
+                    ></Image>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://twitter.com/NAGISAtairiku">
+                    <Image
+                      src={"/icons/twiiter_b.svg"}
+                      width={"50"}
+                      height={"50"}
+                      alt={comedian.name+"_sns2"}
+                    ></Image>
+                  </a>
+                </li>
+              </ul>
+              
             </p>
           </div>
         </div>
@@ -98,13 +120,13 @@ export default async function ComedianPage() {
           </div>
           {/* 分析データ */}
           <div className="min-w-[500px] flex flex-col md:mt-0 mt-4 items-center justify-center border-2 border-gray-300 md:p-7 p-3 space-y-5">
-            <RatingDataView leftLabel="正統派" rightLabel="破天荒" rating={9} />
+            {/* <RatingDataView leftLabel="正統派" rightLabel="破天荒" rating={9} />
             <RatingDataView leftLabel="賢い" rightLabel="頭悪い" rating={7} />
             <RatingDataView leftLabel="センス" rightLabel="パワー" rating={3} />
             <RatingDataView leftLabel="精密" rightLabel="柔軟" rating={8} />
             <RatingDataView leftLabel="演技派" rightLabel="素顔" rating={3} />
             <RatingDataView leftLabel="早め" rightLabel="ゆっくり" rating={6} />
-            <RatingDataView leftLabel="尖り" rightLabel="真面目" rating={2} />
+            <RatingDataView leftLabel="尖り" rightLabel="真面目" rating={2} /> */}
           </div>
         </div>
       </div>

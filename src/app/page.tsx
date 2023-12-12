@@ -27,17 +27,6 @@ import {
   ContactForm,
 } from "@/components/landing/ContactForm";
 
-/*export const Page = () => {
-  useEffect(() => {
-    ScrollFadeIn();
-  }, []);
-  return (
-    <div className="js-show-on-scroll>
-      ...
-    </div>
-  );
-};  */
-
 export default function Home() {
   return (
     <div className="">
@@ -47,7 +36,7 @@ export default function Home() {
         href="/application/recommend_comedians"
       ></BackgroundImage>
 
-      <ScrollFadeIn></ScrollFadeIn>
+      {/* <ScrollFadeIn></ScrollFadeIn> */}
 
       <HowToUse></HowToUse>
 
@@ -59,17 +48,6 @@ export default function Home() {
 
       <ContactForm></ContactForm>
 
-      {/* <h1>ランディングページ</h1>
-        <h2>まだ知らない芸人との出会いが！？</h2>
-        <h3>あなたの好みの芸人がきっと見つかる！！</h3>
-        <h4>あなたの好みの傾向がわかるかも！</h4> */}
-
-      {/* 下に行くほど細かい情報
-          二段目 診断ページのスクリーンショット、軽い使い方
-
-          三段目 検索機能、診断機能、お気に入り
-          四段目 こんなかたにおすすめ！
-       */}
     </div>
   );
 }

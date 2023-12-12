@@ -7,13 +7,6 @@ import Link from "next/link";
 export const HowToUse = () => {
   return (
     <div className="flex justify-center flex-wrap ml-4">
-      {/* <motion.div
-        className=""
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ amount: 'all' }}
-        transition={{ duration: 2 }}
-      > */}
       <motion.div
       variants ={{
         offscreen: {

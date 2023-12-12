@@ -23,11 +23,9 @@ export const RecommendFor = () => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: false, amount: 0 }}
-
-    >
-      
+    > 
       <div className="flex justify-center md:pt-24 md:mr-48">
-      <div className="md:mr-20">
+      <div className="md:mr-20 md:block hidden">
         <Image
           src={"/icons/tendonIcon.svg"}
           alt="tendon"

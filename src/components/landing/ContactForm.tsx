@@ -1,6 +1,9 @@
 "use client";
 
-import React, { FC, useState } from 'react';
+import ContactSendButton from "@/components/auth/ContactSendButton";
+import { ContactInfo } from "@/models/ContactInfo";
+
+import React, { ChangeEventHandler, FC, useState, FormEventHandler} from 'react';
 import {
   FormItem,
 } from "@/components/landing/FormItem";
@@ -16,7 +19,32 @@ import {
 
 const checkList = ["芸人について", "不具合について", "その他"];
 
+
 export const ContactForm = () => {
+  const defaultinfo:ContactInfo = {
+    name: "名前",
+    mail: "example@smarthr.co.jp",
+    body: "お問合せ内容"
+  } 
+  const [contactinfo, setContactinfo] = useState<ContactInfo>(defaultinfo)
+
+  
+
+
+
+  // const handleContactInfoChange: ChangeEventHandler<HTMLInputElement> = ({
+  //   target
+  // }) => {
+  //   setContactinfo(target.value);
+  // };
+
+  // const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+  //   event.preventDefault();
+  //   alert(
+  //     `contactinfo: ${contactinfo}`
+  //   );
+  // };
+
   return (
     <div className="md:ml-40 mt-24">
       <h1 className="text-3xl md:ml-0 ml-2">お問い合わせフォーム</h1>
@@ -40,14 +68,14 @@ export const ContactForm = () => {
           <div className="mt-4 md:ml-0 ml-2">
             <div className="flex">
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">メールアドレス</label>
-              <p className="text-white bg-red-600 rounded ml-2 ">必須</p>
+              {/* <p className="text-white bg-red-600 rounded ml-2 ">必須</p> */}
             </div>
             <input type="text" id="mail_address" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-96 w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="example@smarthr.co.jp" required></input>
           </div>
         </div>
         <hr></hr>
 
-        {/* お問合せ項目 */}
+        {/* お問合せ項目
         <div className="md:ml-0 ml-2">
           <div className="flex mt-4">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">お問い合わせ項目</label>
@@ -56,7 +84,7 @@ export const ContactForm = () => {
             <CheckboxContainer name="about" value={checkList} />
           </div>
         </div>
-        <hr></hr>
+        <hr></hr> */}
 
         {/* お問合せ内容 */}
         <div className="md:ml-0 ml-2">
@@ -67,13 +95,17 @@ export const ContactForm = () => {
         <hr></hr>
 
         {/* 返信不要欄 */}
-        <div className="md:ml-0 ml-2">
+        {/* <div className="md:ml-0 ml-2">
           <div className="flex space-x-2 mt-2">
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">返信不要欄</label>
             <input type="checkbox" />
             <p>※返信が不要な場合はチェックしてください</p>
           </div>
-        </div>
+        </div> */}
+
+
+        {/* ダミーボタンを作る */}
+        <ContactSendButton contactinfo={contactinfo} />
       </form>
     </div>
   );

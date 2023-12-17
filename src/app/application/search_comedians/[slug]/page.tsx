@@ -1,8 +1,9 @@
 "use client";
 import { getComedianDataFromID } from "@/lib/gradio";
 import { Comedian, convertComedianCompanyToString } from "@/models/Comedian";
-import RatingDataView from "@/components/shared/RatingDataView";
-import TypeBadges from "@/components/shared/TypeBadges";
+import SNSIcon from "@/components/shared/SNSIcon";
+//import RatingDataView from "@/components/shared/RatingDataView";
+//import TypeBadges from "@/components/shared/TypeBadges";
 import SkillBadges from "@/components/shared/ComedianSkillBadge";
 import FavoriteAddButton from "@/components/auth/FavoriteAddButton";
 import { useSearchParams } from "next/navigation";
@@ -14,8 +15,6 @@ type Props = {
 
 const labelClassName = "md:text-2xl text-[#F25C05] font-bold";
 const dataClassName = "md:text-xl";
-const youtube_url = "https://www.youtube.com/embed/Irrs_mNhxN0?si=iQwSko57X5WI2dcS";
-
 
 export default async function ComedianPage() {
   // 検索パラメータからIDパラメータを取得
@@ -29,8 +28,7 @@ export default async function ComedianPage() {
 
   // IDに基づいてコメディアンのデータを取得
   const comedians = await getComedianDataFromID(id, []);
-  //console.log('comedian型かな');
-  console.log(comedians);
+  //console.log(comedians);
   // データが見つからない場合、エラーメッセージを表示
   if (!comedians || comedians.length === 0) {
     return <div>データが見つかりません</div>;
@@ -51,7 +49,7 @@ export default async function ComedianPage() {
             href={comedian.homePageURL}
             className="flex items-center justify-center"
           >
-            {comedian.imageSRC === ' no_image' ? (
+            {comedian.imageSRC === 'no_image' ? (
               <Image
                 src={"https://via.placeholder.com/200x200"}
                 width={"320"}
@@ -61,12 +59,12 @@ export default async function ComedianPage() {
               ></Image>
             ) : (
               <Image
-              src={comedian.imageSRC || "https://via.placeholder.com/200x200"}
-              width={"320"}
-              height={"320"}
-              alt={comedian.name}
-              className="rounded-2xl md:w-[400px] w-[300px]"
-            ></Image>
+                src={comedian.imageSRC || "https://via.placeholder.com/200x200"}
+                width={"320"}
+                height={"320"}
+                alt={comedian.name}
+                className="rounded-2xl md:w-[400px] w-[300px]"
+              ></Image>
             )}
 
           </a>
@@ -81,31 +79,50 @@ export default async function ComedianPage() {
           <SkillBadges comedian={comedian} />
           <FavoriteAddButton comedian={comedian} />
           <div className="bg-[#D9D9D9] rounded-lg text-center mt-[100px]">
-            <p className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">
-              <ul className="flex">
+            <div className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">
+              <ul className="flex space-x-3">
                 <li>
-                  <a href="https://twitter.com/seiko1204">
-                    <Image
-                      src={"/icons/twiiter_b.svg"}
-                      width={"30"}
-                      height={"30"}
-                      alt={comedian.name + "_sns1"}
-                    ></Image>
-                  </a>
+                  <SNSIcon
+                    sns={comedian.x1 || "no_link"}
+                    img_path_ok={"/icons/x_b.svg"}
+                    img_path_err={"/icons/x_w.svg"}
+                    img_alt={comedian.name + "_x1"}
+                  ></SNSIcon>
                 </li>
                 <li>
-                  <a href={comedian.x1}>
-                    <Image
-                      src={"/icons/twiiter_b.svg"}
-                      width={"30"}
-                      height={"30"}
-                      alt={comedian.name + "_sns2"}
-                    ></Image>
-                  </a>
+                  <SNSIcon
+                    sns={comedian.insta1 || "no_link"}
+                    img_path_ok={"/icons/instagram_b.svg"}
+                    img_path_err={"/icons/instagram_w.svg"}
+                    img_alt={comedian.name + "_insta1"}
+                  ></SNSIcon>
+                </li>
+                <li>
+                  <SNSIcon
+                    sns={comedian.x2 || "no_link"}
+                    img_path_ok={"/icons/x_b.svg"}
+                    img_path_err={"/icons/x_w.svg"}
+                    img_alt={comedian.name + "_x2"}
+                  ></SNSIcon>
+                </li>
+                <li>
+                  <SNSIcon
+                    sns={comedian.insta2 || "no_link"}
+                    img_path_ok={"/icons/instagram_b.svg"}
+                    img_path_err={"/icons/instagram_w.svg"}
+                    img_alt={comedian.name + "_insta2"}
+                  ></SNSIcon>
+                </li>
+                <li>
+                  <SNSIcon
+                    sns={comedian.youtube_channel || "no_link"}
+                    img_path_ok={"/icons/youtube_b.svg"}
+                    img_path_err={"/icons/youtube_w.svg"}
+                    img_alt={comedian.name + "_youtube"}
+                  ></SNSIcon>
                 </li>
               </ul>
-
-            </p>
+            </div>
           </div>
         </div>
       </div>
@@ -135,14 +152,25 @@ export default async function ComedianPage() {
           </div>
           {/* 分析データ */}
           <div className="min-w-[500px] flex flex-col md:mt-0 mt-4 items-center justify-center border-2 border-gray-300 md:p-7 p-3 space-y-5">
-            <iframe
-              width="560"
-              height="315"
-              src={youtube_url}
-              title="YouTube video player"
+            {comedian.movie_link === 'no_link' ? (
+              <Image
+                src={"https://via.placeholder.com/200x200"}
+                width={"320"}
+                height={"320"}
+                alt={comedian.name}
+                className="rounded-2xl md:w-[560px] w-[315px]"
+              ></Image>
+            ) : (
+              <iframe
+                width="560"
+                height="315"
+                src={comedian.movie_link}
+                title="YouTube video player"
 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></iframe>
+            )}
+
             {/* <RatingDataView leftLabel="正統派" rightLabel="破天荒" rating={9} />
             <RatingDataView leftLabel="賢い" rightLabel="頭悪い" rating={7} />
             <RatingDataView leftLabel="センス" rightLabel="パワー" rating={3} />
@@ -153,6 +181,6 @@ export default async function ComedianPage() {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 }

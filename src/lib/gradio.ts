@@ -30,6 +30,15 @@ const parseComedian = (input: string): Comedian => {
     appearance,
     popularity,
     info,
+    x1,
+    insta1,
+    x2,
+    insta2,
+    youtube_channel,
+    others1,
+    others2,
+    movie_link,
+    updated_at
   ] = input.split(", ");
 
   return {
@@ -39,7 +48,7 @@ const parseComedian = (input: string): Comedian => {
     company: parseInt(company.replace(/'/g,"")),
     sex: parseInt(sex.replace(/'/g,"")),
     member: parseInt(member.replace(/'/g,"")),
-    imageSRC: imageSRC !== "''" ? String(imageSRC).replace(/'/g, "") : "", //imageSRC : undefined,
+    imageSRC: imageSRC !== "''" ? String(imageSRC).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, "") : "", //imageSRC : undefined,
     homePageURL:
       homePageURL !== "''" ? String(homePageURL).replace(/'/g, "") : "", //homePageURL : undefined,
     manzai: manzai !== "''" ? parseInt(manzai.replace(/'/g,"")) : undefined,
@@ -53,7 +62,17 @@ const parseComedian = (input: string): Comedian => {
     sns: sns !== "''" ? parseInt(sns.replace(/'/g,"")) : undefined,
     appearance: parseInt(appearance.replace(/'/g,"")),
     popularity: parseInt(popularity.replace(/'/g,"")),
-    info: String(info).replace(/'/g, ""),
+    info: String(info).replace(/'/g, "").replace(/"/g, ""),
+    x1: String(x1).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, ""),
+    insta1: String(insta1).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, ""),
+    x2: String(x2).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, ""),
+    insta2: String(insta2).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, ""),
+    youtube_channel: String(youtube_channel).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, ""),
+    others1: String(others1).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, ""),
+    others2: String(others2).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, ""),
+    movie_link: String(movie_link).replace(/'/g, "").replace(/"/g, "").replace(/\s/g, ""),
+    updated_at: updated_at.replace(/'/g, "").replace(/"/g, ""),
+
   };
 };
 
@@ -81,10 +100,10 @@ export const getComedianNamePredict = async (
     // 結果が有効かどうかを確認します
     if (result !== null && typeof result === "object" && "data" in result) {
       const data: ResultData = result as ResultData;
-      //console.log(data.data[0])
+
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
-        
+        //console.log(convertToComedian(data.data[0]));
         // 最初のデータ項目をComedianオブジェクトに変換します
         return convertToComedian(data.data[0]);
       }
@@ -123,10 +142,11 @@ export const getComedianDataForSearch = async (
     // 結果が有効かどうかを確認します
     if (result !== null && typeof result === "object" && "data" in result) {
       const data: ResultData = result as ResultData;
-      //console.log( data.data[0].replace(/"/g, '').replace(/' /g, "'"))
-      //console.log(convertToComedian(data.data[0].replace(/"/g, '')))
+      
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
+        //console.log(data.data[0])
+        //console.log(convertToComedian(data.data[0]));
         // 最初のデータ項目をComedianオブジェクトに変換します
         return convertToComedian(data.data[0]);
       }
@@ -154,8 +174,7 @@ export const getComedianDataFromID = async (
   comedyType: string[]
 ): Promise<Comedian[] | null> => {
   // APIのURLを定義します
-  const apiUrl = "https://yomo93-getcomediansdata-pub.hf.space/";
-  //const apiUrl = "https://yomo93-tendon-searchid-pub.hf.space/";
+  const apiUrl = "https://yomo93-tendon-searchid-pub.hf.space/";
 
   // アプリクライアントを初期化します
   const app = await client(apiUrl, {});
@@ -170,7 +189,8 @@ export const getComedianDataFromID = async (
       //console.log(data.data[0])
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
-        //console.log(convertToComedian(data.data[0]))
+        //console.log(data.data[0]);
+        //console.log(convertToComedian(data.data[0]));
         // 最初のデータ項目をComedianオブジェクトに変換します
         return convertToComedian(data.data[0]);
       }

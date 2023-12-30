@@ -26,7 +26,7 @@ export default function Search_comedians() {
     const result = await getComedianDataForSearch(searchText, params);
 
     setIsLoading(false); // ローディング状態を false に設定します
-
+    console.log(result)
     if (result == null) {
       await setComedians([]); // 結果が null の場合、コメディアンの状態を空の配列に設定します
     } else {

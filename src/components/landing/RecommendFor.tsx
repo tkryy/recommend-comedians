@@ -23,16 +23,16 @@ export const RecommendFor = () => {
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: false, amount: 0 }}
-    > 
+    >
       <div className="flex justify-center md:pt-24 md:mr-48">
-      <div className="md:mr-20 md:block hidden">
-        <Image
-          src={"/icons/tendonIcon.svg"}
-          alt="tendon"
-          width={200}
-          height={200}
-        ></Image>
-      </div>
+        <div className="md:mr-20 md:block hidden">
+          <Image
+            src={"/icons/tendonIcon.svg"}
+            alt="tendon"
+            width={200}
+            height={200}
+          ></Image>
+        </div>
 
         <div className="flex-wrap md:-ml-8 -ml-16">
           <h1 className="md:text-5xl text-3xl font-bold text-yellow-500 mt-4 md:ml-40 ml-32 md:w-full">こんな方におすすめ！</h1>

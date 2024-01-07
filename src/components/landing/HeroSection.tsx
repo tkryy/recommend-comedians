@@ -25,7 +25,7 @@ export const BackgroundImage = ({
                     relative `} 
           style={{backgroundImage: 'url(/images/landing_bg.webp)'}}
     >
-      <div>
+      <div className="flex justify-center">
         <div className={`rounded-2xl 
                         md:p-20 p-2 
                         backdrop-blur-sm  
@@ -36,8 +36,7 @@ export const BackgroundImage = ({
                         absolute 
                         md:left-1/4 
                         md:top-1/4 top-1/2 
-                        -mt-32 
-                        md:ml-0 ml-16`}
+                        -mt-32`}
         > 
           <h1 className="md:text-9xl text-7xl font-bold text-[#F25C05]">
             {title}

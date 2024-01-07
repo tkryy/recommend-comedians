@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const SearchIntroduction = () => {
   return (
-    <div className="flex justfy-center flex-wrap ml-4">
+    <div className="flex justify-center">
       <motion.div
         variants={{
           offscreen: {
@@ -25,7 +25,7 @@ export const SearchIntroduction = () => {
         viewport={{ once: false, amount: 0 }}
 
       >
-        <div className="md:flex md:pt-24 md:-mt-0 -mt-12 md:pl-40 pl-8">
+        <div className="md:flex md:pt-24 md:-mt-0 -mt-12">
           <div>
             <h1 className={`md:text-5xl text-xl 
                             font-bold 

@@ -3,7 +3,7 @@
 import ContactSendButton from "@/components/auth/ContactSendButton";
 import { ContactInfo } from "@/models/ContactInfo";
 
-import React, { ChangeEventHandler, FC, useState, FormEventHandler} from 'react';
+import React, { ChangeEventHandler, FC, useState, FormEventHandler } from 'react';
 import {
   FormItem,
 } from "@/components/landing/FormItem";
@@ -35,14 +35,14 @@ const checkList = ["芸人について", "不具合について", "その他"];
 // );
 
 export const ContactForm = () => {
-  const defaultinfo:ContactInfo = {
+  const defaultinfo: ContactInfo = {
     name: "名前",
     mail: "example@smarthr.co.jp",
     body: "お問合せ内容"
-  } 
+  }
   const [contactinfo, setContactinfo] = useState<ContactInfo>(defaultinfo)
 
-  
+
 
 
 
@@ -71,7 +71,10 @@ export const ContactForm = () => {
           <div className="flex space-x-8 mt-2">
             <div className="flex space-x-4">
               <input type="text" id="name" className="md:w-96 w-80 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="お名前" required></input>
+                placeholder="お名前" 
+                onChange={(e) => {
+                  setContactinfo({ ...contactinfo, name: e.target.value });
+                }} required></input>
             </div>
           </div>
         </div>
@@ -84,7 +87,11 @@ export const ContactForm = () => {
               <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">メールアドレス</label>
               {/* <p className="text-white bg-red-600 rounded ml-2 ">必須</p> */}
             </div>
-            <input type="text" id="mail_address" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-96 w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="example@smarthr.co.jp" required></input>
+            <input type="text" id="mail_address" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-96 w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+            placeholder="example@smarthr.co.jp" 
+            onChange={(e) => {
+              setContactinfo({ ...contactinfo, mail: e.target.value });
+            }} required></input>
           </div>
         </div>
         <hr></hr>
@@ -103,8 +110,14 @@ export const ContactForm = () => {
         {/* お問合せ内容 */}
         <div className="md:ml-0 ml-2">
           <div className="mt-4">
-            <TextareaComp name="お問い合わせ内容" value={"お問合せ内容を記入してください。"} />
+            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">お問い合わせ</label>
+            {/* <TextareaComp name="お問い合わせ内容" value={"お問合せ内容を記入してください。"} /> */}
           </div>
+          <input type="text" id="contact" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block md:w-96 w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+            placeholder="お問い合わせ内容" 
+            onChange={(e) => {
+              setContactinfo({ ...contactinfo, body: e.target.value });
+            }} required></input>
         </div>
         <hr></hr>
 
@@ -119,7 +132,10 @@ export const ContactForm = () => {
 
 
         {/* ダミーボタンを作る */}
-        <ContactSendButton contactinfo={contactinfo} />
+        <div className="mt-2 md:ml-0 ml-4">
+          <ContactSendButton contactinfo={contactinfo} />
+        </div>
+        
       </form>
     </div>
   );

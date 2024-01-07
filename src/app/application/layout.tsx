@@ -4,7 +4,6 @@ import { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Header from "../../components/shared/Header";
 import Sidebar from "../../components/shared/Sidebar";
-//import Fotter from "../../components/shared/Fotter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +27,6 @@ export default function RootLayout({
             {children}
           </div>
         </div>
-        {/* <Fotter /> */}
       </div>
     </div>
   );

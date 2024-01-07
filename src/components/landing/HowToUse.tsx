@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const HowToUse = () => {
   return (
-    <div className="flex justify-center flex-wrap ml-4">
+    <div className="flex justify-center flex-wrap md:pl-36">
       <motion.div
       variants ={{
         offscreen: {

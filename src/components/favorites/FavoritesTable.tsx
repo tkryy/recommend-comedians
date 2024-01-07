@@ -11,6 +11,8 @@ import { useState, useEffect } from "react";
 import { useComediansStore, useUserDataStore } from "@/lib/zustand/Stores";
 import { StateManager, ViewState } from "@/models/StateManager";
 import SkillBadges from "../shared/ComedianSkillBadge";
+import SNSIcon from "../shared/SNSIcon";
+import { SNSIconList } from "../shared/SNSIconList";
 
 export default function FavoritesTable() {
   const { user } = useAuth();
@@ -57,13 +59,24 @@ export default function FavoritesTable() {
             <div className="avatar">
               <div className="mask mask-squircle w-10 h-10">
                 <Link href="/team_info">
-                  <Image
+                  { comedian.imageSRC === 'no_image' ? (
+                    <Image
+                    src="/icons/tendonIcon.svg"
+                    alt="tendonIcon"
+                    width="320"
+                    height="320"
+                    className="w-10 h-10"
+                    ></Image>
+                  ) : (
+                    <Image
                     src={comedian.imageSRC || dummyImageSRC}
                     alt={comedian.name}
                     width="320"
                     height="320"
                     className="w-10 h-10"
                   ></Image>
+                  )}
+                  
                 </Link>
               </div>
             </div>
@@ -98,6 +111,9 @@ export default function FavoritesTable() {
           {/* ジャンル */}
           <SkillBadges comedian={comedian} />
         </th>
+        <td>
+          <SNSIconList comedian={comedian} />
+        </td>
       </tr>
     );
   };
@@ -139,6 +155,7 @@ export default function FavoritesTable() {
             <th className="text-black">所属事務所</th>
             <th className="text-black">結成年</th>
             <th className="text-black">ジャンル</th>
+            <th className="text-black">SNS</th>
           </tr>
         </thead>
         <tbody>{comedians.map(renderFavoriteRow)}</tbody>

@@ -4,8 +4,8 @@ import { useState } from "react";
 import PageTitle from "@/components/shared/PageTitle";
 import { Comedian, dummyData } from "@/models/Comedian";
 import ComedianCard from "@/components/shared/ComedianCard";
+//import ComedianCardwithInfo from "@/components/shared/ComedianCardwithInfo";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Search_comedians() {
   const [params, setParams] = useState<string[]>([]);
@@ -22,15 +22,19 @@ export default function Search_comedians() {
     event.preventDefault(); // デフォルトのフォーム送信動作を防ぎます
     setIsLoading(true); // ローディング状態を true に設定します
 
-    // getComedianDataForSearch 関数を呼び出してコメディアンのデータを取得します
-    const result = await getComedianDataForSearch(searchText, params);
+    // 入力がなければ何も表示しない
+    if (searchText === "") { setIsLoading(false); }
+    // 入力があれば検索結果を加工して表示
+    else {
+      // getComedianDataForSearch 関数を呼び出してコメディアンのデータを取得します
+      const result = await getComedianDataForSearch(searchText, params);
 
-    setIsLoading(false); // ローディング状態を false に設定します
-    console.log(result)
-    if (result == null) {
-      await setComedians([]); // 結果が null の場合、コメディアンの状態を空の配列に設定します
-    } else {
-      await setComedians(result); // コメディアンの状態を取得した結果に設定します
+      setIsLoading(false); // ローディング状態を false に設定します
+      if (result == null) {
+        await setComedians([]); // 結果が null の場合、コメディアンの状態を空の配列に設定します
+      } else {
+        await setComedians(result); // コメディアンの状態を取得した結果に設定します
+      }
     }
   };
 
@@ -67,7 +71,7 @@ export default function Search_comedians() {
   };
 
   return (
-    <div className="">
+    <div className="tx-10">
       <PageTitle title="芸人を探す" />
       {/*　検索ページ */}
       <div className="space-y-4 mx-20">
@@ -132,18 +136,27 @@ export default function Search_comedians() {
               "/icons/slideshow_FILL0_wght400_GRAD0_opsz24_white.svg"
             )}
           </div>
+          {/* <div style={{backgroundColor: "rgb(200,200,200)"}}>
+            <p className="tx:10">
+              お気に入りしている芸人の名前を押すと個別ページを見れるよ！ <br></br>
+              お気に入りしていない芸人の名前を押すとお気に入りページへ進むよ。
+            </p>
+          </div> */}
         </div>
 
         {/* 検索結果 */}
         <div className=" items-center md:space-x-3">
           <h3 className="text-3xl font-bold">検索結果</h3>
-          <div className="flex flex-col justify-center items-center min-w-[300px]] p-3 rounded-lg md:mt-0 mt-2">
+          <div className="flex flex-col justify-center items-center sm:min-w-[230px] md:min-w-[300px] p-3 rounded-lg md:mt-0 mt-2">
             {!isLoading && (
-              <div className="grid md:grid-cols-4 grid-cols-1 md:gap-5 gap-5 md:px-0 px-12">
+              <div
+                className="grid md:grid-cols-4 grid-cols-1 md:gap-5 gap-5 md:px-0 px-12"
+              >
                 {comedians.map((comedian: Comedian) => (
-                  <Link href={`/application/search_comedians/detail?id=${comedian.id}`}>
-                  <ComedianCard comedian={comedian} />
-                  </Link>
+                  <div className="flex">
+                    <ComedianCard comedian={comedian} />
+                    {/* <ComedianCardwithInfo comedian={comedian} */}
+                  </div>
                 ))}
                 {comedians.length == 1 && comedians[0].name == "undefined" && (
                   <p>検索結果はありません</p>
@@ -162,14 +175,14 @@ export default function Search_comedians() {
         </div>
 
         {/* トレンド */}
-        <div className="flex flex-col justify-center space-y-4">
+        {/* <div className="flex flex-col justify-center space-y-4">
           <h2 className="text-2xl font-bold">トレンド</h2>
           <div className="grid md:grid-cols-4 grid-cols-1 md:gap-5 gap-5 md:px-0 px-12">
             {dummyData.map((comedian: Comedian) => (
               <ComedianCard comedian={comedian} />
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

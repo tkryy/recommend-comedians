@@ -1,5 +1,6 @@
 import { client } from "@gradio/client";
 import { Comedian, dummyData } from "@/models/Comedian";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type ResultData = {
   data: Array<string>;
@@ -88,11 +89,9 @@ function convertToComedian(s: string): Comedian[] {
 export const getComedianNamePredict = async (
   name: string
 ):Promise<Comedian[] | null> => {
-  //const apiUrl = "https://yomo93-tendon-recommend-698e5c7.hf.space/";
   const apiUrl = "https://yomo93-tendonrecommend-pub.hf.space/";
   const app = await client(apiUrl, {});
   const result = await app.predict("/predict", [name]);
-  console.log(result)
   try {
     // アプリに予測リクエストを行います
     const result = await app.predict("/predict", [name]);
@@ -209,7 +208,7 @@ export const getComedianDataFromID = async (
 
 export const URLtoImage = async (
   cURL: string
-):Promise<string | null> => {
+):Promise<string> => {
   const apiUrl = "https://yomo93-url2image-pub.hf.space/";
   const app = await client(apiUrl, {});
   
@@ -224,7 +223,7 @@ export const URLtoImage = async (
       // 少なくとも1つのデータ項目があるかどうかを確認します
       if (data.data.length > 0) {
         
-        console.log(data.data[0])
+        //console.log(data.data[0])
         // 最初のデータ項目をComedianオブジェクトに変換します
         return data.data[0];
       }
@@ -237,5 +236,5 @@ export const URLtoImage = async (
     console.error("Error:", error);
   }
   console.error("Error: Invalid data format");
-  return null;
+  return 'https://via.placeholder.com/200x200';
 };

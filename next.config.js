@@ -80,6 +80,11 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.maseki.co.jp",
         port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.sunmusic-gp.co.jp",
+        port: "",
       }
     ],
   },

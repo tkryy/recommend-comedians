@@ -1,5 +1,5 @@
-"use client";
-import { getComedianDataFromID } from "@/lib/gradio";
+'use client'
+import { getComedianDataFromID, URLtoImage } from "@/lib/gradio";
 import { Comedian, convertComedianCompanyToString } from "@/models/Comedian";
 import SNSIcon from "@/components/shared/SNSIcon";
 //import RatingDataView from "@/components/shared/RatingDataView";
@@ -8,6 +8,8 @@ import SkillBadges from "@/components/shared/ComedianSkillBadge";
 import FavoriteAddButton from "@/components/auth/FavoriteAddButton";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
+import { SNSIconList } from "@/components/shared/SNSIconList";
+//import { useState } from "react";
 // pages/comedian/[id].js
 type Props = {
   params: { comedian: Comedian };
@@ -36,6 +38,12 @@ export default async function ComedianPage() {
 
   // リストから最初のコメディアンを取得
   const comedian: Comedian = comedians[0];
+  //console.log(comedian);
+
+  //const [imgSRC, setImgSRC] = useState('/icons/tendonIcon.svg');
+  //const c_imgSRC = await URLtoImage(comedian.imageSRC || '/icons/tendonIcon.svg');
+  //const imgSRC = URLtoImage(comedian.imageSRC || 'https://via.placeholder.com/200x200');
+  //console.log(imgSRC);
 
   // ページ上にコメディアンの詳細を表示
   return (
@@ -48,18 +56,20 @@ export default async function ComedianPage() {
           <a
             href={comedian.homePageURL}
             className="flex items-center justify-center"
-          >
+          > 
+
             {comedian.imageSRC === 'no_image' ? (
               <Image
-                src={"https://via.placeholder.com/200x200"}
+                src={"/icons/tendonIcon.svg"}
                 width={"320"}
                 height={"320"}
-                alt={comedian.name}
+                alt={"tendonIcon"}
                 className="rounded-2xl md:w-[400px] w-[300px]"
               ></Image>
             ) : (
               <Image
-                src={comedian.imageSRC || "https://via.placeholder.com/200x200"}
+                //src={comedian.imageSRC || "https://via.placeholder.com/200x200"}
+                src={comedian.imageSRC || "/icons/tendonIcon.svg"}
                 width={"320"}
                 height={"320"}
                 alt={comedian.name}
@@ -78,53 +88,9 @@ export default async function ComedianPage() {
           </h2>
           <SkillBadges comedian={comedian} />
           <FavoriteAddButton comedian={comedian} />
-          <div className="bg-[#D9D9D9] rounded-lg text-center mt-[100px]">
-            <div className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">
-              <ul className="flex space-x-3">
-                <li>
-                  <SNSIcon
-                    sns={comedian.x1 || "no_link"}
-                    img_path_ok={"/icons/x_b.svg"}
-                    img_path_err={"/icons/x_w.svg"}
-                    img_alt={comedian.name + "_x1"}
-                  ></SNSIcon>
-                </li>
-                <li>
-                  <SNSIcon
-                    sns={comedian.insta1 || "no_link"}
-                    img_path_ok={"/icons/instagram_b.svg"}
-                    img_path_err={"/icons/instagram_w.svg"}
-                    img_alt={comedian.name + "_insta1"}
-                  ></SNSIcon>
-                </li>
-                <li>
-                  <SNSIcon
-                    sns={comedian.x2 || "no_link"}
-                    img_path_ok={"/icons/x_b.svg"}
-                    img_path_err={"/icons/x_w.svg"}
-                    img_alt={comedian.name + "_x2"}
-                  ></SNSIcon>
-                </li>
-                <li>
-                  <SNSIcon
-                    sns={comedian.insta2 || "no_link"}
-                    img_path_ok={"/icons/instagram_b.svg"}
-                    img_path_err={"/icons/instagram_w.svg"}
-                    img_alt={comedian.name + "_insta2"}
-                  ></SNSIcon>
-                </li>
-                <li>
-                  <SNSIcon
-                    sns={comedian.youtube_channel || "no_link"}
-                    img_path_ok={"/icons/youtube_b.svg"}
-                    img_path_err={"/icons/youtube_w.svg"}
-                    img_alt={comedian.name + "_youtube"}
-                  ></SNSIcon>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <SNSIconList comedian={comedian} />
         </div>
+        <p>{comedian.updated_at}</p>
       </div>
 
       <div className="my-9 block md:flex md:flex-col items-center justify-center ">
@@ -154,10 +120,10 @@ export default async function ComedianPage() {
           <div className="min-w-[500px] flex flex-col md:mt-0 mt-4 items-center justify-center border-2 border-gray-300 md:p-7 p-3 space-y-5">
             {comedian.movie_link === 'no_link' ? (
               <Image
-                src={"https://via.placeholder.com/200x200"}
+                src={"/icons/tendonIcon.svg"}
                 width={"320"}
                 height={"320"}
-                alt={comedian.name}
+                alt={"tendonIcon"}
                 className="rounded-2xl md:w-[560px] w-[315px]"
               ></Image>
             ) : (
@@ -170,14 +136,6 @@ export default async function ComedianPage() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               ></iframe>
             )}
-
-            {/* <RatingDataView leftLabel="正統派" rightLabel="破天荒" rating={9} />
-            <RatingDataView leftLabel="賢い" rightLabel="頭悪い" rating={7} />
-            <RatingDataView leftLabel="センス" rightLabel="パワー" rating={3} />
-            <RatingDataView leftLabel="精密" rightLabel="柔軟" rating={8} />
-            <RatingDataView leftLabel="演技派" rightLabel="素顔" rating={3} />
-            <RatingDataView leftLabel="早め" rightLabel="ゆっくり" rating={6} />
-            <RatingDataView leftLabel="尖り" rightLabel="真面目" rating={2} /> */}
           </div>
         </div>
       </div>

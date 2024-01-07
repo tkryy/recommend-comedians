@@ -73,7 +73,7 @@ function Header({}) {
                     <p>お気に入り</p>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/application/add_data">
                     <Image
                       alt="add"
@@ -83,7 +83,7 @@ function Header({}) {
                     ></Image>
                     <p>データ追加</p>
                   </Link>
-                </li>
+                </li> */}
 
                 <div className="mt-40 border-2 border-gray-300"></div>
                 <li>
@@ -132,7 +132,7 @@ function Header({}) {
 
         <div className="navbar-end mr-6">
           {/* ベルマーク */}
-          <button className="btn btn-ghost btn-circle mr-4">
+          {/* <button className="btn btn-ghost btn-circle mr-4">
             <div className="indicator text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +150,7 @@ function Header({}) {
               </svg>
               <span className="badge badge-xs badge-primary indicator-item"></span>
             </div>
-          </button>
+          </button> */}
 
           {/* アイコンマーク */}
           <div className="dropdown dropdown-end ">

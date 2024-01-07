@@ -41,7 +41,7 @@ export default function Search_comedians() {
   const genreButton = (genre: string, imageSRC: string) => {
     return (
       <button
-        className="flex flex-col items-center justify-center w-16"
+        className={`flex flex-col items-center justify-center w-16`}
         onClick={() => {
           if (params.includes(genre)) {
             setParams(params.filter((item) => item !== genre));
@@ -71,10 +71,10 @@ export default function Search_comedians() {
   };
 
   return (
-    <div className="tx-10">
+    <div className="">
       <PageTitle title="芸人を探す" />
       {/*　検索ページ */}
-      <div className="space-y-4 mx-20">
+      <div className="space-y-4 mx-1">
         {/* キーワード検索 */}
         <div className="space-y-4 items-center justify-between">
           <h2 className="text-2xl font-bold">キーワード検索</h2>
@@ -98,7 +98,11 @@ export default function Search_comedians() {
         {/* ボタンにして絞り込みができるようにする */}
         <div className="space-y-4 items-center justify-center">
           <h2 className="text-2xl font-bold text-start">芸風を選択</h2>
-          <div className="grid md:grid-cols-6 grid-cols-3 md:gap-4 gap-3 px-12">
+          <div className={`grid
+                          md:grid-cols-6 grid-cols-3 
+                          md:gap-4 gap-3 
+                          px-12`}
+          >
             {genreButton(
               "漫才/漫談",
               "/icons/mic_FILL0_wght400_GRAD0_opsz24_white.svg"
@@ -145,12 +149,20 @@ export default function Search_comedians() {
         </div>
 
         {/* 検索結果 */}
-        <div className=" items-center md:space-x-3">
+        <div className=" items-center">
           <h3 className="text-3xl font-bold">検索結果</h3>
-          <div className="flex flex-col justify-center items-center sm:min-w-[230px] md:min-w-[300px] p-3 rounded-lg md:mt-0 mt-2">
+          <div className={`flex flex-col justify-center items-center 
+                          sm:min-w-[230px] md:min-w-[300px] 
+                          p-3 
+                          rounded-lg 
+                          md:mt-0 mt-2`}
+          >
             {!isLoading && (
               <div
-                className="grid md:grid-cols-4 grid-cols-1 md:gap-5 gap-5 md:px-0 px-12"
+                className={`grid 
+                            lg:grid-cols-4 md:grid-cols-3 grid-cols-1 
+                            md:gap-5 gap-5 
+                            md:px-0 px-12`}
               >
                 {comedians.map((comedian: Comedian) => (
                   <div className="flex">

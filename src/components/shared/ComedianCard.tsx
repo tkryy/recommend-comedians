@@ -17,14 +17,21 @@ function ComedianCard({ comedian }: ComedianCardProps) {
   if (comedian.name == "undefined") {
     return null;
   }
-
+  let nameCSS;
+  if (comedian.name.length > 8) {
+    nameCSS = 'text-xs';
+  } else if (comedian.name.length > 6) {
+    nameCSS = 'text-sm';
+  } else {
+    nameCSS = 'text-xl';
+  }
   return (
     <div className="bg-[#F2F2F7] rounded-md card w-[300px] border bottom-1">
       {/* テキスト */}
       <div className="card-body max-h-[250px]">
         <Link href={"/application/favorite/" + comedian.id}>
           <button className="btn btn-ghost">
-            <h3 className="sm:text-xs md:text-xl font-bold">{comedian.name}</h3>
+            <h3 className={nameCSS+" font-bold"}>{comedian.name}</h3>
           </button>
         </Link>
         <SkillBadges comedian={comedian} />

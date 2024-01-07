@@ -19,6 +19,20 @@ import {
 
 const checkList = ["芸人について", "不具合について", "その他"];
 
+// const validateMessages = {
+//   required: "${label}は必須です。",
+//   types: {
+//     email: "${label}を正しい形式で入力してください。",
+//   },
+// };
+
+// const onFinish = (item: string) => {
+//   console.log(item);
+// }
+
+// return (
+//   <Form {...layout} name="nest-messages" onFinish={onFinish} validateMessages={validateMessages}></Form>
+// );
 
 export const ContactForm = () => {
   const defaultinfo:ContactInfo = {
@@ -56,7 +70,7 @@ export const ContactForm = () => {
           </div>
           <div className="flex space-x-8 mt-2">
             <div className="flex space-x-4">
-              <input type="text" id="last_name" className="md:w-96 w-80 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              <input type="text" id="name" className="md:w-96 w-80 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="お名前" required></input>
             </div>
           </div>

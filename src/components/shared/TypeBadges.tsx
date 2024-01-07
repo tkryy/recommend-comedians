@@ -7,7 +7,7 @@ export default function TypeBadges({ comedian }: { comedian: Comedian }) {
 
   return (
     <div className="grid md:grid-cols-2 md:gap-2 gap-1">
-      {comedian.manzai && (
+      {comedian.manzai !== 0 && (
         <div
           id="BADGE"
           className={badgeClass}
@@ -16,7 +16,7 @@ export default function TypeBadges({ comedian }: { comedian: Comedian }) {
           漫才
         </div>
       )}
-      {comedian.conte && (
+      {comedian.conte !== 0 && (
         <div
           id="BADGE"
           className={badgeClass}
@@ -25,7 +25,7 @@ export default function TypeBadges({ comedian }: { comedian: Comedian }) {
           コント
         </div>
       )}
-      {comedian.mimic && (
+      {comedian.mimic !== 0 && (
         <div
           id="BADGE"
           className={badgeClass}
@@ -34,7 +34,7 @@ export default function TypeBadges({ comedian }: { comedian: Comedian }) {
           ものまね
         </div>
       )}
-      {comedian.rhythm && (
+      {comedian.rhythm !== 0 && (
         <div
           id="BADGE"
           className={badgeClass}
@@ -43,7 +43,7 @@ export default function TypeBadges({ comedian }: { comedian: Comedian }) {
           歌ネタ
         </div>
       )}
-      {comedian.ogiri && (
+      {comedian.ogiri !== 0 && (
         <div
           id="BADGE"
           className={badgeClass}

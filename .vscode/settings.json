@@ -1,11 +1,7 @@
 {
     "workbench.colorCustomizations": {
-        "titleBar.activeBackground": "#8c4242", // 上のバーの背景色
-        "titleBar.activeForeground": "#fffefe", // 上のバーのテキストの色
-        "activityBar.background": "#ecae7f", // 左のバーの背景色
-        "activityBar.foreground": "#000000",
-        "editor.minimap.enabled": false, // 左のバーのテキストの色
-      },
+      "editor.minimap.enabled": false
+    },
     "svg.preview.background": "black",
     
 }

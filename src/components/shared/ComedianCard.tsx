@@ -3,10 +3,9 @@ import {
   convertComedianCompanyToString,
   convertComedianCompanyToColor,
 } from "@/models/Comedian";
+import Link from "next/link";
 import SkillBadges from "./ComedianSkillBadge";
-
-// ダミー画像のURL
-const dummyImageSRC = "https://via.placeholder.com/200x200";
+import FavoriteAddButton from "../auth/FavoriteAddButton";
 
 interface ComedianCardProps {
   comedian: Comedian;
@@ -20,11 +19,16 @@ function ComedianCard({ comedian }: ComedianCardProps) {
   }
 
   return (
-    <div className="bg-[#F2F2F7] rounded-md card w-[250px] border bottom-1">
+    <div className="bg-[#F2F2F7] rounded-md card w-[300px] border bottom-1">
       {/* テキスト */}
       <div className="card-body max-h-[250px]">
-        <h3 className="text-xl font-bold">{comedian.name}</h3>
+        <Link href={"/application/favorite/" + comedian.id}>
+          <button className="btn btn-ghost">
+            <h3 className="sm:text-xs md:text-xl font-bold">{comedian.name}</h3>
+          </button>
+        </Link>
         <SkillBadges comedian={comedian} />
+        <FavoriteAddButton comedian={comedian} />
       </div>
       {/* 画像 */}
 
@@ -38,28 +42,6 @@ function ComedianCard({ comedian }: ComedianCardProps) {
           borderRadius: "0px 0px 8px 8px",
         }}
       >
-        {/* 画像
-        {comedian.imageSRC && comedian.imageSRC !== "undefined" && (
-          <Image
-            src={comedian.imageSRC || dummyImageSRC} // comedian.imageSRCが存在しない場合にダミー画像を表示
-            alt={comedian.name}
-            layout="responsive"
-            width={300}
-            height={300}
-            className=""
-          />
-        )}
-        {comedian.imageSRC == "undefined" && (
-          <Image
-            src={dummyImageSRC} // comedian.imageSRCが存在しない場合にダミー画像を表示
-            alt={comedian.name}
-            layout="responsive"
-            width={300}
-            height={300}
-            className=""
-          />
-        )}
-         */}
         <h4 className="text-sm text-[#fff] pl-3 py-3">
           {convertComedianCompanyToString(comedian)}
         </h4>

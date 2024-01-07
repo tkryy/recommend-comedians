@@ -147,7 +147,7 @@ export const convertComedianCompanyToColor = (comedian: Comedian) => {
 
 export const dummyData: Comedian[] = [
   {
-    id: "99410c8c-8c17-4c8f-9521-90b594aefaac",
+    id: "YSN1111111", //"99410c8c-8c17-4c8f-9521-90b594aefaac",
     name: "ダミー芸人1",
     birthYear: "2000",
     company: 1,
@@ -169,7 +169,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: "a9df3c77-0671-487c-ba3d-310a58e094d0",
+    id: "SHT0000000", //"a9df3c77-0671-487c-ba3d-310a58e094d0",
     name: "ダミー芸人2",
     birthYear: "2000",
     company: 2,
@@ -193,7 +193,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "SMT2222222",//uuidv4(),
     name: "ダミー芸人3",
     birthYear: "2000",
     company: 3,
@@ -217,7 +217,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "TIT3333333",//uuidv4(),
     name: "ダミー芸人4",
     birthYear: "2000",
     company: 4,
@@ -242,7 +242,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "GCT4444444",//uuidv4(),
     name: "ダミー芸人5",
     birthYear: "2000",
     company: 5,
@@ -266,7 +266,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "MET5555555",//uuidv4(),
     name: "ダミー芸人6",
     birthYear: "2000",
     company: 6,
@@ -290,7 +290,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "PJT1111111",//uuidv4(),
     name: "ダミー芸人7",
     birthYear: "2000",
     company: 7,
@@ -314,7 +314,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "WET1111111",//uuidv4(),
     name: "ダミー芸人8",
     birthYear: "2000",
     company: 8,
@@ -338,7 +338,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "HPT1111111",//uuidv4(),
     name: "ダミー芸人9",
     birthYear: "2000",
     company: 9,
@@ -362,7 +362,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "SPT1111111",//uuidv4(),
     name: "ダミー芸人10",
     birthYear: "2000",
     company: 10,
@@ -386,7 +386,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "APT1111111",//uuidv4(),
     name: "ダミー芸人11",
     birthYear: "2000",
     company: 11,
@@ -410,7 +410,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "KDT1111111",//uuidv4(),
     name: "ダミー芸人12",
     birthYear: "2000",
     company: 12,
@@ -434,7 +434,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "HRT1111111",//uuidv4(),
     name: "ダミー芸人13",
     birthYear: "2000",
     company: 13,
@@ -458,7 +458,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "AST1111111",//uuidv4(),
     name: "ダミー芸人14",
     birthYear: "2000",
     company: 14,
@@ -482,7 +482,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "VMT1111111",//uuidv4(),
     name: "ダミー芸人15",
     birthYear: "2000",
     company: 15,
@@ -506,7 +506,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "FRT1111111", //uuidv4(),
     name: "ダミー芸人16",
     birthYear: "2000",
     company: 16,
@@ -530,7 +530,7 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
   {
-    id: uuidv4(),
+    id: "XXX1111111", //uuidv4(),
     name: "ダミー芸人17",
     birthYear: "2000",
     company: 17,
@@ -554,3 +554,28 @@ export const dummyData: Comedian[] = [
     updated_at: '2023/12/09',
   },
 ];
+
+export const error_comedian:Comedian = {
+    id: "XXXXXXXXXX", //uuidv4(),
+    name: "エラー",
+    birthYear: "2000",
+    company: 17,
+    sex: 0,
+    member: 0,
+    imageSRC: "no_link",
+    homePageURL: "no_link",
+    info: "入力が間違っていないか確認してください。",
+    manzai: 0,
+    conte: 0,
+    appearance: 0,
+    popularity: 0,
+    x1: 'no_link',
+    insta1: 'no_link',
+    x2: 'no_link',
+    insta2: 'no_link',
+    youtube_channel: 'no_link',
+    others1: 'no_link',
+    others2: 'no_link',
+    movie_link: 'no_link',
+    updated_at: '2023/12/23',
+};

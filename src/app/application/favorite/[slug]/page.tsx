@@ -9,6 +9,8 @@ import RatingDataView from "@/components/shared/RatingDataView";
 import TypeBadges from "@/components/shared/TypeBadges";
 import FavoriteAddButton from "@/components/auth/FavoriteAddButton";
 import Image from "next/image";
+import { SNSIconList } from "@/components/shared/SNSIconList";
+import SkillBadges from "@/components/shared/ComedianSkillBadge";
 export default function Page({ params }: { params: { slug: string } }) {
   const comedians = useComediansStore((state) => state.comedians);
   const comedian = comedians.find((comedian) => comedian.id === params.slug);
@@ -38,13 +40,30 @@ export default function Page({ params }: { params: { slug: string } }) {
             href={comedian.homePageURL}
             className="flex items-center justify-center"
           >
-            <Image
+            {/* <Image
               src={comedian.imageSRC || "https://via.placeholder.com/200x200"}
               width={"320"}
               height={"320"}
               alt={comedian.name}
               className="rounded-2xl md:w-[400px] w-[300px]"
-            ></Image>
+            ></Image> */}
+            { comedian.imageSRC === 'no_image' ? (
+                    <Image
+                    src="/icons/tendonIcon.svg"
+                    alt="tendonIcon"
+                    width={320}
+                    height={320}
+                    className="w-320 h-320"
+                    ></Image>
+                  ) : (
+                    <Image
+                    src={comedian.imageSRC || "/icons/tendonIcon.svg"}
+                    alt={comedian.name}
+                    width="320"
+                    height="320"
+                    className="w-320 h-320"
+                  ></Image>
+                  )}
           </a>
         </div>
         <div
@@ -54,13 +73,9 @@ export default function Page({ params }: { params: { slug: string } }) {
           <h2 className="md:text-6xl text-lg font-bold mb-3">
             {comedian.name}
           </h2>
-          <TypeBadges comedian={comedian} />
+          <SkillBadges comedian={comedian} />
           <FavoriteAddButton comedian={comedian} />
-          <div className="bg-[#D9D9D9] rounded-lg text-center mt-[100px]">
-            <p className="md:text-xl font-bold md:px-7 px-1 py-5 text-black">
-              正統派タイプ
-            </p>
-          </div>
+          <SNSIconList comedian={comedian} />
         </div>
       </div>
 
@@ -84,19 +99,29 @@ export default function Page({ params }: { params: { slug: string } }) {
             </div>
 
             <p className="mt-3 md:text-base text-xs">
-              吉本興業大阪本社に所属する日本のお笑いコンビ。歌ネタ王決定戦2020王者。
-              M-1グランプリ2017ファイナリスト、M-1グランプリ2022準優勝。
+              {comedian.info}
             </p>
           </div>
-          {/* 分析データ */}
+          {/* 動画 */}
           <div className="min-w-[500px] flex flex-col md:mt-0 mt-4 items-center justify-center border-2 border-gray-300 md:p-7 p-3 space-y-5">
-            <RatingDataView leftLabel="正統派" rightLabel="破天荒" rating={9} />
-            <RatingDataView leftLabel="賢い" rightLabel="頭悪い" rating={7} />
-            <RatingDataView leftLabel="センス" rightLabel="パワー" rating={3} />
-            <RatingDataView leftLabel="精密" rightLabel="柔軟" rating={8} />
-            <RatingDataView leftLabel="演技派" rightLabel="素顔" rating={3} />
-            <RatingDataView leftLabel="早め" rightLabel="ゆっくり" rating={6} />
-            <RatingDataView leftLabel="尖り" rightLabel="真面目" rating={2} />
+            {comedian.movie_link === 'no_link' ? (
+              <Image
+                src={"https://via.placeholder.com/200x200"}
+                width={"320"}
+                height={"320"}
+                alt={comedian.name}
+                className="rounded-2xl md:w-[560px] w-[315px]"
+              ></Image>
+            ) : (
+              <iframe
+                width="560"
+                height="315"
+                src={comedian.movie_link}
+                title="YouTube video player"
+
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></iframe>
+            )}
           </div>
         </div>
       </div>

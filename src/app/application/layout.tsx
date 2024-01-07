@@ -2,10 +2,9 @@
 
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
-
-import Header3 from "../../components/shared/Header3";
+import Header from "../../components/shared/Header";
 import Sidebar from "../../components/shared/Sidebar";
-import Fotter from "../../components/shared/Fotter";
+//import Fotter from "../../components/shared/Fotter";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <div>
-      <Header3 />
+      <Header />
       <div className="lg:flex block content-start">
         <Sidebar />
         <div className="lg:pl-56 pl-0 min-h-screen  flex  justify-top flex-col  ">

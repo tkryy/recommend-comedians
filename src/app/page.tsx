@@ -1,31 +1,13 @@
 /* ランディングページ */
-import Image from "next/image";
-import Link from "next/link";
 import { BackgroundImage } from "@/components/landing/HeroSection";
-
-import {
-  ScrollFadeIn,
-} from "@/components/landing/ScrollFadein";
-
-import {
-  HowToUse,
-} from "@/components/landing/HowToUse";
-
-import {
-  SearchIntroduction,
-} from "@/components/landing/SearchIntroduction";
-
-import {
-  FavoriteIntroduction,
-} from "@/components/landing/FavoriteIntroduction";
-
-import {
-  RecommendFor,
-} from "@/components/landing/RecommendFor";
-
-import {
-  ContactForm,
-} from "@/components/landing/ContactForm";
+import { HowToUse, } from "@/components/landing/HowToUse";
+import { SearchIntroduction, } from "@/components/landing/SearchIntroduction";
+import { FavoriteIntroduction, } from "@/components/landing/FavoriteIntroduction";
+import { RecommendFor, } from "@/components/landing/RecommendFor";
+import {ContactForm, } from "@/components/landing/ContactForm";
+//import Image from "next/image";
+//import Link from "next/link";
+//import { ScrollFadeIn, } from "@/components/landing/ScrollFadein";
 
 export default function Home() {
   return (

@@ -57,7 +57,7 @@ export default function Recommend_comedians() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full md:mx-5">
       <PageTitle title="AIおすすめ診断" />
 
       {/* 検索入力部分 */}
@@ -104,7 +104,7 @@ export default function Recommend_comedians() {
           </pre>
           <pre data-prefix=">" className="text-warning">
             {isTypingSecond && (
-              <TypingAnimation text={"Tendon server access..."} />
+              <TypingAnimation text={"Tendon server access"} />
             )}
             {!isTypingSecond && <TypingAnimation text={" "} />}{" "}
           </pre>

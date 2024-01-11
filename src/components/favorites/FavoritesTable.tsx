@@ -10,14 +10,13 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useComediansStore, useUserDataStore } from "@/lib/zustand/Stores";
 import { StateManager, ViewState } from "@/models/StateManager";
-import SkillBadges from "../shared/ComedianSkillBadge";
-import SNSIcon from "../shared/SNSIcon";
+import SkillBadges from "../shared/ComedianSkillBadgeFavorite";
 import { SNSIconList } from "../shared/SNSIconList";
 
 export default function FavoritesTable() {
   const { user } = useAuth();
   const [comedians, setComedians] = useState<Comedian[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  //const [isLoading, setIsLoading] = useState(false);
   const [manager, setManager] = useState<StateManager>(new StateManager());
 
   useEffect(() => {
@@ -55,34 +54,37 @@ export default function FavoritesTable() {
       <tr className="bg-white border-gray-200 hover:bg-info">
         <td className={tdClassName}>
           {/* 画像と名前 */}
-          <div className="flex items-center md:space-x-5 space-x-3 md:min-w-[250px] min-w-[110px]">
+          <div className={`flex items-center 
+                          md:space-x-5 space-x-3 
+                          md:min-w-[250px] min-w-[110px]`}
+          >
             <div className="avatar">
               <div className="mask mask-squircle w-10 h-10">
                 <Link href="/team_info">
-                  { comedian.imageSRC === 'no_image' ? (
+                  {comedian.imageSRC === 'no_image' ? (
                     <Image
-                    src="/icons/tendonIcon.svg"
-                    alt="tendonIcon"
-                    width="320"
-                    height="320"
-                    className="w-10 h-10"
+                      src="/icons/tendonIcon.svg"
+                      alt="tendonIcon"
+                      width="320"
+                      height="320"
+                      className="w-10 h-10"
                     ></Image>
                   ) : (
                     <Image
-                    src={comedian.imageSRC || dummyImageSRC}
-                    alt={comedian.name}
-                    width="320"
-                    height="320"
-                    className="w-10 h-10"
-                  ></Image>
+                      src={comedian.imageSRC || dummyImageSRC}
+                      alt={comedian.name}
+                      width="320"
+                      height="320"
+                      className="w-10 h-10"
+                    ></Image>
                   )}
-                  
+
                 </Link>
               </div>
             </div>
             <div>
               <Link href={`/application/favorite/${comedian.id}`}>
-                <div className="font-bold md:text-lg text-[10px] ">
+                <div className={`font-bold md:text-lg text-[10px] `}>
                   {comedian.name}
                 </div>
               </Link>
@@ -103,7 +105,7 @@ export default function FavoritesTable() {
             </p>
           </div>
         </td>
-        <td className={tdClassName}>
+        <td className={tdClassName+` hidden md:table-cell`}>
           {/* 結成年 */}
           <p className={tdTextClasses}>{comedian.birthYear}</p>
         </td>
@@ -111,9 +113,10 @@ export default function FavoritesTable() {
           {/* ジャンル */}
           <SkillBadges comedian={comedian} />
         </th>
-        <td>
+        <td className="hidden md:table-cell">
           <SNSIconList comedian={comedian} />
         </td>
+
       </tr>
     );
   };
@@ -149,13 +152,19 @@ export default function FavoritesTable() {
     <div className=" relative  shadow-md md:mx-8 ">
       <table className="table md:w-full text-left bg-[#F2F2F7]">
         {/* head */}
-        <thead className="md:text-sm text-xs  text-gray-700 uppercase bg-info">
+        <thead className={`md:text-sm text-xs  
+                          text-gray-700 
+                          uppercase 
+                          bg-info`}
+        >
           <tr>
             <th className="text-black">名前</th>
             <th className="text-black">所属事務所</th>
-            <th className="text-black">結成年</th>
+            <th className={`text-black
+                            hidden md:table-cell
+                          `}>結成年</th>
             <th className="text-black">ジャンル</th>
-            <th className="text-black">SNS</th>
+            <th className={`text-black hidden md:table-cell`}>SNS</th>
           </tr>
         </thead>
         <tbody>{comedians.map(renderFavoriteRow)}</tbody>

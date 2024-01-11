@@ -9,7 +9,7 @@ function Footer_landing({ }) {
         </div>
 
         <div className="mt-4 md:mt-8">
-          <div className="footer text-sm md:text-base">
+          <div className="footer text-[11px] md:text-base">
             <div className="justify-self-end flex">
               <p>©company 2023</p>
               <p className="hover:opacity-75">

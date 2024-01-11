@@ -83,7 +83,7 @@ export const FeatureLargeCard = ({
           {icon}
           {subTitle}
         </div>
-        <h1 className="text-black text-3xl md:text-5xl font-extrabold mb-2">
+        <h1 className="text-black text-2xl md:text-5xl font-extrabold mb-2">
           {title}
         </h1>
         <p className="text-lg font-normal text-[#262526d9] mb-6">

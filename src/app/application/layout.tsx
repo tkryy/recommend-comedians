@@ -20,10 +20,18 @@ export default function RootLayout({
   return (
     <div>
       <Header />
-      <div className="lg:flex block content-start">
+      <div className={`lg:flex lg:flex-col
+                      block content-start`}
+      >
         <Sidebar />
-        <div className="lg:pl-56 pl-0 min-h-screen  flex  justify-top flex-col  ">
-          <div className="w-full flex flex-col content-start items-center justify-center md:mx-5 my-24 ">
+        <div className={`xl:pl-56 md:pl-5 
+                        min-h-screen  
+                        flex  justify-top flex-col `}
+        >
+          <div className={`w-full 
+                          flex flex-col content-start items-center justify-center 
+                          my-24 `}
+          >
             {children}
           </div>
         </div>

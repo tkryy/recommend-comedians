@@ -10,7 +10,7 @@ interface SNSIconProps {
 
 const SNSIcon = ({ sns_link, img_path_ok, img_path_err, img_alt}: SNSIconProps) => {
     return (
-        <div>
+        <div className={`min-w-[20px]`}>
         {sns_link === "no_link" ? (
             <Image
             src={img_path_err}

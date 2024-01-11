@@ -8,8 +8,14 @@ interface SNSIconProps {
 
 export const SNSIconList = ({comedian}: SNSIconProps) => {
     return (
-        <div className="md:text-xl font-bold md:px-7 px-1 py-3 text-black">
-            <ul className="flex space-x-3">
+        <div className={`md:text-xl 
+                        font-bold 
+                        md:px-7 px-1 
+                        py-3 
+                        text-black`}
+        >
+            <ul className={`flex 
+                            lg:space-x-3 space-x-1`}>
                 <li>
                 <SNSIcon
                     sns_link={comedian.x1 || "no_link"}

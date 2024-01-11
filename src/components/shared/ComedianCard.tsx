@@ -31,11 +31,13 @@ function ComedianCard({ comedian }: ComedianCardProps) {
       <div className="card-body max-h-[250px]">
         <Link href={"/application/favorite/" + comedian.id}>
           <button className="btn btn-ghost">
-            <h3 className={nameCSS+" font-bold"}>{comedian.name}</h3>
+            <h3 className={nameCSS + " font-bold"}>{comedian.name}</h3>
           </button>
         </Link>
-        <SkillBadges comedian={comedian} />
-        <FavoriteAddButton comedian={comedian} />
+        <div className="flex md:flex-col flex-row">
+          <SkillBadges comedian={comedian} />
+          <FavoriteAddButton comedian={comedian} />
+        </div>
       </div>
       {/* 画像 */}
 

@@ -29,31 +29,62 @@ function ComedianCardwithInfo({ comedian }: ComedianCardProps) {
                         <h3 className="text-xl font-bold">{comedian.name}</h3>
                     </button>
                 </Link>
-                <SkillBadges comedian={comedian} />
-                <FavoriteAddButton comedian={comedian} />
+                <div className="flex md:flex-col flex-row">
+                    <SkillBadges comedian={comedian} />
+                    <FavoriteAddButton comedian={comedian} />
+                </div>
                 <SNSIconList comedian={comedian} />
             </div>
-            <div>
+            <div className="md:hidden">
                 {comedian.movie_link === 'no_link' ? (
-                    <div className="md:w-[560px] h-[315px] items-center justify-center">
-                        <Image
-                            src={"/icons/tendonIcon.svg"}
-                            width={"320"}
-                            height={"320"}
-                            alt={comedian.name}
-                        //className="rounded-2xl md:w-[320px] w-[320px]"
-                        ></Image>
-                        <p>動画が存在しません...</p>
+                    <div className="md:w-[560px] md:h-[315px]">
+                        <div className="flex items-center justify-center">
+                            <Image
+                                src={"/icons/tendonIcon.svg"}
+                                width={"80"}
+                                height={"80"}
+                                alt={comedian.name}
+                            //className="rounded-2xl md:w-[320px] w-[320px]"
+                            ></Image>
+                        </div>
+                        <p className="flex justify-center">動画が存在しません...</p>
                     </div>
                 ) : (
-                    <iframe
-                        width="560"
-                        height="315"
-                        src={comedian.movie_link}
-                        title={"YouTube video player" + comedian.id}
+                    <div className="flex justify-center items-center ">
+                        <iframe
+                            width="320"
+                            height="180"
+                            src={comedian.movie_link}
+                            title={"YouTube video player" + comedian.id}
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        ></iframe>
+                    </div>
+                )}
+            </div>
+            <div className="hidden md:table-cell">
+                {comedian.movie_link === 'no_link' ? (
+                    <div className="md:w-[560px] h-[315px]">
+                        <div className="flex justify-center">
+                            <Image
+                                src={"/icons/tendonIcon.svg"}
+                                width={"250"}
+                                height={"250"}
+                                alt={comedian.name}
+                            ></Image>
+                        </div>
+                        <p className="flex justify-center">動画が存在しません...</p>
+                    </div>
+                ) : (
+                    <div className="flex justify-center items-center">
+                        <iframe
+                            width="560"
+                            height="315"
+                            src={comedian.movie_link}
+                            title={"YouTube video player" + comedian.id}
 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    ></iframe>
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        ></iframe>
+                    </div>
                 )}
             </div>
             <div

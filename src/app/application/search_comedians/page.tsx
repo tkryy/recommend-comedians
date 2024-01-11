@@ -71,20 +71,27 @@ export default function Search_comedians() {
   };
 
   return (
-    <div className="">
+    <div className="md:mx-5">
       <PageTitle title="芸人を探す" />
       {/*　検索ページ */}
-      <div className="space-y-4 mx-1">
+      <div className="space-y-4 md:mx-10 mx-2">
         {/* キーワード検索 */}
-        <div className="space-y-4 items-center justify-between">
-          <h2 className="text-2xl font-bold">キーワード検索</h2>
-          <div className="flex items-center justify-center">
-            <form onSubmit={handleButtonClick}>
+        <div className="space-y-4 items-center justify-between ">
+          <h2 className={`md:text-2xl 
+                          font-bold`}
+          >
+            キーワード検索
+          </h2>
+          <div className={`flex items-center justify-center`}>
+            <form onSubmit={handleButtonClick} className="flex">
               <input
                 id="SEARCH_BOX"
                 type="text"
-                placeholder="芸人さんの名前の一部を入力！"
-                className="input input-bordered md:w-96 w-full text-black bg-gray-300"
+                placeholder="芸名の一部を入力！"
+                className={`input input-bordered 
+                            md:w-96 w-full 
+                            text-black 
+                            bg-gray-300`}
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
               />
@@ -97,9 +104,12 @@ export default function Search_comedians() {
         {/* 芸風検索 */}
         {/* ボタンにして絞り込みができるようにする */}
         <div className="space-y-4 items-center justify-center">
-          <h2 className="text-2xl font-bold text-start">芸風を選択</h2>
+          <h2 className={`md:text-2xl font-bold text-start`}
+          >
+            芸風を選択
+          </h2>
           <div className={`grid
-                          md:grid-cols-6 grid-cols-3 
+                          md:grid-cols-5 grid-cols-3 
                           md:gap-4 gap-3 
                           px-12`}
           >
@@ -150,7 +160,11 @@ export default function Search_comedians() {
 
         {/* 検索結果 */}
         <div className=" items-center">
-          <h3 className="text-3xl font-bold">検索結果</h3>
+          <h3 className={`md:text-3xl 
+                          font-bold`}
+          >
+            検索結果
+          </h3>
           <div className={`flex flex-col justify-center items-center 
                           sm:min-w-[230px] md:min-w-[300px] 
                           p-3 

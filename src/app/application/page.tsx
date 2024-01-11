@@ -6,7 +6,7 @@ import { GoogleLogInButton } from "@/components/auth/LoginButtons";
 
 export default function Home() {
   return (
-    <div>
+    <div className="md:mx-5">
       <section className="">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-7">
           <FeatureLargeCard

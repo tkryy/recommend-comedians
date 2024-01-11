@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Header_landing />
-        <div className="lg:flex block mb-9">
+        <div className="lg:flex block mb-9 lg:flex-col ">
           {/* <Sidebar /> */}
           <div className="bg-white mt-16">
             {" "}

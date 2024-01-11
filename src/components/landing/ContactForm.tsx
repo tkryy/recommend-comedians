@@ -42,10 +42,6 @@ export const ContactForm = () => {
   }
   const [contactinfo, setContactinfo] = useState<ContactInfo>(defaultinfo)
 
-
-
-
-
   // const handleContactInfoChange: ChangeEventHandler<HTMLInputElement> = ({
   //   target
   // }) => {

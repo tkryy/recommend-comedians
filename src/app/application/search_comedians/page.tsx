@@ -174,7 +174,7 @@ export default function Search_comedians() {
             {!isLoading && (
               <div
                 className={`grid 
-                            lg:grid-cols-4 md:grid-cols-3 grid-cols-1 
+                            lg:grid-cols-3 md:grid-cols-2 grid-cols-1 
                             md:gap-5 gap-5 
                             md:px-0 px-12`}
               >

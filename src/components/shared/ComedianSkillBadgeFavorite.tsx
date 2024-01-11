@@ -44,7 +44,7 @@ function ComedianSkillBadge({
 export default function SkillBadges({comedian} : {comedian: Comedian}) {
     return(
         <div className={`grid 
-                        md:grid-cols-2 grid-cols-1
+                        grid-cols-1
                         mt-2 
                         gap-2`}
         >

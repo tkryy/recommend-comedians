@@ -18,7 +18,11 @@ function ComedianCard({ comedian }: ComedianCardProps) {
     return null;
   }
   let nameCSS;
-  if (comedian.name.length > 8) {
+  if (comedian.name.length > 17) {
+    nameCSS = 'text-[9px]';
+  } else if (comedian.name.length > 12) {
+    nameCSS = 'text-[10px]';
+  } else if (comedian.name.length > 8) {
     nameCSS = 'text-xs';
   } else if (comedian.name.length > 6) {
     nameCSS = 'text-sm';

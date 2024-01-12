@@ -15,7 +15,7 @@ export const SNSIconList = ({comedian}: SNSIconProps) => {
                         text-black`}
         >
             <ul className={`flex 
-                            lg:space-x-3 space-x-1`}>
+                            lg:space-x-5 space-x-3`}>
                 <li>
                 <SNSIcon
                     sns_link={comedian.x1 || "no_link"}

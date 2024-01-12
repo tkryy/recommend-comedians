@@ -21,12 +21,17 @@ function ComedianCardwithInfo({ comedian }: ComedianCardProps) {
         return null;
     }
 
+    let nameCSS = 'text-xl';
+    if (comedian.name.length > 14) {
+        nameCSS = 'sm:text-lg md:text-xl';
+    }
+
     return (
         <div className="bg-[#F2F2F7] rounded-md card border bottom-1 mx:20">
             <div className="card-body">
                 <Link href={"/application/favorite/" + comedian.id}>
                     <button className="btn btn-ghost">
-                        <h3 className="text-xl font-bold">{comedian.name}</h3>
+                        <h3 className={nameCSS+" font-bold"}>{comedian.name}</h3>
                     </button>
                 </Link>
                 <div className="flex md:flex-col flex-row">

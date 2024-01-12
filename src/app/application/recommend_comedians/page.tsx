@@ -147,8 +147,9 @@ export default function Recommend_comedians() {
           <p>{error_comedian.info}</p>
         ) : (
           <ComedianCardwithInfo comedian={comedian || error_comedian}/>
-        ))}
+        ))} 
       </div>
+      
     </div>
   );
 }

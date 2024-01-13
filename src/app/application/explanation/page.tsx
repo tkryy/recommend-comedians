@@ -2,7 +2,7 @@ import ComedianCard from "@/components/shared/ComedianCard";
 import PageTitle from "@/components/shared/PageTitle";
 import { Comedian, dummyData } from "@/models/Comedian";
 import { convertComedianCompanyToColor, convertComedianCompanyToString } from "@/models/Comedian";
-import SkillBadges from "@/components/shared/ComedianSkillBadge";
+import SkillBadges from "@/components/shared/ComedianSkillBadgeFavorite";
 import { sample } from "@/models/Comedian";
 import Image from "next/image";
 

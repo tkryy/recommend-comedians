@@ -603,15 +603,15 @@ export const error_comedian:Comedian = {
 };
 
 export const sample:Comedian = {
-  id: "XXXXXXXXXX", //uuidv4(),
-  name: "エラー",
+  id: "XXXXXXXXXX",
+  name: "サンプル",
   birthYear: "2000",
-  company: 17,
+  company: 0,
   sex: 0,
   member: 0,
   imageSRC: "no_link",
   homePageURL: "no_link",
-  info: "入力が間違っていないか確認してください。",
+  info: "これはサンプルデータです",
   manzai: 1,
   conte: 1,
   pin: 1,
@@ -631,6 +631,6 @@ export const sample:Comedian = {
   others1: 'no_link',
   others2: 'no_link',
   movie_link: 'no_link',
-  updated_at: '2023/12/23',
+  updated_at: '2024/01/13',
 };
 

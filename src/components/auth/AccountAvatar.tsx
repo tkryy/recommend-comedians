@@ -57,7 +57,7 @@ const userData:UserData = {
             </Link>
           </li>
           <li>
-            <Link href={"/setting"} className="justify-between">
+            <Link href={"/application/setting"} className="justify-between">
               設定
             </Link>
           </li>

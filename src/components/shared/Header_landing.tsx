@@ -81,7 +81,7 @@ function Header_landing({}) {
                     <p>使い方</p>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/application/setting">
                     <Image
                       alt="setting"
@@ -91,7 +91,7 @@ function Header_landing({}) {
                     ></Image>
                     <p>設定</p>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

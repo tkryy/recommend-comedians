@@ -63,11 +63,11 @@ function Sidebar() {
             "使い方"
           )}
 
-          {renderSliderItem(
+          {/* {renderSliderItem(
             "/application/setting",
             "/icons/settings_FILL0_wght400_GRAD0_opsz24.svg",
             "設定"
-          )}
+          )} */}
         </div>
       </ul>
   );

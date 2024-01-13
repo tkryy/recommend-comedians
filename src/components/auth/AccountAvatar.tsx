@@ -56,11 +56,11 @@ const userData:UserData = {
               プロフィール
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href={"/application/setting"} className="justify-between">
               設定
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

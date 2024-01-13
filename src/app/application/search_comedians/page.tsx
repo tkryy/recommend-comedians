@@ -4,7 +4,6 @@ import { useState } from "react";
 import PageTitle from "@/components/shared/PageTitle";
 import { Comedian, dummyData } from "@/models/Comedian";
 import ComedianCard from "@/components/shared/ComedianCard";
-//import ComedianCardwithInfo from "@/components/shared/ComedianCardwithInfo";
 import Image from "next/image";
 
 export default function Search_comedians() {
@@ -71,14 +70,13 @@ export default function Search_comedians() {
   };
 
   return (
-    <div className="md:mx-5">
+    <div className="md:mx-5 md:w-full">
       <PageTitle title="芸人を探す" />
       {/*　検索ページ */}
       <div className="space-y-4 md:mx-10 mx-2">
         {/* キーワード検索 */}
         <div className="space-y-4 items-center justify-between ">
-          <h2 className={`md:text-2xl 
-                          font-bold`}
+          <h2 className={`md:text-2xl font-bold`}
           >
             キーワード検索
           </h2>
@@ -111,7 +109,7 @@ export default function Search_comedians() {
           <div className={`grid
                           md:grid-cols-5 grid-cols-3 
                           md:gap-4 gap-3 
-                          px-12`}
+                          px-20`}
           >
             {genreButton(
               "漫才/漫談",
@@ -174,7 +172,7 @@ export default function Search_comedians() {
             {!isLoading && (
               <div
                 className={`grid 
-                            lg:grid-cols-3 md:grid-cols-2 grid-cols-1 
+                            grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
                             md:gap-5 gap-5 
                             md:px-0 px-12`}
               >

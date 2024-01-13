@@ -49,6 +49,15 @@ export default function FavoritesTable() {
     const companyColor = convertComedianCompanyToColor(comedian);
     const badgeClass =
       "md:text-sm text-[10px] font-medium  md:px-2.5 md:py-0.5 rounded text-white items-center text-center bg-transparent";
+    let nameCSS = 'font-bold md:text-lg text-[10px] ';
+    if (comedian.name.length>11) {
+      nameCSS = 'font-bold text-[8px] md:text-[12px]';
+    }
+
+    let companyCSS = 'md:text-base text-[10px] text-[#8E8E93]';
+    if (convertComedianCompanyToString(comedian).length>9) {
+      companyCSS = 'text-[8px] md:text-[10px] text-[#8E8E93]';
+    }
 
     return (
       <tr className="bg-white border-gray-200 hover:bg-info">
@@ -84,7 +93,7 @@ export default function FavoritesTable() {
             </div>
             <div>
               <Link href={`/application/favorite/${comedian.id}`}>
-                <div className={`font-bold md:text-lg text-[10px] `}>
+                <div className={nameCSS}>
                   {comedian.name}
                 </div>
               </Link>
@@ -100,7 +109,7 @@ export default function FavoritesTable() {
                 backgroundColor: convertComedianCompanyToColor(comedian),
               }}
             ></div>
-            <p className={tdTextClasses}>
+            <p className={companyCSS}>
               {convertComedianCompanyToString(comedian)}
             </p>
           </div>
@@ -113,9 +122,9 @@ export default function FavoritesTable() {
           {/* ジャンル */}
           <SkillBadges comedian={comedian} />
         </th>
-        <td className="hidden md:table-cell">
+        {/* <td className="hidden lg:table-cell">
           <SNSIconList comedian={comedian} />
-        </td>
+        </td> */}
 
       </tr>
     );
@@ -164,7 +173,7 @@ export default function FavoritesTable() {
                             hidden md:table-cell
                           `}>結成年</th>
             <th className="text-black">ジャンル</th>
-            <th className={`text-black hidden md:table-cell`}>SNS</th>
+            {/* <th className={`text-black hidden lg:table-cell`}>SNS</th> */}
           </tr>
         </thead>
         <tbody>{comedians.map(renderFavoriteRow)}</tbody>

@@ -3,12 +3,14 @@ import {
   FeatureLargeCard,
 } from "@/components/home/HeroViewSection";
 import { GoogleLogInButton } from "@/components/auth/LoginButtons";
+import PageTitle from "@/components/shared/PageTitle";
 
 export default function Home() {
   return (
     <div className="md:mx-5">
       <section className="">
-        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-7">
+        <PageTitle title="ホーム"/>
+        <div className="mx-auto max-w-screen-xl px-4 md:ml-6 lg:py-7 py-8">
           <FeatureLargeCard
             icon={
               <svg

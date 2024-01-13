@@ -47,9 +47,9 @@ export const convertComedianCompanyToString = (comedian: Comedian) => {
   let number = comedian.company;
   switch (number) {
     case 0:
-      return "東京(札幌)吉本";
+      return "東京吉本(東)";
     case 1:
-      return "大阪(福岡、沖縄)吉本";
+      return "大阪吉本(西)";
     case 2:
       return "松竹";
     case 3:
@@ -69,7 +69,7 @@ export const convertComedianCompanyToString = (comedian: Comedian) => {
     case 10:
       return "サンミュージックプロダクション";
     case 11:
-      return "浅井企画所属";
+      return "浅井企画";
     case 12:
       return "ケイダッシュステージ";
     case 13:
@@ -146,6 +146,28 @@ export const convertComedianCompanyToColor = (comedian: Comedian) => {
 };
 
 export const dummyData: Comedian[] = [
+  {
+    id: "YSN1111111", //"99410c8c-8c17-4c8f-9521-90b594aefaac",
+    name: "ダミー芸人1",
+    birthYear: "2000",
+    company: 0,
+    sex: 1,
+    member: 2,
+    homePageURL: "https://profile.yoshimoto.co.jp/talent/detail?id=134",
+    info: "これはダミーデータ1です",
+    manzai: 1,
+    appearance: 1,
+    popularity: 1,
+    x1: 'no_link',
+    insta1: 'no_link',
+    x2: 'no_link',
+    insta2: 'no_link',
+    youtube_channel: 'no_link',
+    others1: 'no_link',
+    others2: 'no_link',
+    movie_link: 'no_link',
+    updated_at: '2024/01/13',
+  },
   {
     id: "YSN1111111", //"99410c8c-8c17-4c8f-9521-90b594aefaac",
     name: "ダミー芸人1",
@@ -579,3 +601,36 @@ export const error_comedian:Comedian = {
     movie_link: 'no_link',
     updated_at: '2023/12/23',
 };
+
+export const sample:Comedian = {
+  id: "XXXXXXXXXX", //uuidv4(),
+  name: "エラー",
+  birthYear: "2000",
+  company: 17,
+  sex: 0,
+  member: 0,
+  imageSRC: "no_link",
+  homePageURL: "no_link",
+  info: "入力が間違っていないか確認してください。",
+  manzai: 1,
+  conte: 1,
+  pin: 1,
+  rhythm: 1,
+  ogiri: 1,
+  mimic: 1,
+  gag: 1,
+  talk: 1,
+  sns: 1,
+  appearance: 0,
+  popularity: 0,
+  x1: 'no_link',
+  insta1: 'no_link',
+  x2: 'no_link',
+  insta2: 'no_link',
+  youtube_channel: 'no_link',
+  others1: 'no_link',
+  others2: 'no_link',
+  movie_link: 'no_link',
+  updated_at: '2023/12/23',
+};
+

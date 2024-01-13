@@ -45,8 +45,7 @@ export default function SkillBadges({comedian} : {comedian: Comedian}) {
     return(
         <div className={`grid 
                         grid-cols-1
-                        mt-2 
-                        gap-2`}
+                        gap-1`}
         >
           <ComedianSkillBadge
             comedian={comedian}

@@ -25,7 +25,7 @@ export const SearchIntroduction = () => {
         viewport={{ once: false, amount: 0 }}
 
       >
-        <div className="md:flex md:pt-24 md:-mt-0 -mt-12">
+        <div className="md:flex md:pt-24 md:mt-64">
           <div>
             <h1 className={`md:text-5xl text-xl 
                             font-bold 
@@ -40,7 +40,7 @@ export const SearchIntroduction = () => {
               Tendonでは、キーワードや芸風からの<br className="md:block hidden"></br>検索機能を<br className="md:hidden block"></br>用意しています。
             </p>
           </div>
-          <div className={`md:ml-12 
+          <div className={`md:px-4
                           md:mt-0 mt-4`}
           >
             <Image
@@ -55,7 +55,7 @@ export const SearchIntroduction = () => {
               alt="検索ページの図"
               width="320"
               height="320"
-              className="p-2 -ml-2 mockup-window border border-base-300 md:hidden block"
+              className="p-2 mockup-window border border-base-300 md:hidden block"
             ></Image>
           </div>
         </div>

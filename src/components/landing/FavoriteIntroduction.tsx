@@ -26,7 +26,7 @@ export const FavoriteIntroduction = () => {
         viewport={{ once: false, amount: 0 }}
 
       >
-        <div className="md:flex md:pt-24">
+        <div className="md:flex md:pt-24 md:mt-64 mt-12">
           <Image
             src={"/images/favorite_exam01.png"}
             alt="お気に入りページの図"

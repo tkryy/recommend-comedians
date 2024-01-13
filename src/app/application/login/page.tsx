@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Login() {
   return (
-    <div className="card w-96 bg-base-100 shadow-xl ">
+    <div className="card w-full bg-base-100 shadow-xl px-2">
       <figure>
         <Image
           src="/images/landing_bg.webp"

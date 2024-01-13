@@ -10,7 +10,7 @@ interface SkillBadgeProps {
   text: string;
 }
 
-function ComedianSkillBadge({
+export function ComedianSkillBadge({
   comedian,
   number,
   text,

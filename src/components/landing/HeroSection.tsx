@@ -51,10 +51,7 @@ export const BackgroundImage = ({
             <Link
             href={href}
             className={`btn btn-lg btn-block btn-primary
-                        text-base 
-                        font-bold 
-                        text-center 
-                        text-white 
+                        text-base text-white text-center font-bold  
                         rounded-lg 
                         hover:translate-y-0.5 
                         transform 

@@ -116,7 +116,7 @@ function Header_landing({}) {
 
         <div className="navbar-end mr-6">
           {/* ベルマーク */}
-          <button className="btn btn-ghost btn-circle mr-4">
+          {/* <button className="btn btn-ghost btn-circle mr-4">
             <div className="indicator text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +134,7 @@ function Header_landing({}) {
               </svg>
               <span className="badge badge-xs badge-primary indicator-item"></span>
             </div>
-          </button>
+          </button> */}
 
           {/* アイコンマーク */}
           <div className="dropdown dropdown-end ">

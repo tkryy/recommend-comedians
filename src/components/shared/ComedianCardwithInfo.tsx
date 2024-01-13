@@ -34,7 +34,7 @@ function ComedianCardwithInfo({ comedian }: ComedianCardProps) {
                         <h3 className={nameCSS+" font-bold"}>{comedian.name}</h3>
                     </button>
                 </Link>
-                <div className="flex md:flex-col flex-row">
+                <div className="flex flex-col">
                     <SkillBadges comedian={comedian} />
                     <FavoriteAddButton comedian={comedian} />
                 </div>

@@ -58,7 +58,7 @@ export default function Terms_of_use() {
         <p className="font-bold mt-2">8. お問い合わせ先</p>
         <p>
           本規約に関するご質問やお問い合わせは、以下の連絡先までお願いいたします。
-          <br></br>[お問い合わせ先情報を記載]
+          <br></br>yomoyomo1293@gmail.com 木戸俊平
         </p>
 
         <p className="mt-4">最終更新日：2023.9.22</p>

@@ -2,28 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import UserAccountAvatar from "../auth/AccountAvatar";
 import { ServerAuthProvider } from "@/lib/firebase/server-auth-provider";
-function Header3({}) {
+function Header_landing({}) {
   return (
     <>
       <div className="navbar bg-opacity-80 shadow-lg backdrop-filter backdrop-blur-sm bg-[#F25C05] fixed top-0 z-50">
         <div className="navbar-start lg:ml-4">
           <div className="dropdown">
-            <label tabIndex={0} className="btn btn-ghost xl:hidden text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </label>
             <div>
               <ul
                 tabIndex={0}
@@ -97,7 +81,7 @@ function Header3({}) {
                     <p>使い方</p>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/application/setting">
                     <Image
                       alt="setting"
@@ -107,7 +91,7 @@ function Header3({}) {
                     ></Image>
                     <p>設定</p>
                   </Link>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -132,7 +116,7 @@ function Header3({}) {
 
         <div className="navbar-end mr-6">
           {/* ベルマーク */}
-          <button className="btn btn-ghost btn-circle mr-4">
+          {/* <button className="btn btn-ghost btn-circle mr-4">
             <div className="indicator text-white">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -150,7 +134,7 @@ function Header3({}) {
               </svg>
               <span className="badge badge-xs badge-primary indicator-item"></span>
             </div>
-          </button>
+          </button> */}
 
           {/* アイコンマーク */}
           <div className="dropdown dropdown-end ">
@@ -164,4 +148,4 @@ function Header3({}) {
   );
 }
 
-export default Header3;
+export default Header_landing;

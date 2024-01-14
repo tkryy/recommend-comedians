@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 // import { motion, useScroll, useInView } from "framer-motion"
 
 // export const ScrollFadeIn = () => {
@@ -11,7 +11,7 @@
 //     viewport={{ amount: 'all' }}
 //     transition={{ duration: 1 }}
 //   >
-    
+
 //   </motion.div>
 //   );
 // }
@@ -32,14 +32,25 @@
 // }
 
 
-import { motion, useAnimation, useInView} from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 
-export const ScrollFadeIn = () =>  {
-  return(
+export const ScrollFadeIn = () => {
+  return (
     <motion.div
-      animate = {{x: 500}} //←コレ
+      // animate={{ x: 500 }} //←コレ
+      animate={{ x: [0, 800, 550] }}
+      transition={{
+        duration: 2,
+        times: [0, 0.2, 1]
+      }}
     >
-      右にスライドイン
+      右にスライドから左にスライド
+      <Image
+        src={"/icons/tendonIcon.svg"}
+        alt="tendon"
+        width={50}
+        height={50}
+      ></Image>
     </motion.div>
   );
 }

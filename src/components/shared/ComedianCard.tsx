@@ -3,82 +3,51 @@ import {
   convertComedianCompanyToString,
   convertComedianCompanyToColor,
 } from "@/models/Comedian";
-
-import Image from "next/image";
-
-// ダミー画像のURL
-const dummyImageSRC = "https://via.placeholder.com/200x200";
+import Link from "next/link";
+import SkillBadges from "./ComedianSkillBadge";
+import FavoriteAddButton from "../auth/FavoriteAddButton";
 
 interface ComedianCardProps {
   comedian: Comedian;
 }
 
 function ComedianCard({ comedian }: ComedianCardProps) {
-  const size = 400;
-  const badgeClass =
-    "text-xs font-medium mr-2 px-2.5 py-0.5 rounded text-white bg-transparent";
-
   const companyColor = convertComedianCompanyToColor(comedian);
+
+  if (comedian.name == "undefined") {
+    return null;
+  }
+  let nameCSS;
+  if (comedian.name.length > 17) {
+    nameCSS = 'text-[9px]';
+  } else if (comedian.name.length > 12) {
+    nameCSS = 'text-[10px]';
+  } else if (comedian.name.length > 8) {
+    nameCSS = 'text-xs';
+  } else if (comedian.name.length > 6) {
+    nameCSS = 'text-sm';
+  } else {
+    nameCSS = 'text-xl';
+  }
   return (
-    <div className="bg-[#F2F2F7] rounded-md card max-w-[220px] border bottom-1">
+    <div key={comedian.id} className="bg-[#F2F2F7] rounded-md card w-[300px] border bottom-1">
       {/* テキスト */}
       <div className="card-body max-h-[250px]">
-        <h3 className="text-xl font-bold">{comedian.name}</h3>
-
-        <div className="flex mt-2 space-x-1">
-          {comedian.manzai && (
-            <div
-              id="BADGE"
-              className={badgeClass}
-              style={{ backgroundColor: companyColor }}
-            >
-              漫才
-            </div>
-          )}
-          {comedian.conte && (
-            <div
-              id="BADGE"
-              className={badgeClass}
-              style={{ backgroundColor: companyColor }}
-            >
-              コント
-            </div>
-          )}
-          {comedian.mimic && (
-            <div
-              id="BADGE"
-              className={badgeClass}
-              style={{ backgroundColor: companyColor }}
-            >
-              ものまね
-            </div>
-          )}
-
-          {comedian.rhythm && (
-            <div
-              id="BADGE"
-              className={badgeClass}
-              style={{ backgroundColor: companyColor }}
-            >
-              歌ネタ
-            </div>
-          )}
-          {comedian.ogiri && (
-            <div
-              id="BADGE"
-              className={badgeClass}
-              style={{ backgroundColor: companyColor }}
-            >
-              大喜利
-            </div>
-          )}
+        <Link href={"/application/favorite/" + comedian.id}>
+          <button className="btn btn-ghost">
+            <h3 className={nameCSS + " font-bold"}>{comedian.name}</h3>
+          </button>
+        </Link>
+        <div className="flex flex-col">
+          <SkillBadges comedian={comedian} />
+          <FavoriteAddButton comedian={comedian} />
         </div>
       </div>
       {/* 画像 */}
 
       <div
         className={
-          "flex flex-col items-start justify-between min-h-[265px] rounded-b-lg" +
+          "flex flex-col items-start justify-between h-[50px] rounded-b-lg" +
           companyColor
         }
         style={{
@@ -86,14 +55,6 @@ function ComedianCard({ comedian }: ComedianCardProps) {
           borderRadius: "0px 0px 8px 8px",
         }}
       >
-        <Image
-          src={comedian.imageSRC || dummyImageSRC} // comedian.imageSRCが存在しない場合にダミー画像を表示
-          alt={comedian.name}
-          layout="responsive"
-          width={300}
-          height={300}
-          className=""
-        />
         <h4 className="text-sm text-[#fff] pl-3 py-3">
           {convertComedianCompanyToString(comedian)}
         </h4>

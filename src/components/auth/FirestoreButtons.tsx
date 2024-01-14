@@ -37,7 +37,7 @@ export default function TestButton() {
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(`/api/plan?month=${displayMonth}`);
-      console.log(data);
+      //console.log(data);
       setPlans(data);
     })();
   }, [displayMonth]);

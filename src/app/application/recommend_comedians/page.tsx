@@ -1,15 +1,18 @@
 "use client";
-
 import { getComedianNamePredict } from "@/lib/gradio";
 import { useState } from "react";
 import Link from "next/link";
 import PageTitle from "@/components/shared/PageTitle";
 import TypingAnimation from "@/components/shared/TypingCode";
+import ComedianCardwithInfo from "@/components/shared/ComedianCardwithInfo";
+import { Comedian, error_comedian } from "@/models/Comedian";
 
 export default function Recommend_comedians() {
   
   const [resultText, setResultText] = useState("？？？");
   const [isLoading, setIsLoading] = useState(false);
+  const [comedian, setComedian] = useState<Comedian>();
+
 
   const [isTypingFirst, setIsTypingFirst] = useState(false);
   const [isTypingSecond, setIsTypingSecond] = useState(false);
@@ -36,8 +39,16 @@ export default function Recommend_comedians() {
     //ローディング状態を設定
     setIsLoading(false);
 
+    if (result == null) {
+      console.log("error")
+      await setResultText(error_comedian.name);
+    } else {
+      //console.log(result)
+      await setResultText(result[0].name || "結果");
+      setComedian(result[0] || error_comedian)
+    }
     //結果を表示
-    await setResultText(result || "結果");
+    
 
     //全てのアニメをリセット
     await setTimeout(() => setIsTypingFirst(false), 500);
@@ -46,9 +57,10 @@ export default function Recommend_comedians() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full md:mx-5">
       <PageTitle title="AIおすすめ診断" />
 
+      {/* 検索入力部分 */}
       <div className="flex flex-col justify-center items-center space-y-[50px] ">
         <div className="flex flex-col items-center justify-center min-w-full">
           <h2 className="md:text-3xl font-bold text-center">
@@ -81,6 +93,7 @@ export default function Recommend_comedians() {
           </div>
         </div>
 
+        {/* アニメーション部分 */}
         <div className="mockup-code md:min-w-[500px]">
           <pre data-prefix="$">
             <code>あなたの好みを分析...</code>
@@ -91,7 +104,7 @@ export default function Recommend_comedians() {
           </pre>
           <pre data-prefix=">" className="text-warning">
             {isTypingSecond && (
-              <TypingAnimation text={"Tendon server access..."} />
+              <TypingAnimation text={"Tendon server access"} />
             )}
             {!isTypingSecond && <TypingAnimation text={" "} />}{" "}
           </pre>
@@ -100,7 +113,8 @@ export default function Recommend_comedians() {
             {!isTypingThird && <TypingAnimation text={" "} />}{" "}
           </pre>
         </div>
-
+        
+        {/* 結果表示部分 */}
         <div className="md:flex  items-center md:space-x-3">
           <h3 className="text-3xl font-bold">おすすめは</h3>
           <div className="flex flex-col justify-center items-center min-w-[300px] border-2 border-[#D9D9D9] p-3 rounded-lg md:mt-0 mt-2">
@@ -119,16 +133,23 @@ export default function Recommend_comedians() {
             {/* isLoadingがtrueのときだけ表示 */}
           </div>
         </div>
-        <p className=" md:text-3xl ">あなたのおすすめ芸人タイプは○○です。</p>
-        <div className="flex items-center justify-center space-x-3">
-          <Link href="" className="btn btn-outline btn-accent  text-white   ">
-            他の○○タイプの芸人を見る
-          </Link>
+        
+        {/* <div className="flex items-center justify-center space-x-3">
           <button className="btn   btn-accent text-white ">
             お気に入り登録
           </button>
-        </div>
+        </div> */}
+
+        { // 初期状態、エラー状態、結果表示状態 にわけて表示を変更
+        resultText === "？？？" ? (
+          <></>
+        ) : ( resultText === error_comedian.name ? (
+          <p>{error_comedian.info}</p>
+        ) : (
+          <ComedianCardwithInfo comedian={comedian || error_comedian}/>
+        ))} 
       </div>
+      
     </div>
   );
 }

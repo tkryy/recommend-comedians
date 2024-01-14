@@ -4,6 +4,7 @@ import { useUserDataStore } from "@/lib/zustand/Stores";
 import { useAuth } from "@/lib/firebase/context";
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import { Comedian } from "@/models/Comedian";
 
 interface FavoriteAddButtonProps {
@@ -24,6 +25,42 @@ export default function FavoriteAddButton({
 
   const { user } = useAuth();
   const userData = useUserDataStore((state) => state.userData);
+  //console.log(userData.uid)
+
+  /* Googleでログインしていない場合にお気に入りボタンを押すとログイン画面へ */
+  if (userData.uid === '') {
+    return (
+      <div className="w-full">
+        <label htmlFor="modal_recommend" className="btn btn-ghost">
+        <Image
+            src={"/icons/BookMark.svg"}
+            alt={comedian.name}
+            width={30}
+            height={30}
+          />
+        </label>
+        <input type="checkbox" id="modal_recommend" className="modal-toggle" />
+        <div className="modal" role="dialog">
+          <div className="modal-box bg-white mb-8 flex flex-col justify-center items-center">
+            <p className="p-4">お気に入り機能を使う場合はGoogleアカウントでのログインが必要です。</p>
+            <Link href={'/application/login'} className={`btn btn-lg btn-block btn-primary
+                                                  text-base text-black text-center font-bold  
+                                                  rounded-lg 
+                                                  hover:translate-y-0.5 
+                                                  transform 
+                                                  transition
+                                                  border-none
+                                                  bg-gray-100
+                                                  w-[210px]`}
+            >
+              <p>ログインページへ</p>
+            </Link>
+          </div>
+          <label className="modal-backdrop" htmlFor="modal_recommend">Close</label>
+        </div>
+      </div>
+    );
+  }
 
   async function handleSave() {
     await axios.post(`/api/favorite?userid=${userData.uid}`, comedian);
@@ -42,8 +79,8 @@ export default function FavoriteAddButton({
     (async () => {
       const { data } = await axios.get(`/api/favorite?userid=${userData.uid}`);
       const comedians = data;
-      console.log(comedian.id);
-      console.log(comedians);
+      //console.log(comedian.id);
+      //console.log(comedians);
       setComedians(data);
 
       setIsFavorite(

@@ -25,17 +25,19 @@ function UserAccountAvatar() {
     );
   }
 
-const userData:UserData = {
-  uid: user.uid,
-  name: user.displayName || "name",
-  email: user.email || "email",
-}
-
-  useEffect(() => {
+  const userData: UserData = {
+    uid: user.uid,
+    name: user.displayName || "name",
+    email: user.email || "email",
+  }
+  useUserDataStore.setState({
+    userData: userData,
+  });
+  /* useEffect(() => {
     useUserDataStore.setState({
       userData: userData,
     });
-  });
+  }); */
 
   return (
     <div>
@@ -56,11 +58,11 @@ const userData:UserData = {
               プロフィール
             </Link>
           </li>
-          <li>
-            <Link href={"/setting"} className="justify-between">
+          {/* <li>
+            <Link href={"/application/setting"} className="justify-between">
               設定
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>

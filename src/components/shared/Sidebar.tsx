@@ -47,11 +47,11 @@ function Sidebar() {
             "お気に入り"
           )}
 
-          {renderSliderItem(
+          {/*renderSliderItem(
             "/application/add_data",
             "/icons/person_add_FILL0_wght400_GRAD0_opsz24.svg",
             "データ追加"
-          )}
+          ) */}
 
           <div id="BORDER" className="mt-40 border-2 border-gray-300" />
         </div>
@@ -63,11 +63,11 @@ function Sidebar() {
             "使い方"
           )}
 
-          {renderSliderItem(
+          {/* {renderSliderItem(
             "/application/setting",
             "/icons/settings_FILL0_wght400_GRAD0_opsz24.svg",
             "設定"
-          )}
+          )} */}
         </div>
       </ul>
   );

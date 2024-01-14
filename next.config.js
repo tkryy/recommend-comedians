@@ -51,6 +51,41 @@ const nextConfig = {
         hostname: "www.ohtapro.co.jp",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "www.kdashstage.jp",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.tkma.co.jp",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.ohtapro.co.jp",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "grapecom.jp",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "ogre.natalie.mu",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.maseki.co.jp",
+        port: "",
+      },
+      {
+        protocol: "https",
+        hostname: "www.sunmusic-gp.co.jp",
+        port: "",
+      }
     ],
   },
 };

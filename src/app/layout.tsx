@@ -3,10 +3,10 @@ import "./globals.css";
 import { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import Header3 from "../components/shared/Header3";
+import Header_landing from "../components/shared/Header_landing";
 /*
-import Sidebar from "../components/shared/Sidebar";
-import Fotter from "../components/shared/Fotter"; */
+import Sidebar from "../components/shared/Sidebar";*/
+import Footer_landing from "../components/shared/Footer_landing";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,8 +23,8 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header3 />
-        <div className="lg:flex block">
+        <Header_landing />
+        <div className="lg:flex block mb-9 lg:flex-col ">
           {/* <Sidebar /> */}
           <div className="bg-white mt-16">
             {" "}
@@ -35,8 +35,8 @@ export default function RootLayout({
               {children}
             </div>
           </div>
-          {/* <Fotter /> */}
         </div>
+        <Footer_landing />
       </body>
     </html>
   );

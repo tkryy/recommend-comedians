@@ -49,7 +49,6 @@ export const ContactForm = () => {
             </div>
           </div>
         </div>
-        <hr></hr>
 
         {/* メールアドレス */}
         <div>
@@ -67,7 +66,6 @@ export const ContactForm = () => {
             </div>
           </div>
         </div>
-        <hr></hr>
 
         {/* お問合せ項目
         <div className="md:ml-0 ml-2">
@@ -94,7 +92,6 @@ export const ContactForm = () => {
               }} required></input>
           </div>
         </div>
-        <hr></hr>
 
         {/* 返信不要欄 */}
         {/* <div className="md:ml-0 ml-2">

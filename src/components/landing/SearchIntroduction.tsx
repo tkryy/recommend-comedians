@@ -44,14 +44,14 @@ export const SearchIntroduction = () => {
                           md:mt-0 mt-4`}
           >
             <Image
-              src={"/images/search_exam01.png"}
+              src={"/images/search_start.png"}
               alt="検索ページの図"
               width="650"
               height="320"
               className="p-4 mockup-window border border-base-300 md:block hidden"
             ></Image>
             <Image
-              src={"/images/search_exam01.png"}
+              src={"/images/search_start.png"}
               alt="検索ページの図"
               width="320"
               height="320"

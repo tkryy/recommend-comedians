@@ -51,32 +51,32 @@ export const HowToUse = () => {
       >
         <div className="md:flex justify-center md:space-x-5 md:p-0 p-16 md:mt-0 -mt-12">
         <Image
-          src={"/images/recommend_exam03.png"}
+          src={"/images/recommend_exam01.png"}
           alt="診断ページの図1"
-          width="500"
+          width="450"
           height="320"
-          className="mockup-window border border-base-300 md:mb-0 mb-4 md:block hidden"
+          className="mockup-window border border-base-300 p-2 md:block hidden"
         ></Image>
         <Image
-          src={"/images/recommend_exam04.png"}
+          src={"/images/recommend_exam02.png"}
           alt="診断ページの図2"
-          width="500"
+          width="450"
           height="320"
-          className="mockup-window border border-base-300 md:block hidden"
+          className="mockup-window border border-base-300 p-2 md:block hidden"
         ></Image>
         <Image
-          src={"/images/recommend_exam03.png"}
+          src={"/images/recommend_exam01.png"}
           alt="診断ページの図1"
           width="320"
           height="320"
-          className="mockup-window border border-base-300 md:mb-0 mb-4 block md:hidden"
+          className="mockup-window border border-base-300 md:mb-0 mb-4 p-2 block md:hidden"
         ></Image>
         <Image
-          src={"/images/recommend_exam04.png"}
+          src={"/images/recommend_exam02.png"}
           alt="診断ページの図2"
           width="320"
           height="320"
-          className="mockup-window border border-base-300 block md:hidden"
+          className="mockup-window border border-base-300 p-2 block md:hidden"
         ></Image>
       </div>
 

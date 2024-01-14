@@ -28,24 +28,24 @@ export const FavoriteIntroduction = () => {
       >
         <div className="md:flex md:pt-24 md:mt-64 mt-12">
           <Image
-            src={"/images/favorite_exam01.png"}
+            src={"/images/favorite_table.png"}
             alt="お気に入りページの図"
-            width="600"
+            width="500"
             height="320"
-            className="p-4 mockup-window border border-base-300 md:block hidden"
+            className="p-2 mockup-window border border-base-300 md:block hidden"
           ></Image>
 
-          <div className="md:pt-20 md:pl-16">
+          <div className="md:pt-32 md:pl-16">
             <h1 className="md:text-5xl text-xl font-bold text-yellow-500 mt-4">お気に入り機能</h1>
             <p className="md:text-xl text-black md:mt-8 md:-ml-8">Tendonでは、新たに発見したお気に入りの芸人を<br></br>記録できます。</p>
             <p className="md:text-xl text-black md:-ml-8">あなただけのお気に入りの芸人リストを作りましょう。</p>
           </div>
           <Image
-            src={"/images/favorite_exam01.png"}
+            src={"/images/favorite_table.png"}
             alt="お気に入りページの図"
             width="320"
             height="320"
-            className="p-4 -ml-2 mt-2 mockup-window border border-base-300 md:hidden block"
+            className="p-1 mt-2 mockup-window border border-base-300 md:hidden block"
           ></Image>
         </div>
       </motion.div>

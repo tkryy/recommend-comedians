@@ -35,6 +35,7 @@ export default function Search_comedians() {
         await setComedians(result); // コメディアンの状態を取得した結果に設定します
       }
     }
+    
   };
 
   const genreButton = (genre: string, imageSRC: string) => {
@@ -68,7 +69,7 @@ export default function Search_comedians() {
       </button>
     );
   };
-
+  
   return (
     <div className="md:mx-5 md:w-full">
       <PageTitle title="芸人を探す" />
@@ -180,8 +181,8 @@ export default function Search_comedians() {
                     <ComedianCard comedian={comedian} />
                   </div>
                 ))}
-                {comedians.length == 1 && comedians[0].name == "undefined" && (
-                  <p>検索結果はありません</p>
+                {comedians.length === 0 && searchText !== "" && (
+                  <p>検索結果ありません</p>
                 )}
               </div>
             )}

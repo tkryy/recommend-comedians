@@ -164,7 +164,7 @@ export default function Page({ params }: { params: { slug: string } }) {
                           md:mt-0 mt-4 
                           lg:p-0 p-2 
                           space-y-5 
-                          hidden md:table-cell`}
+                          hidden md:block`}
           >
             {comedian.movie_link === 'no_link' ? (
               <Image

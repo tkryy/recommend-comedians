@@ -66,7 +66,7 @@ function ComedianCardwithInfo({ comedian }: ComedianCardProps) {
                     </div>
                 )}
             </div>
-            <div className="hidden md:table-cell">
+            <div className="hidden md:block">
                 {comedian.movie_link === 'no_link' ? (
                     <div className="md:w-[560px] h-[315px]">
                         <div className="flex justify-center">

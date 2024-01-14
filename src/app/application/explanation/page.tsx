@@ -23,7 +23,7 @@ export default function Explanation() {
               <label htmlFor="modal_recommend" className="btn w-[140px] bg-red-400 border-none text-white">おすすめ機能</label>
               <input type="checkbox" id="modal_recommend" className="modal-toggle" />
               <div className="modal" role="dialog">
-                <div className="modal-box bg-white mb-8">
+                <div className="modal-box bg-white mb-14">
                   <Link href={'/application/recommend_comedians'}>
                     <button className="hover:translate-y-0.5 transform transition">
                       <h3 className="text-lg font-bold">おすすめ機能</h3>
@@ -77,7 +77,7 @@ export default function Explanation() {
               <label htmlFor="modal_search" className="btn w-[140px] bg-red-400 border-none text-white">検索機能</label>
               <input type="checkbox" id="modal_search" className="modal-toggle" />
               <div className="modal" role="dialog">
-                <div className="modal-box bg-white mb-8">
+                <div className="modal-box bg-white mb-14">
                   <Link href={'/application/search_comedians'}>
                     <button className="hover:translate-y-0.5 transform transition">
                       <h3 className="text-lg font-bold">検索機能</h3>
@@ -156,7 +156,7 @@ export default function Explanation() {
               <label htmlFor="modal_favorite" className="btn w-[140px] bg-red-400 border-none text-white">お気に入り機能</label>
               <input type="checkbox" id="modal_favorite" className="modal-toggle" />
               <div className="modal" role="dialog">
-                <div className="modal-box bg-white mb-8">
+                <div className="modal-box bg-white mb-14">
                   <Link href={'/application/search_comedians'}>
                     <button className="hover:translate-y-0.5 transform transition">
                       <h3 className="text-lg font-bold">お気に入り機能</h3>

@@ -48,7 +48,7 @@ export default function Cookie() {
         <p className="font-bold mt-2">5. お問い合わせ先</p>
         <p>
           クッキーに関するご質問やお問い合わせは、以下の連絡先までお願いいたします。
-          <br></br>yomoyomo1294@gmail.com 木戸俊平
+          <br></br>yomoyomo1293@gmail.com 木戸俊平
         </p>
 
         <p className="mt-4">最終更新日：2023.9.22</p>

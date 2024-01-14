@@ -76,8 +76,7 @@ export default function Search_comedians() {
       <div className="space-y-4 md:mx-10 mx-2">
         {/* キーワード検索 */}
         <div className="space-y-4 items-center justify-between ">
-          <h2 className={`md:text-2xl font-bold`}
-          >
+          <h2 className={`md:text-2xl font-bold`}>
             キーワード検索
           </h2>
           <div className={`flex items-center justify-center`}>
@@ -157,7 +156,7 @@ export default function Search_comedians() {
         </div>
 
         {/* 検索結果 */}
-        <div className=" items-center">
+        <div key={'result_comedians'} className=" items-center">
           <h3 className={`md:text-3xl 
                           font-bold`}
           >
@@ -177,16 +176,15 @@ export default function Search_comedians() {
                             md:px-0 px-12`}
               >
                 {comedians.map((comedian: Comedian) => (
-                  <div className="flex">
+                  <div key={comedian.id} className="flex">
                     <ComedianCard comedian={comedian} />
-                    {/* <ComedianCardwithInfo comedian={comedian} */}
                   </div>
                 ))}
                 {comedians.length == 1 && comedians[0].name == "undefined" && (
                   <p>検索結果はありません</p>
                 )}
               </div>
-            )}{" "}
+            )}
             {/* isLoadingがfalseのときだけ表示 */}
             {isLoading && (
               <span

@@ -30,7 +30,7 @@ function ComedianCard({ comedian }: ComedianCardProps) {
     nameCSS = 'text-xl';
   }
   return (
-    <div className="bg-[#F2F2F7] rounded-md card w-[300px] border bottom-1">
+    <div key={comedian.id} className="bg-[#F2F2F7] rounded-md card w-[300px] border bottom-1">
       {/* テキスト */}
       <div className="card-body max-h-[250px]">
         <Link href={"/application/favorite/" + comedian.id}>

@@ -16,7 +16,7 @@ export function ComedianSkillBadge({
   text,
 }: SkillBadgeProps) {
   const badgeClass =
-    "text-xs font-medium mr-2 text-center px-2.5 py-0.5 rounded text-white bg-transparent";
+    "text-[8px] md:text-xs font-medium mr-2 text-center px-2.5 py-0.5 rounded text-white bg-transparent";
 
   const companyColor = convertComedianCompanyToColor(comedian);
 
@@ -26,7 +26,7 @@ export function ComedianSkillBadge({
 
   if (number !== undefined && number > 0) {
     return (
-      <div className="w-[80px] mx-1">
+      <div className=" w-[60px] md:w-[80px] mx-1">
         <div
           id="BADGE"
           className={badgeClass}

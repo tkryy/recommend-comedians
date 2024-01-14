@@ -25,17 +25,19 @@ function UserAccountAvatar() {
     );
   }
 
-const userData:UserData = {
-  uid: user.uid,
-  name: user.displayName || "name",
-  email: user.email || "email",
-}
-
-  useEffect(() => {
+  const userData: UserData = {
+    uid: user.uid,
+    name: user.displayName || "name",
+    email: user.email || "email",
+  }
+  useUserDataStore.setState({
+    userData: userData,
+  });
+  /* useEffect(() => {
     useUserDataStore.setState({
       userData: userData,
     });
-  });
+  }); */
 
   return (
     <div>

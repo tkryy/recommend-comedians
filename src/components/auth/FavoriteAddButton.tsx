@@ -25,6 +25,7 @@ export default function FavoriteAddButton({
 
   const { user } = useAuth();
   const userData = useUserDataStore((state) => state.userData);
+  //console.log(userData.uid)
 
   /* Googleでログインしていない場合にお気に入りボタンを押すとログイン画面へ */
   if (userData.uid === '') {
@@ -78,8 +79,8 @@ export default function FavoriteAddButton({
     (async () => {
       const { data } = await axios.get(`/api/favorite?userid=${userData.uid}`);
       const comedians = data;
-      console.log(comedian.id);
-      console.log(comedians);
+      //console.log(comedian.id);
+      //console.log(comedians);
       setComedians(data);
 
       setIsFavorite(

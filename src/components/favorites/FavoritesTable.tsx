@@ -30,7 +30,7 @@ export default function FavoritesTable() {
       useComediansStore.setState({
         comedians: favorites,
       });
-      console.log(favorites);
+      //console.log(favorites);
       setComedians(favorites);
       const newManager = new StateManager();
       newManager.setState(ViewState.Success);
@@ -60,7 +60,7 @@ export default function FavoritesTable() {
     }
 
     return (
-      <tr className="bg-white border-gray-200 hover:bg-info">
+      <tr key={comedian.id} className="bg-white border-gray-200 hover:bg-info">
         <td className={tdClassName}>
           {/* 画像と名前 */}
           <div className={`flex items-center 
@@ -87,7 +87,6 @@ export default function FavoritesTable() {
                       className="w-10 h-10"
                     ></Image>
                   )}
-
                 </Link>
               </div>
             </div>
@@ -118,10 +117,10 @@ export default function FavoritesTable() {
           {/* 結成年 */}
           <p className={tdTextClasses}>{comedian.birthYear}</p>
         </td>
-        <th className={tdClassName}>
+        <td className={tdClassName}>
           {/* ジャンル */}
           <SkillBadges comedian={comedian} />
-        </th>
+        </td>
         {/* <td className="hidden lg:table-cell">
           <SNSIconList comedian={comedian} />
         </td> */}
@@ -170,8 +169,8 @@ export default function FavoritesTable() {
             <th className="text-black">名前</th>
             <th className="text-black">所属事務所</th>
             <th className={`text-black
-                            hidden md:table-cell
-                          `}>結成年</th>
+                            hidden md:table-cell`}
+            >結成年</th>
             <th className="text-black">ジャンル</th>
             {/* <th className={`text-black hidden lg:table-cell`}>SNS</th> */}
           </tr>

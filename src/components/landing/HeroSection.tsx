@@ -44,7 +44,7 @@ export const BackgroundImage = ({
         </div>
         <div className={`pt-20 flex flex-col justify-center items-center`}
         >
-          <h2 className="text-xl md:text-2xl lg:text-5xl  font-bold text-white">
+          <h2 className="text-base md:text-2xl lg:text-5xl  font-bold text-white">
             {subtitle}
           </h2>
           <div className="md:pt-12 pt-8">

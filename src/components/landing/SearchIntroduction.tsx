@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export const SearchIntroduction = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center items-center px-1">
       <motion.div
         variants={{
           offscreen: {
@@ -23,25 +23,30 @@ export const SearchIntroduction = () => {
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: false, amount: 0 }}
-
       >
-        <div className="md:flex md:pt-24 md:mt-64">
-          <div>
+        <div className="md:flex md:pt-24 md:mt-64 md:flex-col lg:flex-row justify-center">
+          <div className="flex flex-col items-center">
             <h1 className={`md:text-5xl text-xl 
                             font-bold 
                             text-yellow-500 
                             md:mt-8`}
             >
-              キーワード、<br className="md:block hidden"></br>芸風から検索！
+              キーワード、<br className="lg:block hidden"></br>芸風から検索！
             </h1>
-            <p className={`md:text-xl text-black 
+            {/* <p className={`md:text-xl text-black 
                           md:mt-8`}
             >
-              Tendonでは、キーワードや芸風からの<br className="md:block hidden"></br>検索機能を<br className="md:hidden block"></br>用意しています。
+              Tendonでは、キーワードや芸風からの<br className="lg:block hidden"></br>検索機能を<br className="md:hidden block"></br>用意しています。
+            </p> */}
+            <p className={`md:text-xl text-black 
+                          md:mt-8 mx-8`}
+            >
+              Tendonでは、キーワードや芸風からの検索機能を用意しています。
             </p>
           </div>
           <div className={`md:px-4
-                          md:mt-0 mt-4`}
+                          md:mt-0 mt-4
+                          flex justify-center`}
           >
             <Image
               src={"/images/search_start.png"}

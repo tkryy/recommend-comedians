@@ -36,9 +36,9 @@ export const FavoriteIntroduction = () => {
           ></Image>
 
           <div className="md:pt-32 md:pl-16">
-            <h1 className="md:text-5xl text-xl font-bold text-yellow-500 mt-4">お気に入り機能</h1>
-            <p className="md:text-xl text-black md:mt-8 md:-ml-8">Tendonでは、新たに発見したお気に入りの芸人を<br></br>記録できます。</p>
-            <p className="md:text-xl text-black md:-ml-8">あなただけのお気に入りの芸人リストを作りましょう。</p>
+            <h1 className="md:text-5xl text-xl font-bold text-yellow-500 mt-4 mx-8">お気に入り機能</h1>
+            <p className="md:text-xl text-black md:mt-8">Tendonでは、新たに発見したお気に入りの芸人を<br></br>記録できます。</p>
+            <p className="md:text-xl text-black">あなただけのお気に入りの芸人リストを作りましょう。</p>
           </div>
           <Image
             src={"/images/favorite_table.png"}

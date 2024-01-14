@@ -65,7 +65,7 @@ export default function Privacy_policy() {
         <p className="font-bold mt-2">7. お問い合わせ先</p>
         <p>
           プライバシーポリシーに関するご質問やお問い合わせは、以下の連絡先までお願いいたします。
-          <br></br>[お問い合わせ先情報を記載]
+          <br></br>yomoyomo1294@gmail.com 木戸俊平
         </p>
 
         <p className="mt-4">最終更新日：2023.9.22</p>

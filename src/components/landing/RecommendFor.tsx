@@ -38,11 +38,11 @@ export const RecommendFor = () => {
       <div className="flex justify-center flex-wrap ">
         <h1 className="md:text-5xl text-3xl font-bold text-yellow-500 mt-4 ">こんな方におすすめ！</h1>
       </div>
-      <div className="flex justify-center">
+      <div className="flex justify-center mx-1">
         <p className="px-5 md:text-xl text-black md:mt-8 mt-4 ">Tendonは、最近芸人を推しはじめた人、たくさんを芸人を知りたい人など<br className="md:block hidden"></br>お笑いが好きな人はもちろん、お笑いに少しでも興味がある人にもおすすめです。</p>
       </div>
       <div className="flex justify-center">
-        <p className="md:text-5xl text-xl font-bold text-yellow-500 md:mt-8 mt-4 ">自分の知らない好みの芸人を見つけよう！</p>
+        <p className="lg:text-5xl md:text-4xl text-base font-bold text-yellow-500 md:mt-8 mt-4 ">自分の知らない好みの芸人を見つけよう！</p>
       </div>
     </motion.div>
 

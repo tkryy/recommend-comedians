@@ -10,7 +10,7 @@ function Footer_landing({ }) {
         <div className="mt-4 md:mt-8">
           <div className="footer text-[11px] md:text-base">
             <div className="justify-self-end flex">
-              <p>©company 2023</p>
+              <p>Tendon開発チーム</p>
               <p className="hover:opacity-75">
                 <Link href="/application/policy">プライバシーポリシー</Link>
               </p>

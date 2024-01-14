@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export const HowToUse = () => {
   return (
-    <div className="flex justify-center flex-wrap ">
+    <div className="flex justify-center flex-wrap px-1">
       <motion.div
       variants ={{
         offscreen: {
@@ -26,8 +26,11 @@ export const HowToUse = () => {
       viewport = {{once: false, amount: 0}}
       
       >
-        <h1 className="flex justify-center md:text-5xl text-2xl font-bold  md:pt-8 pt-4 text-yellow-500">芸人名を入力、おすすめを提案！</h1>
-        <p className="flex justify-center md:text-xl text-base w-full md:p-8 p-2 ">あなたの好みの芸人名を入力すると、入力した芸人と<br className="md:hidden"></br>似ている芸人をAIが判断して、おすすめを提案します！</p>
+        <h1 className={`flex justify-center 
+                        md:text-5xl text-xl font-bold  
+                        md:pt-8 pt-4 text-yellow-500`}>芸人名を入力、おすすめを提案！</h1>
+        {/* <p className="flex justify-center md:text-xl text-base w-full md:p-8 p-2 ">あなたの好みの芸人名を入力すると、入力した芸人と<br className="md:hidden"></br>似ている芸人をAIが判断して、おすすめを提案します！</p> */}
+        <p className="flex justify-center md:text-xl text-base md:p-8 p-2 mx-6">あなたの好みの芸人名を入力すると、入力した芸人と似ている芸人をAIが判断して、おすすめを提案します！</p>
       </motion.div>
       
       <motion.div
